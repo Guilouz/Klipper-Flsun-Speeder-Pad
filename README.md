@@ -5,3 +5,13 @@
 Klipper is a 3d-Printer firmware. It combines the power of a general purpose computer with one or more micro-controllers.
 
 See the [features document](https://www.klipper3d.org/Features.html) for more information on why you should use Klipper.
+
+
+## About
+
+This configuration is compatible with FLSUN V400 only.
+
+- Improved settings (drivers current, microsteps, bed leveling and more...)
+- Added useful and automated macros with notifications to KlipperScreen
+
+Updated Klipperscreen is also available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
