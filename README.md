@@ -13,7 +13,7 @@ This configuration is compatible with FLSUN V400 only.
 
 - Improved settings (drivers current, microsteps, bed leveling and more...)
 - Added useful and automated macros with notifications to KlipperScreen
-- Added configuration for ADXL345 via USB
+- Added configuration for ADXL345 via USB with Raspberry Pico
 - Improved Start/End Gcodes
 
 Updated Klipperscreen is also available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
