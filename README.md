@@ -15,10 +15,18 @@ This configuration is compatible with FLSUN V400 only.
 - Added useful and automated macros with notifications to KlipperScreen
 - Added configuration for ADXL345 via USB with Raspberry Pico
 - Improved Start/End Gcodes
-
+<br />
 Updated Klipperscreen is also available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
 
 
 If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. Thank you 🙂
 
 [ ![Download](https://user-images.githubusercontent.com/12702322/115148445-e5a40100-a05f-11eb-8552-c1f5d4355987.png) ](https://www.paypal.me/CyrilGuislain)
+
+<br />
+
+## STL files
+
+- Motherboard Mount for Easy Access to microSd port : https://www.printables.com/model/268464-flsun-v400-motherboard-mount
+- ADXL345 Mount : https://www.printables.com/model/268463-flsun-v400-adxl345-mount
+- FLSUN V400 Fanduct : https://www.printables.com/model/268456-flsun-v400-fanduct
