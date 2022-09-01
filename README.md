@@ -16,7 +16,7 @@ This configuration is compatible with FLSUN V400 only.
 - Added configuration for ADXL345 via USB with Raspberry Pico
 - Improved Start/End Gcodes
 
-Updated Klipperscreen is also available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
+Updated Klipperscreen version for V400 is also available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
 
 <br />
 
