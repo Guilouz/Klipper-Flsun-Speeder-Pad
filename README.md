@@ -30,3 +30,10 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 - Motherboard Mount for Easy Access to microSd port : https://www.printables.com/model/268464-flsun-v400-motherboard-mount
 - ADXL345 Mount : https://www.printables.com/model/268463-flsun-v400-adxl345-mount
 - FLSUN V400 Fanduct : https://www.printables.com/model/268456-flsun-v400-fanduct
+
+
+## ADXL345 Wiring
+
+To use ADXL345 with FLSUN V400 it's necessary to use it via USB with a Raspberry Pi Pico.
+
+![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
