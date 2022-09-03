@@ -254,7 +254,7 @@ I also recommend using a microSD extension for future updates to avoid removing 
 
 <br />
 
-## Using my Configuration
+## Using Configurations
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -299,3 +299,18 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 To use ADXL345 with FLSUN V400 for measuring Resonances it's necessary to use it via USB with a Raspberry Pi Pico.
 
 ![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
+
+- Some dependencies are necessary to use ADXL345, install them with this following commands (one at a time):
+```
+sudo apt update
+sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
+```
+- Followed by this command to install Numpy in Klipper's environment:
+```
+~/klippy-env/bin/pip install -v numpy
+```
+- Then simply uncomment (remove the #) from the following line in the `printer.cfg` file to enable ADXL support:
+```
+#[include adxl345.cfg]
+```
+- To measure the resonances, see here : https://www.klipper3d.org/Measuring_Resonances.html
