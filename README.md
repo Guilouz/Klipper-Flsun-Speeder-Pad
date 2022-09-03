@@ -201,3 +201,55 @@ path: ~/mainsail
 
 ![Capture d’écran 2022-09-03 à 15 49 16](https://user-images.githubusercontent.com/12702322/188273402-84c3c399-5c88-4d6f-82e2-3bd9b134dbd7.jpg)
 
+<br />
+
+## Update Motherboard Firmware
+
+It's important that your motherboard firmware version matches with the installed Klipper version.
+
+Version is visible on `System Loads` tile -> `mcu` section (in `Machine` tab).
+
+To update firmware, follow these instructions:
+
+- In the SSH command prompt window, enter the following commands (one at a time):
+```
+cd ~/klipper/
+make menuconfig
+```
+- Select these settings:
+```
+[*] Enable extra low-level configuration options
+Micro-controller Architecture = STMicroelectronics STM32
+Processor model = STM32F103
+Bootloader offset = 28KiB bootloader
+Clock Reference = 8 MHz crystal
+Communication interface = (USART3 (on PB11/PB10))
+```
+
+![Capture d’écran 2022-09-03 à 15 58 37](https://user-images.githubusercontent.com/12702322/188273866-1981aa1b-f01e-40c4-a8c4-4f1935adb821.jpg)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following command to compile firmware:
+```
+make
+```
+- Then this one to convert firmware:
+```
+./scripts/update_mks_robin.py out/klipper.bin out/Robin_nano35.bin
+```
+- V400 motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
+
+- Get the firmware named `Robin_nano35.bin` in `/home/pi/klipper/out/`directory (on the left part of MobaXterm).
+
+- Copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+
+- Insert the microSD card into the motherboard then turn on the printer.
+
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO35.BIN.CUR` and the version on the `System Loads` tile must have been changed.
+
+Note: Access to the microSD port of the motherboard being impossible as it is, because of the pneufit just in front, I modeled a new support available in `STL Files` section.
+
+![1](https://user-images.githubusercontent.com/12702322/188274940-e660a798-93a0-495f-9cf0-842c3893f6d4.jpg)
+
+I also recommend using a microSD extension for future updates to avoid removing the cover each time.
