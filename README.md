@@ -36,7 +36,7 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 
 ## Enable Root Access
 
-By default Root access is not allowed on Speeder Pad. To activate them, follow these instructions:
+By default, root access is not allowed on Speeder Pad. To enable it, follow these instructions:
 
 - Download this pack and unzip it : [Root Access Enabler.zip](https://github.com/Guilouz/Klipper-Flsun-V400/files/9482488/Root.Access.Enabler.zip)
 
