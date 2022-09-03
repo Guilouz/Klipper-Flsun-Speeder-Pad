@@ -34,14 +34,6 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 
 <br />
 
-## ADXL345 Wiring
-
-To use ADXL345 with FLSUN V400 it's necessary to use it via USB with a Raspberry Pi Pico.
-
-![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
-
-<br />
-
 ## Enable Root Access
 
 By default Root access is not allowed on Speeder Pad. To activate them, follow these instructions:
@@ -184,8 +176,10 @@ Note: You can also install Fluidd if you don't like the Mainsail interface.
 
 ## Update Mainsail
 
-- Go to your Mainsail Web interface then select the `Machine` tab.
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
 - Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
+
 - Now, still on Mainsail, open the `moonraker.conf` file and add the following lines:
 
 ```
@@ -196,7 +190,9 @@ repo: mainsail-crew/mainsail
 path: ~/mainsail
 ```
 - Once done, click on `Save & close` at the top right to save the file.
+
 - You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
+
 - You will see a new Mainsail line appear.
 
 ![Capture d’écran 2022-09-03 à 15 49 16](https://user-images.githubusercontent.com/12702322/188273402-84c3c399-5c88-4d6f-82e2-3bd9b134dbd7.jpg)
@@ -256,3 +252,25 @@ I also recommend using a microSD extension for future updates to avoid removing 
 
 ![PXL_20220830_171401777 jpg f3eeafe2288a0e0428950cfca7c5eec7](https://user-images.githubusercontent.com/12702322/188275110-b74b6cf9-ab33-403e-be87-4fcad06fa6f5.jpg)
 
+<br />
+
+## Using my Configuration
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Right-click on the `printer.cfg` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
+
+- Download and unzip my repository zip file here : https://github.com/Guilouz/Klipper-Flsun-V400/archive/refs/heads/main.zip
+
+- Then upload `printer.cfg`, `macros.cfg` and `adxl345.cfg` files located in `Configurations` directory.
+
+- Restart printer to take effect.
+
+
+<br />
+
+## ADXL345
+
+To use ADXL345 with FLSUN V400 it's necessary to use it via USB with a Raspberry Pi Pico.
+
+![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
