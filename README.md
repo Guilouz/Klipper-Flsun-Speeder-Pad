@@ -315,4 +315,4 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 - After saving and restarting the firmware you should see the ADXL MCU connecting to Klipper.
 
-- To measure the resonances, see here : https://www.klipper3d.org/Measuring_Resonances.html
+- To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
