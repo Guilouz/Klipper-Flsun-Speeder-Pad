@@ -225,8 +225,9 @@ Communication interface = (USART3 (on PB11/PB10))
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
-- Enter the following command to compile firmware:
+- Enter the following commands to compile firmware (one at a time):
 ```
+make clean
 make
 ```
 - Then this one to convert firmware:
@@ -235,7 +236,7 @@ make
 ```
 - V400 motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
 
-- Get the firmware named `Robin_nano35.bin` in `/home/pi/klipper/out/`directory (on the left part of MobaXterm).
+- Get the firmware named `Robin_nano35.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
 
 - Copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
 
@@ -308,7 +309,50 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 ~/klippy-env/bin/pip install -v numpy
 ```
-- Then simply uncomment (remove the #) from the following line in the `printer.cfg` file to enable ADXL support:
+- It's also necessary to compile firmware for Raspberry Pico, enter the following commands (one at a time):
+```
+cd ~/klipper/
+make menuconfig
+```
+- Select these settings:
+```
+[] Enable extra low-level configuration options
+Micro-controller Architecture = (Raspberry Pi RP2040)
+Communication interface = (USB)
+```
+
+![Capture d’écran 2022-09-03 à 18 28 10](https://user-images.githubusercontent.com/12702322/188279790-bba11b1c-16df-4e8e-bb80-e9400a1a4962.jpg)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following commands to compile firmware (one at a time):
+```
+make clean
+make
+```
+- Get the firmware named `klipper.uf2` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+
+- Connect the Raspberry Pi Pico to the computer via USB while holding down the `BOOTSEL` button.
+
+- Copy `klipper.uf2` file to the Raspberry Pico, it reboots as soon as it installs the firmware.
+
+- Now plug it into one of the Speeder Pad's USB ports.
+
+- Type this command to retrieve the serial:
+```
+ls /dev/serial/by-id/*
+```
+- You should see 2 serial appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`.
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open `adxl345.cfg` file and edit following line with serial you have just obtained:
+```
+serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
+```
+- Save and restart firmware.
+
+- Then uncomment (remove the #) to the following line in the `printer.cfg` file to enable ADXL support:
 ```
 [include adxl345.cfg]
 ```
