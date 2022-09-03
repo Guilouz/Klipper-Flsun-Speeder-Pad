@@ -283,8 +283,13 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 - Start BED LEVELING and save configuration.
 
 - Adjust Z-OFFSET, first you need to move to Z=0 and then adjust nozzle position with a sheet of paper.
+  - Note: The Z-Offset is saved in real time including when adjusting babysteps.
 
-Note: The Z-Offset is saved in real time including when adjusting babysteps.
+- To calibrate your extruder, see here: https://www.klipper3d.org/Rotation_Distance.html 
+
+- To adjust Pressure Advance, see here: https://www.klipper3d.org/Pressure_Advance.html
+
+- To adjust manually Resonance Compensation, see here: https://www.klipper3d.org/Resonance_Compensation.html
 
 
 <br />
