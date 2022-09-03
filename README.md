@@ -311,7 +311,7 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 - Then simply uncomment (remove the #) from the following line in the `printer.cfg` file to enable ADXL support:
 ```
-#[include adxl345.cfg]
+[include adxl345.cfg]
 ```
 - After saving and restarting the firmware you should see the ADXL MCU connecting to Klipper.
 
