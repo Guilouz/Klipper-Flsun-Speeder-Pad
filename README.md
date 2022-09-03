@@ -300,7 +300,7 @@ To use ADXL345 with FLSUN V400 for measuring Resonances it's necessary to use it
 
 ![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
 
-- Some dependencies are necessary to use ADXL345, install them with this following commands (one at a time):
+- Some dependencies are required to use ADXL345, install them with this following commands (one at a time):
 ```
 sudo apt update
 sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
