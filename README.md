@@ -253,3 +253,6 @@ Note: Access to the microSD port of the motherboard being impossible as it is, b
 ![1](https://user-images.githubusercontent.com/12702322/188274940-e660a798-93a0-495f-9cf0-842c3893f6d4.jpg)
 
 I also recommend using a microSD extension for future updates to avoid removing the cover each time.
+
+![PXL_20220830_171401777 jpg f3eeafe2288a0e0428950cfca7c5eec7](https://user-images.githubusercontent.com/12702322/188275110-b74b6cf9-ab33-403e-be87-4fcad06fa6f5.jpg)
+
