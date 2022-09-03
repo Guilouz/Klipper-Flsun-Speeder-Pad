@@ -132,3 +132,50 @@ sudo ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 ```
 timedatectl
 ```
+
+<br />
+
+## Switch to Official Klipper Builds
+
+By default, FLSUN does not use builds from official GitHub repositories. Updates point to Gitee repositories which are very slow, sometimes inaccessible and not updated.
+In addition, during Delta Calibration, tower angles and delta radius are never recalculated in their Klipper build, which can cause several issues.
+
+To upgrade to official builds, follow these instructions:
+
+- In the SSH command prompt window, enter the following command to install Kiauh:
+```
+git clone https://github.com/th33xitus/kiauh.git
+```
+- Launch Kiauh by entering this command:
+```
+./kiauh/kiauh.sh
+```
+- This window should appear:
+
+![Capture d’écran 2022-09-03 à 15 13 44](https://user-images.githubusercontent.com/12702322/188272063-58e8e06c-338a-42a1-abb0-5492dbe781c4.jpg)
+
+- Enter in `3) [Remove]` menu by typing `3` then `Enter`:
+
+![Capture d’écran 2022-09-03 à 15 26 31](https://user-images.githubusercontent.com/12702322/188272462-49994d56-11a7-438a-bbd8-f0511c36640d.jpg)
+
+- Remove `2) [Moonraker]` by typing `2` then `Enter` (you will need to enter the Root password).
+
+- When it's done, remove `1) [Klipper]` by typing `1` then `Enter` (you will need to enter the Root password).
+
+- When it's done, go back to main menu by typing `B` then `Enter`.
+
+- Enter in `1) [Install]` menu by typing `1` then `Enter`:
+
+![Capture d’écran 2022-09-03 à 15 39 18](https://user-images.githubusercontent.com/12702322/188273051-df392b33-ee7b-47d6-8166-f5be167b42f2.jpg)
+
+- Install `1) [Klipper]` by typing `1` then `Enter` (you will need to enter the Root password).
+
+- When it's done, install `2) [Moonraker]` by typing `2` then `Enter` (you will need to enter the Root password).
+
+- When it's done, go back to main menu by typing `B` then `Enter`.
+
+- Exit Kiauh by typing `Q` then `Enter`.
+
+- Your Speeder Pad now running offical builds of Klipper and Moonraker.
+
+Note: You can also install Fluidd if you don't like the Mainsail interface.
