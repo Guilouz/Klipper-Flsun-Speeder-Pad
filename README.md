@@ -342,7 +342,9 @@ make
 ```
 ls /dev/serial/by-id/*
 ```
-- You should see 2 serial appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`.
+- You should see 2 serial appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`:
+
+![Capture d’écran 2022-09-03 à 18 47 04](https://user-images.githubusercontent.com/12702322/188280406-1b3a5c76-ad65-432c-a6c0-9156f0814c86.jpg)
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
