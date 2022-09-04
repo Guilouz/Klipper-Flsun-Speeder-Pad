@@ -346,7 +346,7 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 <br />
 
-## ADXL345
+## Use ADXL345
 
 To use ADXL345 with FLSUN V400 for measuring Resonances it's necessary to use it via USB with a Raspberry Pi Pico.
 
