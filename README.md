@@ -7,6 +7,26 @@ Klipper is a 3d-Printer firmware. It combines the power of a general purpose com
 See the [features document](https://www.klipper3d.org/Features.html) for more information on why you should use Klipper.
 
 
+## Table of Contents
+
+- [About](#about)
+- [STL Files](#stl-files)
+- [Enable Root Access](#enable-root-access)
+- [SSH Connection](#ssh-connection)
+- [Change Password](#change-password)
+- [Change Timezone](#change-timezone)
+- [Change Wi-Fi Location](#change-wi-fi-location)
+- [Switch to Official Klipper Builds](#switch-to-official-klipper-builds)
+- [Update Mainsail](#update-mainsail)
+- [Update Timelapse](#update-timelapse)
+- [Update Motherboard Firmware](#update-motherboard-firmware)
+- [Use Configurations](#use-configurations)
+- [Calibrate your Printer](#calibrate-your-printer)
+- [Use ADXL345](#use-adxl345)
+- [Special Thanks](#special-thanks)
+
+<br />
+
 ## About
 
 This configuration is compatible with FLSUN V400 only.
@@ -365,7 +385,7 @@ I also recommend using a microSD extension for future updates to avoid removing 
 
 <br />
 
-## Using Configurations
+## Use Configurations
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
