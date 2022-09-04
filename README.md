@@ -128,6 +128,8 @@ timedatectl
 
 ## Change Wi-Fi Location
 
+By default, there is no location defined.
+
 - In the SSH command prompt window, enter the following command to check the current Wi-Fi location:
 ```
 iw reg get
@@ -170,15 +172,22 @@ country FR: DFS-ETSI
         (5945 - 6425 @ 160), (N/A, 23), (N/A), NO-OUTDOOR
         (57000 - 71000 @ 2160), (N/A, 40), (N/A)
 ```
-- To make the location permanent, enter the following command (you will need to enter the Root password):
+- To make the location permanent, enter the following command replacing `FR` by your country (you will need to enter the Root password):
 ```
-sudo nano /etc/default/crda
+sudo sed -i 's/^REG.*=$/&FR/' /etc/default/crda
 ```
-- Add your location after `REGDOMAIN=` as is:
+- Then, this command:
 ```
-REGDOMAIN=FR
+sudo sed -i '/^exit 0/ d' /etc/rc.local
 ```
-- Press `Ctrl+X` to exit then `Y` to save and `Enter` to confirm.
+- And this command replacing `FR` by your country:
+```
+echo -e "iw reg set FR\nexit 0" | sudo tee -a /etc/rc.local
+```
+- Then reboot with this command:
+```
+sudo reboot
+```
 
 <br />
 
