@@ -95,7 +95,7 @@ passwd
 
 <br />
 
-## Change Timezone
+## Timezone Change
 
 By default, V400 are on Asia timezone. To change that, follow these instructions:
 
