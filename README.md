@@ -172,7 +172,7 @@ country 00: DFS-UNSET
 ```
 - All available locations can be displayed with this command:
 ```
-sudo nano /usr/share/zoneinfo/zone.tab
+sudo cat /usr/share/zoneinfo/zone.tab
 ```
 - To change the location enter the following command replacing `FR` by your country (you will need to enter the Root password):
 ```
