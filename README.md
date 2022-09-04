@@ -166,7 +166,7 @@ country FR: DFS-ETSI
         (5945 - 6425 @ 160), (N/A, 23), (N/A), NO-OUTDOOR
         (57000 - 71000 @ 2160), (N/A, 40), (N/A)
 ```
-- To make the location permanent, enter the following command:
+- To make the location permanent, enter the following command (you will need to enter the Root password):
 ```
 sudo nano /etc/default/crda
 ```
