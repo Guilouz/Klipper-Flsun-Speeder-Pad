@@ -128,8 +128,6 @@ timedatectl
 
 ## Change Wi-Fi Location
 
-By default, there is no location defined for the Wi-Fi.
-
 - In the SSH command prompt window, enter the following command to check the current Wi-Fi location:
 ```
 iw reg get
