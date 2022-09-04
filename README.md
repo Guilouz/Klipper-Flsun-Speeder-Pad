@@ -160,7 +160,7 @@ You can verify that the change has been made by entering this command again:
 ```
 iw reg get
 ```
-- You obtain this:
+- You obtain this (related to your country):
 ```
 global
 country FR: DFS-ETSI
