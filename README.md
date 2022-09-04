@@ -236,7 +236,6 @@ Note: You can also install Fluidd if you don't like the Mainsail interface.
 - Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
 
 - Now, still on Mainsail, open the `moonraker.conf` file and add the following lines:
-
 ```
 [update_manager client mainsail]
 type: web
@@ -265,7 +264,6 @@ bash ~/moonraker-timelapse/install.sh
 - Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
 
 - Now, still on Mainsail, open the `moonraker.conf` file and add the following lines:
-
 ```
 [update_manager timelapse]
 type: git_repo
