@@ -133,13 +133,9 @@ timedatectl list-timezones
 ```
 timedatectl list-timezones | grep -i Paris
 ```
-- Then unlink the current timezone with this command (you will need to enter the Root password):
-```
-sudo unlink /etc/localtime
-```
 - You can now set the new timezone with this command (replace Europe/Paris by the new timezone):
 ```
-sudo ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+sudo timedatectl set-timezone Europe/Paris
 ```
 - You can then verify that the change has been taken into account by retyping this command:
 ```
