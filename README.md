@@ -202,6 +202,10 @@ wifi.powersave = 2
 ```
 - Then press `Ctrl+X` to exit then `Y` to save and `Enter` to confirm.
 
+- Enter this command to restart Wi-Fi service:
+```
+sudo service network-manager restart
+```
 
 <br />
 
