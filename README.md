@@ -248,9 +248,39 @@ path: ~/mainsail
 
 - You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
 
-- You will see a new Mainsail line appear.
+- You will see a new `mainsail` line appear.
 
 ![Capture d’écran 2022-09-03 à 15 49 16](https://user-images.githubusercontent.com/12702322/188273402-84c3c399-5c88-4d6f-82e2-3bd9b134dbd7.jpg)
+
+<br />
+
+## Update Timelapse
+
+- In the SSH command prompt window, enter the following command:
+```
+bash ~/moonraker-timelapse/install.sh
+```
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
+
+- Now, still on Mainsail, open the `moonraker.conf` file and add the following lines:
+
+```
+[update_manager timelapse]
+type: git_repo
+primary_branch: main
+path: ~/moonraker-timelapse
+origin: https://github.com/mainsail-crew/moonraker-timelapse.git
+managed_services: klipper moonraker
+```
+- Once done, click on `Save & close` at the top right to save the file.
+
+- You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
+
+- You will see a new `timelapse` line appear.
+
+![Capture d’écran 2022-09-04 à 18 46 12](https://user-images.githubusercontent.com/12702322/188324381-3ab16337-e7da-4029-a318-ba41a4884ded.jpg)
 
 <br />
 
