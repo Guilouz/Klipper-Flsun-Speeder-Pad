@@ -288,7 +288,7 @@ channel: stable
 repo: mainsail-crew/mainsail
 path: ~/mainsail
 ```
-- Once done, click on `Save & close` at the top right to save the file.
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
 
 - You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
 
@@ -317,7 +317,7 @@ path: ~/moonraker-timelapse
 origin: https://github.com/mainsail-crew/moonraker-timelapse.git
 managed_services: klipper moonraker
 ```
-- Once done, click on `Save & close` at the top right to save the file.
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
 
 - You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
 
