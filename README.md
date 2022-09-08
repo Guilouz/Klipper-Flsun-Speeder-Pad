@@ -392,7 +392,7 @@ I also recommend using a microSD extension for future updates to avoid removing 
 
 - Download and unzip my repository zip file here : https://github.com/Guilouz/Klipper-Flsun-V400/archive/refs/heads/main.zip
 
-- Then upload `printer.cfg`, `macros.cfg` and `adxl345.cfg` files located in `Configurations` directory.
+- Then upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory.
 
 - Restart printer to take effect.
 
@@ -514,6 +514,216 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 
 **Configuration:**
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open the `printer.cfg` file and modify the following line by removing the `#` at the very beginning:
+```
+[include neopixels.cfg]  #Enable if you want to use Neopixels
+```
+- Now open the `KlipperScreen.conf` file and copy all of this code just before line `#~# --- Do not edit below this line. This section is auto generated --- #~#`:
+```
+[menu __main actions neopixels]
+name: {{ gettext('Neopixels') }}
+icon: neopixels
+
+[menu __main actions neopixels led_off]
+name: {{ gettext('Off') }}
+icon: neopixels-off
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_OFF"}
+
+[menu __main actions neopixels led_on]
+name: {{ gettext('On') }}
+icon: neopixels-on
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_ON"}
+
+[menu __main actions neopixels led_blue]
+name: {{ gettext('Blue') }}
+icon: neopixels-blue
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_BLUE"}
+
+[menu __main actions neopixels led_red]
+name: {{ gettext('Red') }}
+icon: neopixels-red
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_RED"}
+
+[menu __main actions neopixels led_green]
+name: {{ gettext('Green') }}
+icon: neopixels-green
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_GREEN"}
+
+[menu __main actions neopixels led_yellow]
+name: {{ gettext('Yellow') }}
+icon: neopixels-yellow
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_YELLOW"}
+
+[menu __main actions neopixels led_orange]
+name: {{ gettext('Orange') }}
+icon: neopixels-orange
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_ORANGE"}
+
+[menu __main actions neopixels led_violet]
+name: {{ gettext('Violet') }}
+icon: neopixels-violet
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_VIOLET"}
+
+[menu __main actions neopixels hotend_glow]
+name: {{ gettext('Hotend (All)') }}
+icon: extruder
+method: printer.gcode.script
+params: {"script":"HOTEND_GLOW"}
+
+[menu __main actions neopixels hotend_progress]
+name: {{ gettext('Hotend (One by One)') }}
+icon: extruder
+method: printer.gcode.script
+params: {"script":"HOTEND_PROGRESS"}
+
+[menu __main actions neopixels bed_glow]
+name: {{ gettext('Bed (All)') }}
+icon: bed
+method: printer.gcode.script
+params: {"script":"BED_GLOW"}
+
+[menu __main actions neopixels bed_progress]
+name: {{ gettext('Bed (One by One)') }}
+icon: bed
+method: printer.gcode.script
+params: {"script":"BED_PROGRESS"}
+
+[menu __main actions neopixels percent_glow]
+name: {{ gettext('Progress (All)') }}
+icon: clock
+method: printer.gcode.script
+params: {"script":"PERCENT_GLOW"}
+
+[menu __main actions neopixels percent_progress]
+name: {{ gettext('Progress (One by One)') }}
+icon: clock
+method: printer.gcode.script
+params: {"script":"PERCENT_PROGRESS"}
+
+[menu __main actions neopixels speed_glow]
+name: {{ gettext('Speed (All)') }}
+icon: speed+
+method: printer.gcode.script
+params: {"script":"SPEED_GLOW"}
+
+[menu __main actions neopixels speed_progress]
+name: {{ gettext('Speed (One by One)') }}
+icon: speed+
+method: printer.gcode.script
+params: {"script":"SPEED_PROGRESS"}
+
+[menu __print neopixels]
+name: {{ gettext('Neopixels') }}
+icon: neopixels
+
+[menu __print neopixels led_off]
+name: {{ gettext('Off') }}
+icon: neopixels-off
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_OFF"}
+
+[menu __print neopixels led_on]
+name: {{ gettext('On') }}
+icon: neopixels-on
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_ON"}
+
+[menu __print neopixels led_blue]
+name: {{ gettext('Blue') }}
+icon: neopixels-blue
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_BLUE"}
+
+[menu __print neopixels led_red]
+name: {{ gettext('Red') }}
+icon: neopixels-red
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_RED"}
+
+[menu __print neopixels led_green]
+name: {{ gettext('Green') }}
+icon: neopixels-green
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_GREEN"}
+
+[menu __print neopixels led_yellow]
+name: {{ gettext('Yellow') }}
+icon: neopixels-yellow
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_YELLOW"}
+
+[menu __print neopixels led_orange]
+name: {{ gettext('Orange') }}
+icon: neopixels-orange
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_ORANGE"}
+
+[menu __print neopixels led_violet]
+name: {{ gettext('Violet') }}
+icon: neopixels-violet
+method: printer.gcode.script
+params: {"script":"NEOPIXEL_VIOLET"}
+
+[menu __print neopixels hotend_glow]
+name: {{ gettext('Nozzle (All)') }}
+icon: extruder
+method: printer.gcode.script
+params: {"script":"HOTEND_GLOW"}
+
+[menu __print neopixels hotend_progress]
+name: {{ gettext('Nozzle (One by One)') }}
+icon: extruder
+method: printer.gcode.script
+params: {"script":"HOTEND_PROGRESS"}
+
+[menu __print neopixels bed_glow]
+name: {{ gettext('Bed (All)') }}
+icon: bed
+method: printer.gcode.script
+params: {"script":"BED_GLOW"}
+
+[menu __print neopixels bed_progress]
+name: {{ gettext('Bed (One by One)') }}
+icon: bed
+method: printer.gcode.script
+params: {"script":"BED_PROGRESS"}
+
+[menu __print neopixels percent_glow]
+name: {{ gettext('Progress (All)') }}
+icon: clock
+method: printer.gcode.script
+params: {"script":"PERCENT_GLOW"}
+
+[menu __print neopixels percent_progress]
+name: {{ gettext('Progress (One by One)') }}
+icon: clock
+method: printer.gcode.script
+params: {"script":"PERCENT_PROGRESS"}
+
+[menu __print neopixels speed_glow]
+name: {{ gettext('Speed (All)') }}
+icon: speed+
+method: printer.gcode.script
+params: {"script":"SPEED_GLOW"}
+
+[menu __print neopixels speed_progress]
+name: {{ gettext('Speed (One by One)') }}
+icon: speed+
+method: printer.gcode.script
+params: {"script":"SPEED_PROGRESS"}
+```
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
 
 <br />
 
