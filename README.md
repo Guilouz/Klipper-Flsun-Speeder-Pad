@@ -676,13 +676,13 @@ method: printer.gcode.script
 params: {"script":"NEOPIXEL_VIOLET"}
 
 [menu __print neopixels hotend_glow]
-name: {{ gettext('Nozzle (All)') }}
+name: {{ gettext('Hotend (All)') }}
 icon: extruder
 method: printer.gcode.script
 params: {"script":"HOTEND_GLOW"}
 
 [menu __print neopixels hotend_progress]
-name: {{ gettext('Nozzle (One by One)') }}
+name: {{ gettext('Hotend (One by One)') }}
 icon: extruder
 method: printer.gcode.script
 params: {"script":"HOTEND_PROGRESS"}
