@@ -512,7 +512,6 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 ![wiring](https://user-images.githubusercontent.com/12702322/189106620-6ebc2983-be6f-4fb2-a36e-89bb4cd7e54b.png)
 
-<br />
 
 **Configuration:**
 
