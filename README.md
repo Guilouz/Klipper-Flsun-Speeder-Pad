@@ -498,6 +498,25 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 ![Neopixels](https://user-images.githubusercontent.com/12702322/189089546-0705b277-79d4-4a16-bd79-75cb2c6bc493.png)
 
+**Available modes:**
+
+- Turn On Neopixels
+- Turn Off Neopixels
+- Turn On Neopixels in blue
+- Turn On Neopixels in red
+- Turn On Neopixels in green
+- Turn On Neopixels in yellow
+- Turn On Neopixels in orange
+- Turn On Neopixels in violet
+- Turn on Neopixels based on nozzle temperature (All LEDs)
+- Turn on Neopixels based on nozzle temperature (LED by LED)
+- Turn on Neopixels based on bed temperature (All LEDs)
+- Turn on Neopixels based on bed temperature (LED by LED)
+- Turn on Neopixels based on printing progress (All LEDs)
+- Turn on Neopixels based on printing progress (LED by LED)
+- Turn on Neopixels based on printing speed (All LEDs)
+- Turn on Neopixels based on printing speed (LED by LED)
+
 **Necessary:**
 
 - Neon Flexible Tube 1m T1616-Side 10mm PCB: [Here](https://fr.aliexpress.com/item/4000095850068.html?spm=a2g0o.store_pc_allProduct.8148356.60.19667739Amjjs4&pdp_npi=2%40dis%21EUR%21%E2%82%AC%2013%2C34%21%E2%82%AC%209%2C34%21%21%21%21%21%402100bddd16626284472777282ed43e%2112000015942927508%21sh)
