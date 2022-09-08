@@ -23,6 +23,7 @@ See the [features document](https://www.klipper3d.org/Features.html) for more in
 - [Use Configurations](#use-configurations)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use ADXL345](#use-adxl345)
+- [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -490,6 +491,20 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 - After saving and restarting the firmware you should see the ADXL MCU connecting to Klipper.
 
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
+
+<br />
+
+## Use Neopixels Ring Light
+
+![Neopixels](https://user-images.githubusercontent.com/12702322/189089546-0705b277-79d4-4a16-bd79-75cb2c6bc493.png)
+
+**Necessary:**
+
+- Neon Flexible Tube 1m T1616-Side 10mm PCB: [Here](https://fr.aliexpress.com/item/4000095850068.html?spm=a2g0o.store_pc_allProduct.8148356.60.19667739Amjjs4&pdp_npi=2%40dis%21EUR%21%E2%82%AC%2013%2C34%21%E2%82%AC%209%2C34%21%21%21%21%21%402100bddd16626284472777282ed43e%2112000015942927508%21sh)
+
+- LED Strip 1 m 60 IP 30: [Here](https://fr.aliexpress.com/item/32699391341.html?spm=a2g0o.store_pc_groupList.8148356.1.58d547644pkzbu&pdp_npi=2%40dis%21EUR%21%E2%82%AC%208%2C79%21%E2%82%AC%205%2C71%21%21%21%21%21%402100bdde16626287458333294e75cc%2112000026565180770%21sh)
+
+- Support (STL) : [Here](https://www.printables.com/model/272995-flsun-neopixels-ring-light-support)
 
 <br />
 
