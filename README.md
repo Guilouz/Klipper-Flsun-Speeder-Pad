@@ -514,6 +514,10 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 <br />
 
+**Configuration:**
+
+<br />
+
 ## Special Thanks
 
 - [www.lesimprimantes3d.fr](https://www.lesimprimantes3d.fr/) for some photos and Root Access Enabler.
