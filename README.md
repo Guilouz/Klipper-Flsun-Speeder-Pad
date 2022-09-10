@@ -51,9 +51,10 @@ Updated Klipperscreen version for V400 is also available here : [KlipperScreen-F
 
 ## STL Files
 
-- Motherboard Mount for Easy Access to microSd port : https://www.printables.com/model/268464-flsun-v400-motherboard-mount
-- ADXL345 Mount : https://www.printables.com/model/268463-flsun-v400-adxl345-mount
-- FLSUN V400 Fanduct : https://www.printables.com/model/268456-flsun-v400-fanduct
+- Motherboard Mount for Easy Access to microSd port: https://www.printables.com/model/268464-flsun-v400-motherboard-mount
+- ADXL345 Mount: https://www.printables.com/model/268463-flsun-v400-adxl345-mount
+- FLSUN V400 Fanduct: https://www.printables.com/model/268456-flsun-v400-fanduct
+- FLSUN V400 Adjustable Spool Holder: https://www.printables.com/model/274245-flsun-v400-adjustable-spool-holder
 
 <br />
 
