@@ -397,7 +397,7 @@ I also recommend using a microSD extension for future updates to avoid removing 
 
 - Restart printer to take effect.
 
-- Change your Start and End Gcode in your Slicer like this:
+- Change your Start and End Gcode in your Slicer settings like this:
 
   - For **Cura**:
     - Start Gcode: `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
