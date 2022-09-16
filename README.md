@@ -61,6 +61,8 @@ Updated Klipperscreen version for V400 is also available here : [KlipperScreen-F
 
 ## Enable Root Access
 
+**EDIT: THIS PROCEDURE IS NO LONGER POSSIBLE ON NEW V400 RECENTLY SHIPPED**
+
 By default, root access is not allowed on Speeder Pad. To enable it, follow these instructions:
 
 - Download this pack and unzip it : [Root Access Enabler.zip](https://github.com/Guilouz/Klipper-Flsun-V400/files/9579028/Root.Access.Enabler.zip)
