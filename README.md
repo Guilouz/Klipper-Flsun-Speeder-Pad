@@ -22,6 +22,7 @@ See the [features document](https://www.klipper3d.org/Features.html) for more in
 - [Update Motherboard Firmware](#update-motherboard-firmware)
 - [Use Configurations](#use-configurations)
 - [Calibrate your Printer](#calibrate-your-printer)
+- [Use Firmware Retraction](#use-firmware-retraction)
 - [Use ADXL345](#use-adxl345)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - [Special Thanks](#special-thanks)
@@ -432,6 +433,19 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 - To adjust manually Resonance Compensation, see here: https://www.klipper3d.org/Resonance_Compensation.html
 
+<br />
+
+## Use Firmware Retraction
+
+Firmware retraction gives an advantage compared to Slicer retraction, it can be modified during a print (from Mainsail or KlipperScreen) and therefore the same gcode can be printed with different parameters without the need to be re-sliced.
+
+- For **Cura**, it's needed to install `Klipper Settings Plugin` (available here: [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) and enable `Enable Firmware Retraction` setting like that:
+
+![Capture d’écran 2022-09-16 à 02 27 23](https://user-images.githubusercontent.com/12702322/190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04.jpg)
+
+- For **PrusaSclicer / SuperSlicer**, you just need to enable `Use firmware retraction` setting like that:
+
+![Capture d’écran 2022-09-16 à 02 14 56](https://user-images.githubusercontent.com/12702322/190531620-fd64b261-1fc7-41f3-82de-96fba5ab8315.jpg)
 
 <br />
 
