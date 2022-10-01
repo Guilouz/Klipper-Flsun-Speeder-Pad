@@ -348,13 +348,13 @@ make menuconfig
 - Select these settings:
 ```
 [*] Enable extra low-level configuration options
-Micro-controller Architecture (STMicroelectronics STM32)  --->
+    Micro-controller Architecture (STMicroelectronics STM32)  --->
 [ ] Only 10KiB of RAM (for rare stm32f103x6 variant)
 [ ] Disable SWD at startup (for GigaDevice stm32f103 clones)
-Processor model (STM32F103)
-Bootloader offset (28KiB bootloader)  --->
-Clock Reference (8 MHz crystal)  --->
-Communication interface (Serial (on USART3 PB11/PB10))  --->
+    Processor model (STM32F103)
+    Bootloader offset (28KiB bootloader)  --->
+    Clock Reference (8 MHz crystal)  --->
+    Communication interface (Serial (on USART3 PB11/PB10))  --->
 (250000) Baud rate for serial port
 ()  GPIO pins to set at micro-controller startup
 ```
