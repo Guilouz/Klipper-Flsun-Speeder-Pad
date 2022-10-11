@@ -60,7 +60,7 @@ This configuration is compatible with FLSUN V400 only.
 
 By default, root access is not allowed on Speeder Pad. To enable it, follow these instructions:
 
-**Part 1: Restoring Speeder Pad Image**
+**Part 1: Restoring Speeder Pad Image (ONLY for V400 Pad, not needed for Speeder Pad sold separatly)**
 
 Note: A microSD card of at least 32 GB is required.
 
