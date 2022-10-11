@@ -288,9 +288,11 @@ In addition, during Delta Calibration, tower angles and delta radius are never r
 
 To upgrade to official builds, follow these instructions:
 
-- In the left window of MobaXterm, making sure you are in the `/home/pi/` directory and enter in `klipper_config` folder.
+- In the left window of MobaXterm, making sure you are in the `/home/pi/` directory.
 
-- Delete `klipperscreen.conf`, `moonraker.conf` and `printername.cfg` files if they exist.
+- Delete `.gitconfig` file if it exist.
+
+- Enter in `klipper_config` folder and delete `klipperscreen.conf`, `moonraker.conf` and `printername.cfg` files if they exist.
 
 - In the SSH command prompt window, enter the following command to install Kiauh:
 ```
