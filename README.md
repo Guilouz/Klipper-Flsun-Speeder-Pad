@@ -17,6 +17,7 @@ See the [features document](https://www.klipper3d.org/Features.html) for more in
 - [Change Timezone](#change-timezone)
 - [Change Wi-Fi Location](#change-wi-fi-location)
 - [Switch to Official Klipper Builds](#switch-to-official-klipper-builds)
+- [Update KlipperScreen](#update-klipperscreen)
 - [Update Mainsail](#update-mainsail)
 - [Update Timelapse](#update-timelapse)
 - [Update Motherboard Firmware](#update-motherboard-firmware)
@@ -46,10 +47,6 @@ This configuration is compatible with FLSUN V400 only.
 
 <br />
 
-Updated Klipperscreen version for V400 is also available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
-
-<br />
-
 ## STL Files
 
 - Motherboard Mount for Easy Access to microSd port: https://www.printables.com/model/268464-flsun-v400-motherboard-mount
@@ -61,21 +58,73 @@ Updated Klipperscreen version for V400 is also available here : [KlipperScreen-F
 
 ## Enable Root Access
 
-**EDIT: THIS PROCEDURE IS NO LONGER POSSIBLE ON NEW V400 RECENTLY SHIPPED**
-
 By default, root access is not allowed on Speeder Pad. To enable it, follow these instructions:
 
-- Download this pack and unzip it : 
+**Part 1: Restoring Speeder Pad Image**
 
-- Copy `update.sh` file to the root of USB stick provided with V400.
+Note: A microSD card of at least 32 GB is required.
 
-- Printer off, insert the USB stick into one of the ports of the Speeder Pad.
+- Download this restoration image and unzip it: [Speeder Pad Restoration Image](https://drive.google.com/file/d/1Ri8KACnZPBhuLjSnYcEJ00s3w-DGdv2x/view?usp=sharing)
 
-- Turn on the printer and wait for it to start. Once it has restarted, you can remove the USB stick.
+- Download and install Raspberry Pi Imager here: https://www.raspberrypi.com/software/
 
-- You now have Root access for user `pi`.
+- Launch Raspberry Pi Imager:
 
-- To prevent the script from running on every boot, delete the `update.sh` file and the newly created `update.over` file from the USB stick.
+![187550209-0614dc72-369c-4dbd-be49-226c02d87a56](https://user-images.githubusercontent.com/12702322/194968538-4aa44d04-9965-4a57-88c0-99a5deed1670.png)
+
+- Select `SpeederPad_Restore.xz` image file as `Operating System` by selecting `Use custom`.
+
+- Select your microSD card as `Storage`.
+
+- Then click `Write`.
+
+- Once the image is written, turn off Speeder Pad if is on and remove all devices plugged into the USB ports.
+
+- Insert microSD card in Speeder Pad and turn on it.
+
+- A loading bar should appear:
+
+![310231122_845399306593492_2909851982961437932_n](https://user-images.githubusercontent.com/12702322/194969121-cecab4eb-69d5-43d7-84dd-f16d568a663d.jpg)
+
+- And wait until the bar is fully charged and green, this may take several minutes (10/15 minutes):
+
+![310242183_1562586100860948_9195646783738447574_n](https://user-images.githubusercontent.com/12702322/194969293-d18c4097-1242-4edc-8f72-3e54deceb6da.jpg)
+
+- When it's done, turn off Speeder Pad and remove the microSD card.
+
+- Turn Speeder Pad back on, it should start normally and arrive on KlipperScreen splashscreen.
+
+- Go to `Menu` --> `Network` and connect it to your WiFi network.
+
+- Turn it off again.
+
+<br />
+
+**Part 2: Enabling Root access**
+
+Note: A USB stick is required.
+
+- Download this package and unzip it: [SpeederPad_Root_Access.zip](https://github.com/Guilouz/Klipper-Flsun-V400/files/9749879/SpeederPad_Root_Access.zip)
+
+- Copy `update.bin` file to the root of USB stick.
+
+- Remove all devices plugged into the USB ports.
+
+- Insert your USB on USB port 1 of Speeder Pad and turn it on.
+
+- An updating screen should appear and wait for the process to complete.
+
+- When it's done, Speeder Pad will automatically reboot.
+
+- Remove USB Stick and to be sure that the update was successful, the `update.bin` file will have been renamed to `update.cue` on the USB stick.
+
+- Your Speeder Pad is now rooted.
+
+- Connect to SSH with this login: 
+```
+  user: pi
+  password: lamezzcat
+```
 
 <br />
 
@@ -93,7 +142,7 @@ By default, root access is not allowed on Speeder Pad. To enable it, follow thes
 
 ![Capture d’écran 2022-09-03 à 14 10 39](https://user-images.githubusercontent.com/12702322/188269957-c6e8fd1c-f9e1-44ed-86bf-6bd5ced24552.jpg)
 
-- On the new displayed window, enter the password `flsun` (it's not displayed when typing, this is normal):
+- On the new displayed window, enter the password `lamezzcat` (it's not displayed when typing, this is normal):
 
 ![Capture d’écran 2022-09-03 à 14 16 09](https://user-images.githubusercontent.com/12702322/188270050-8db7c386-dd59-49bb-ba04-ad8014766a2e.jpg)
 
@@ -113,7 +162,7 @@ It's possible to change the password of the `pi` user:
 ```
 passwd
 ```
-- You’ll get asked to enter your current password for verification -> `flsun`.
+- You’ll get asked to enter your current password for verification -> `lamezzcat`.
 
 - After verification, you can type in your new password and press `Enter`.
   - **Note: You’ll not be able to see any characters on the display while entering the password. So, don’t panic; just type in your password and press `Enter`.**
@@ -276,6 +325,12 @@ git clone https://github.com/th33xitus/kiauh.git
 - Your Speeder Pad now running offical builds of Klipper and Moonraker.
 
 Note: You can also install Fluidd if you don't like the Mainsail interface.
+
+<br />
+
+## Update KlipperScreen
+
+Updated Klipperscreen version for V400 is available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
 
 <br />
 
@@ -779,5 +834,7 @@ params: {"script":"SPEED_PROGRESS"}
 
 ## Special Thanks
 
-- [www.lesimprimantes3d.fr](https://www.lesimprimantes3d.fr/) for some photos and Root Access Enabler.
+- [www.lesimprimantes3d.fr](https://www.lesimprimantes3d.fr/) for some photos.
 - [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
+- **Attila Bódy** for Root Access.
+- **Iago Diaz** for testing.
