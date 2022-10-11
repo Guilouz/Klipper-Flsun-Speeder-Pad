@@ -173,7 +173,7 @@ passwd
 
 ## Change Timezone
 
-By default, V400 are on Asia timezone. To change that, follow these instructions:
+To change Timezone, follow these instructions:
 
 - In the SSH command prompt window, enter the following command to check the current time zone:
 ```
