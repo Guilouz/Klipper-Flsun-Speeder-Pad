@@ -64,7 +64,7 @@ By default, root access is not allowed on Speeder Pad. To enable it, follow thes
 
 Note: A microSD card of at least 32 GB is required.
 
-- Download this restoration image and unzip it: Link removed
+- Download this restoration image and unzip it: Link removed at the request of Flsun
 
 - Download and install Raspberry Pi Imager here: https://www.raspberrypi.com/software/
 
