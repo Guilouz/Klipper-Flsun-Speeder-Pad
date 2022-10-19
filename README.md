@@ -348,7 +348,7 @@ Updated Klipperscreen version for V400 is available here : [KlipperScreen-Flsun-
 
 - Now, still on Mainsail, open the `moonraker.conf` file and add the following lines:
 ```
-[update_manager client mainsail]
+[update_manager mainsail]
 type: web
 channel: stable
 repo: mainsail-crew/mainsail
