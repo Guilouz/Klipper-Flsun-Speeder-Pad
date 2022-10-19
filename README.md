@@ -419,6 +419,8 @@ make
 
 Note: Access to the microSD port of the motherboard being impossible as it is, because of the pneufit just in front, I modeled a new support available in `STL Files` section.
 
+EDIT: On new V400 microSD port is now accessible, it's not needed to print a new support.
+
 ![1](https://user-images.githubusercontent.com/12702322/188274940-e660a798-93a0-495f-9cf0-842c3893f6d4.jpg)
 
 I also recommend using a microSD extension for future updates to avoid removing the cover each time.
