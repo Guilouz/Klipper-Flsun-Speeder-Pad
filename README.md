@@ -60,11 +60,9 @@ This configuration is compatible with FLSUN V400 only.
 
 By default, root access is not allowed on Speeder Pad. To enable it, follow these instructions:
 
-**Part 1: Restoring Speeder Pad Image (ONLY for V400 Pad, not needed for Speeder Pad sold separatly)**
-
 Note: A microSD card of at least 32 GB is required.
 
-- Download this restoration image and unzip it: [Speeder Pad Restoration Image](https://drive.google.com/file/d/1Ri8KACnZPBhuLjSnYcEJ00s3w-DGdv2x/view?usp=sharing)
+- Download this restoration image and unzip it: [Speeder Pad 1.1 Restoration Image](https://drive.google.com/file/d/1AK9RU-RRE33f7k3TYQ_7vIOV8tARfyd0/view?usp=sharing)
 
 - Download and install Raspberry Pi Imager here: https://www.raspberrypi.com/software/
 
@@ -72,7 +70,7 @@ Note: A microSD card of at least 32 GB is required.
 
 ![187550209-0614dc72-369c-4dbd-be49-226c02d87a56](https://user-images.githubusercontent.com/12702322/194968538-4aa44d04-9965-4a57-88c0-99a5deed1670.png)
 
-- Select `SpeederPad_Restore.xz` image file as `Operating System` by selecting `Use custom`.
+- Select `Speeder_Pad_V1.1_Restoration-221019.xz` image file as `Operating System` by selecting `Use custom`.
 
 - Select your microSD card as `Storage`.
 
@@ -84,11 +82,11 @@ Note: A microSD card of at least 32 GB is required.
 
 - A loading bar should appear:
 
-![310231122_845399306593492_2909851982961437932_n](https://user-images.githubusercontent.com/12702322/194969121-cecab4eb-69d5-43d7-84dd-f16d568a663d.jpg)
+![3](https://user-images.githubusercontent.com/12702322/196795418-12e3064a-59bd-4bfe-b326-036553e77808.png)
 
 - And wait until the bar is fully charged and green, this may take several minutes (10/15 minutes):
 
-![310242183_1562586100860948_9195646783738447574_n](https://user-images.githubusercontent.com/12702322/194969293-d18c4097-1242-4edc-8f72-3e54deceb6da.jpg)
+![4](https://user-images.githubusercontent.com/12702322/196795445-4f680693-a39d-4f79-a605-bb0b380cf57c.png)
 
 - When it's done, turn off Speeder Pad and remove the microSD card.
 
@@ -96,34 +94,10 @@ Note: A microSD card of at least 32 GB is required.
 
 - Go to `Menu` --> `Network` and connect it to your WiFi network.
 
-- Turn it off again.
-
-<br />
-
-**Part 2: Enabling Root access**
-
-Note: A USB stick is required.
-
-- Download this package and unzip it: [SpeederPad_Root_Access.zip](https://github.com/Guilouz/Klipper-Flsun-V400/files/9749879/SpeederPad_Root_Access.zip)
-
-- Copy `update.bin` file to the root of USB stick.
-
-- Remove all devices plugged into the USB ports.
-
-- Insert your USB on USB port 1 of Speeder Pad and turn it on.
-
-- An updating screen should appear and wait for the process to complete.
-
-- When it's done, Speeder Pad will automatically reboot.
-
-- Remove USB Stick and to be sure that the update was successful, the `update.bin` file will have been renamed to `update.cue` on the USB stick.
-
-- Your Speeder Pad is now rooted.
-
-- Connect to SSH with this login: 
+- You can now connect to SSH with this login: 
 ```
   user: pi
-  password: lamezzcat
+  password: flsun
 ```
 
 <br />
@@ -142,7 +116,7 @@ Note: A USB stick is required.
 
 ![Capture d’écran 2022-09-03 à 14 10 39](https://user-images.githubusercontent.com/12702322/188269957-c6e8fd1c-f9e1-44ed-86bf-6bd5ced24552.jpg)
 
-- On the new displayed window, enter the password `lamezzcat` (it's not displayed when typing, this is normal):
+- On the new displayed window, enter the password `flsun` (it's not displayed when typing, this is normal):
 
 ![Capture d’écran 2022-09-03 à 14 16 09](https://user-images.githubusercontent.com/12702322/188270050-8db7c386-dd59-49bb-ba04-ad8014766a2e.jpg)
 
@@ -162,7 +136,7 @@ It's possible to change the password of the `pi` user:
 ```
 passwd
 ```
-- You’ll get asked to enter your current password for verification -> `lamezzcat`.
+- You’ll get asked to enter your current password for verification -> `flsun`.
 
 - After verification, you can type in your new password and press `Enter`.
   - **Note: You’ll not be able to see any characters on the display while entering the password. So, don’t panic; just type in your password and press `Enter`.**
@@ -842,5 +816,4 @@ params: {"script":"SPEED_PROGRESS"}
 
 - [www.lesimprimantes3d.fr](https://www.lesimprimantes3d.fr/) for some photos.
 - [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
-- [compihu](https://github.com/compihu/zzcatslapper) for Root Access.
 - **Iago Diaz** for testing.
