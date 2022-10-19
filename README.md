@@ -16,6 +16,7 @@ See the [features document](https://www.klipper3d.org/Features.html) for more in
 - [Change Password](#change-password)
 - [Change Timezone](#change-timezone)
 - [Change Wi-Fi Location](#change-wi-fi-location)
+- [Update Ubuntu dependencies](#update-ubuntu-dependencies)
 - [Switch to Official Klipper Builds](#switch-to-official-klipper-builds)
 - [Update KlipperScreen](#update-klipperscreen)
 - [Update Mainsail](#update-mainsail)
@@ -251,6 +252,19 @@ wifi.powersave = 2
 - Enter this command to restart Wi-Fi service:
 ```
 sudo service network-manager restart
+```
+
+<br />
+
+## Update Ubuntu dependencies
+
+- In the SSH command prompt window, enter the following command to download updates list (you will need to enter the Root password):
+```
+sudo apt update
+```
+- Then this command to install all of them:
+```
+sudo apt full-upgrade
 ```
 
 <br />
