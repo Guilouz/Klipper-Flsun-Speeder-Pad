@@ -309,6 +309,7 @@ git clone https://github.com/th33xitus/kiauh.git
 sudo rm -rf /home/pi/.moonraker_database_1
 sudo rm -rf /home/pi/.moonraker_database_2
 sudo rm -rf /home/pi/.moonraker_database_3
+sudo rm -rf /home/pi/gcode_files
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
 sudo rm /home/pi/.gitconfig
@@ -328,7 +329,9 @@ sudo rm /home/pi/savedVariables3.cfg
 
 - Select `1) [Python 2.7]  (recommended)` by typing `1` then `Enter`
 
-- Then enter the number of Klipper instances you need (number of printers you want to use with your Speeder Pad, a maximum of 3) and confirm by typing `Y`. 
+- Then enter the number of Klipper instances you need (number of printers you want to use with your Speeder Pad, a maximum of 3) and confirm by typing `Y`.
+
+- In case you have defined more than 1 instance, when asked to choose custom names, select No by typing `N`.
 
 - When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
 
