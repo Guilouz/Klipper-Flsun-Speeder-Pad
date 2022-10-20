@@ -542,6 +542,8 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 - To adjust manually Resonance Compensation, see here: https://www.klipper3d.org/Resonance_Compensation.html
 
+- To mesure Resonances with ADXL, see here: https://www.klipper3d.org/Measuring_Resonances.html
+
 <br />
 
 ## Use Firmware Retraction
