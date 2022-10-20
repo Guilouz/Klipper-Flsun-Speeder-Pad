@@ -411,7 +411,7 @@ make
 
 - Insert the microSD card into the motherboard then turn on the printer.
 
-- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO35.BIN.CUR` and the version on the `System Loads` tile must have been changed.
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO35.BIN.CUR`.
 
 Note: Access to the microSD port of the motherboard being impossible as it is, because of the pneufit just in front, I modeled a new support available in `STL Files` section.
 
@@ -467,7 +467,7 @@ make
 
 - Insert the microSD card into the motherboard then turn on the printer.
 
-- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO_V3.BIN.CUR` and the version on the `System Loads` tile must have been changed.
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO_V3.BIN.CUR`.
 
 <br />
 
