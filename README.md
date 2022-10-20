@@ -1,11 +1,6 @@
-# Klipper Configuration for FLSUN V400
+# FLSUN Speeder Pad Configurations
 
-![test-flsun-v400 jpg 3683ed2615cedff6a17e282b2dc48190 thumb jpg c579e0706751042e9e214feb12a7c162](https://user-images.githubusercontent.com/12702322/183767560-330689f3-61f6-42d3-9daf-b6c3e6ff845a.jpg)
-
-Klipper is a 3d-Printer firmware. It combines the power of a general purpose computer with one or more micro-controllers.
-
-See the [features document](https://www.klipper3d.org/Features.html) for more information on why you should use Klipper.
-
+![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/196842330-e200350d-496f-4a1b-a8f7-1793d781dccb.jpg)
 
 ## Table of Contents
 
@@ -38,12 +33,17 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 
 ## About
 
-This configuration is compatible with FLSUN V400 only.
+By default, FLSUN does not use builds from official GitHub repositories. Updates point to Gitee repositories which are very slow, sometimes inaccessible and not updated.
+In addition, during Delta Calibration, tower angles and delta radius are never recalculated in their Klipper build, which can cause several issues.
 
-- Improved settings (drivers current, microsteps, bed leveling and more...)
-- Added useful and automated macros with notifications to KlipperScreen
-- Added configuration for ADXL345 via USB with Raspberry Pico
+This procedure explains the whole process in order to obtain Root access on the Speeder Pad, to configure it correctly with optimized printer settings.
+
+This settings are compatible with FLSUN Speeder Pad.
+
+- Useful and automated macros with notifications to KlipperScreen
+- Configuration for ADXL345 via USB with Raspberry Pico
 - Improved Start/End Gcodes
+- And more...
 
 <br />
 
@@ -273,9 +273,6 @@ sudo service network-manager restart
 <br />
 
 ## Switch to Official Klipper Builds
-
-By default, FLSUN does not use builds from official GitHub repositories. Updates point to Gitee repositories which are very slow, sometimes inaccessible and not updated.
-In addition, during Delta Calibration, tower angles and delta radius are never recalculated in their Klipper build, which can cause several issues.
 
 To upgrade to official builds, follow these instructions:
 
