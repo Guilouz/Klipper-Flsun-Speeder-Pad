@@ -15,6 +15,7 @@
 - [Switch to Official Klipper Builds](#switch-to-official-klipper-builds)
 - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
 - [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
+- [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr13-firmware)
 - [Update KlipperScreen](#update-klipperscreen)
 - [Update Timelapse](#update-timelapse)
 - [Use Configurations](#use-configurations)
@@ -468,6 +469,51 @@ make
 - Insert the microSD card into the motherboard then turn on the printer.
 
 - Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO_V3.BIN.CUR`.
+
+<br />
+
+## Update Super Racer Motherboard (SKR 1.3) Firmware
+
+It's important that your motherboard firmware version matches with the installed Klipper version.
+
+Version is visible on `System Loads` tile -> `mcu` section (in `Machine` tab).
+
+To update firmware, follow these instructions:
+
+- In the SSH command prompt window, enter the following commands (one at a time):
+```
+cd ~/klipper/
+make menuconfig
+```
+- Select these settings:
+```
+[*] Enable extra low-level configuration options
+    Micro-controller Architecture (LPC176x (Smoothieboard))  --->
+    Processor model (lpc1768 (100 MHz))  --->
+[*] Target board uses Smoothieware bootloader (NEW)
+    Communication interface (USB)  --->
+    USB ids  --->
+()  GPIO pins to set at micro-controller startup
+```
+
+![Capture d’écran 2022-10-20 à 22 31 36](https://user-images.githubusercontent.com/12702322/197057250-1b904584-57cc-4705-b753-37eacfa82764.jpg)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following commands to compile firmware (one at a time):
+```
+make clean
+make
+```
+- Super Racer motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
+
+- Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+
+- Rename it `firmware.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+
+- Insert the microSD card into the motherboard then turn on the printer.
+
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `FIRMWARE.BIN.CUR`.
 
 <br />
 
