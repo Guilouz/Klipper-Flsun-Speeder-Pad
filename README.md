@@ -667,7 +667,7 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 **Wiring for Super Racer (Nano V3.0/V3.1):**
 
-![wiring](https://user-images.githubusercontent.com/12702322/197017003-e65a00e8-12b2-480e-a751-af5ad4724c94.png)
+![wiring](https://user-images.githubusercontent.com/12702322/197017354-f78b9ec9-e959-41ba-b178-14a05bc11da8.png)
 
 
 **Configuration:**
