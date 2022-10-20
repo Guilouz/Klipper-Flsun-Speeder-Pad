@@ -525,7 +525,7 @@ make
 
 ## Use Configurations
 
-- Download and unzip my repository zip file here : https://github.com/Guilouz/Klipper-Flsun-V400/archive/refs/heads/main.zip
+- Download and unzip my repository zip file here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/archive/refs/heads/main.zip
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
