@@ -19,7 +19,6 @@ See the [features document](https://www.klipper3d.org/Features.html) for more in
 - [Change Wi-Fi Location](#change-wi-fi-location)
 - [Switch to Official Klipper Builds](#switch-to-official-klipper-builds)
 - [Update KlipperScreen](#update-klipperscreen)
-- [Update Mainsail](#update-mainsail)
 - [Update Timelapse](#update-timelapse)
 - [Update Motherboard Firmware](#update-motherboard-firmware)
 - [Use Configurations](#use-configurations)
@@ -156,6 +155,10 @@ sudo apt update
 ```
 sudo apt full-upgrade
 ```
+- And this command to reboot:
+```
+sudo reboot
+```
 
 <br />
 
@@ -276,12 +279,6 @@ In addition, during Delta Calibration, tower angles and delta radius are never r
 
 To upgrade to official builds, follow these instructions:
 
-- In the left window of MobaXterm, making sure you are in the `/home/pi/` directory.
-
-- Delete `.gitconfig` file if it exist.
-
-- Enter in `klipper_config` folder and delete `klipperscreen.conf`, `moonraker.conf` and `printername.cfg` files if they exist.
-
 - In the SSH command prompt window, enter the following command to install Kiauh:
 ```
 git clone https://github.com/th33xitus/kiauh.git
@@ -298,57 +295,75 @@ git clone https://github.com/th33xitus/kiauh.git
 
 ![Capture d’écran 2022-09-03 à 15 26 31](https://user-images.githubusercontent.com/12702322/188272462-49994d56-11a7-438a-bbd8-f0511c36640d.jpg)
 
-- Remove `2) [Moonraker]` by typing `2` then `Enter` (you will need to enter the Root password).
+- Remove `5) [KlipperScreen]` by typing `5` then `Enter` (you will need to enter the Root password).
 
-- When it's done, remove `1) [Klipper]` by typing `1` then `Enter` (you will need to enter the Root password).
+- Remove `3) [Mainsail]` by typing `3` then `Enter`.
 
-- When it's done, go back to main menu by typing `B` then `Enter`.
+- Remove `2) [Moonraker]` by typing `2` then `Enter`.
 
-- Enter in `1) [Install]` menu by typing `1` then `Enter`:
-
-![Capture d’écran 2022-09-03 à 15 39 18](https://user-images.githubusercontent.com/12702322/188273051-df392b33-ee7b-47d6-8166-f5be167b42f2.jpg)
-
-- Install `1) [Klipper]` by typing `1` then `Enter` (you will need to enter the Root password).
-
-- When it's done, install `2) [Moonraker]` by typing `2` then `Enter` (you will need to enter the Root password).
+- When it's done, remove `1) [Klipper]` by typing `1` then `Enter`.
 
 - When it's done, go back to main menu by typing `B` then `Enter`.
 
 - Exit Kiauh by typing `Q` then `Enter`.
 
-- Your Speeder Pad now running offical builds of Klipper and Moonraker.
+- Enter the following commands (one at a time):
+```
+sudo rm -rf /home/pi/.moonraker_database_1
+sudo rm -rf /home/pi/.moonraker_database_2
+sudo rm -rf /home/pi/.moonraker_database_3
+sudo rm -rf /home/pi/klipper_config
+sudo rm -rf /home/pi/klipper_logs
+sudo rm /home/pi/.gitconfig
+sudo rm /home/pi/savedVariables1.cfg
+sudo rm /home/pi/savedVariables2.cfg
+sudo rm /home/pi/savedVariables3.cfg
+```
+- Relaunch Kiauh by entering this command:
+```
+./kiauh/kiauh.sh
+```
+- Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-Note: You can also install Fluidd if you don't like the Mainsail interface.
+![Capture d’écran 2022-09-03 à 15 39 18](https://user-images.githubusercontent.com/12702322/188273051-df392b33-ee7b-47d6-8166-f5be167b42f2.jpg)
+
+- Install `1) [Klipper]` by typing `1` then `Enter`.
+
+- Select `1) [Python 2.7]  (recommended)` by typing `1` then `Enter`
+
+- Then enter the number of Klipper instances you need (number of printers you want to use with your Speeder Pad, a maximum of 3) and confirm by typing `Y`. 
+
+- When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
+
+- When it's done, install `3) [Mainsail]` by typing `3` then `Enter` and select no by typing `n` when asked to add the recommended macros.
+
+- When it's done, install `5) [KlipperScreen]` by typing `5` then `Enter` (this process may take several minutes).
+
+- When it's done, go back to main menu by typing `B` then `Enter`.
+
+- Exit Kiauh by typing `Q` then `Enter`.
+
+- Enter this command to reboot:
+```
+sudo reboot
+```
+- Then go to your Mainsail Web interface by entering the IP address of your Speeder Pad in your Internet browser.
+
+- You will see many notifications in the top right corner of the page and click on this notification:
+
+![Capture d’écran 2022-10-20 à 03 38 29](https://user-images.githubusercontent.com/12702322/196837293-28f471f8-93d7-4567-b6b4-94ac8bf3c6fd.jpg)
+
+- A new page will then open asking you to enter your root password:
+
+![Capture d’écran 2022-10-20 à 03 40 22](https://user-images.githubusercontent.com/12702322/196837520-f504b0aa-1023-4d64-9951-e8b1f7d77e16.jpg)
+
+- enter it and once done, your Speeder Pad now running offical builds.
 
 <br />
 
 ## Update KlipperScreen
 
 Updated Klipperscreen version for V400 is available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
-
-<br />
-
-## Update Mainsail
-
-- Go to your Mainsail Web interface then click on `Machine` tab.
-
-- Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
-
-- Now, still on Mainsail, open the `moonraker.conf` file and add the following lines:
-```
-[update_manager mainsail]
-type: web
-channel: stable
-repo: mainsail-crew/mainsail
-path: ~/mainsail
-```
-- Once done, click on `SAVE & RESTART` at the top right to save the file.
-
-- You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
-
-- You will see a new `mainsail` line appear.
-
-![Capture d’écran 2022-09-03 à 15 49 16](https://user-images.githubusercontent.com/12702322/188273402-84c3c399-5c88-4d6f-82e2-3bd9b134dbd7.jpg)
 
 <br />
 
