@@ -16,6 +16,7 @@
 - [Update KlipperScreen](#update-klipperscreen)
 - [Update Timelapse](#update-timelapse)
 - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
+- [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-(nano-v-firmware)
 - [Use Configurations](#use-configurations)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use Firmware Retraction](#use-firmware-retraction)
@@ -447,6 +448,52 @@ EDIT: On new V400 microSD port is now accessible, it's not needed to print a new
 I also recommend using a microSD extension for future updates to avoid removing the cover each time.
 
 ![PXL_20220830_171401777 jpg f3eeafe2288a0e0428950cfca7c5eec7](https://user-images.githubusercontent.com/12702322/188275110-b74b6cf9-ab33-403e-be87-4fcad06fa6f5.jpg)
+
+<br />
+
+## Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware
+
+It's important that your motherboard firmware version matches with the installed Klipper version.
+
+Version is visible on `System Loads` tile -> `mcu` section (in `Machine` tab).
+
+To update firmware, follow these instructions:
+
+- In the SSH command prompt window, enter the following commands (one at a time):
+```
+cd ~/klipper/
+make menuconfig
+```
+- Select these settings:
+```
+[*] Enable extra low-level configuration options
+    Micro-controller Architecture (STMicroelectronics STM32)  --->
+    Processor model (STM32F407)  --->
+    Bootloader offset (48KiB bootloader (MKS Robin Nano V3))  --->
+    Clock Reference (8 MHz crystal)  --->
+    Communication interface (Serial (on USART3 PB11/PB10))  --->
+(250000) Baud rate for serial port
+()  GPIO pins to set at micro-controller startup (NEW)
+```
+
+![Capture d’écran 2022-09-03 à 15 58 37](https://user-images.githubusercontent.com/12702322/188273866-1981aa1b-f01e-40c4-a8c4-4f1935adb821.jpg)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following commands to compile firmware (one at a time):
+```
+make clean
+make
+```
+- Super Racer motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
+
+- Get the firmware named `Robin_nano_v3.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+
+- Copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+
+- Insert the microSD card into the motherboard then turn on the printer.
+
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANOV3.BIN.CUR` and the version on the `System Loads` tile must have been changed.
 
 <br />
 
