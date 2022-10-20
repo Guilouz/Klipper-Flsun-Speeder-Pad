@@ -347,17 +347,7 @@ sudo rm /home/pi/savedVariables3.cfg
 ```
 sudo reboot
 ```
-- Then go to your Mainsail Web interface by entering the IP address of your Speeder Pad in your Internet browser.
-
-- You will see many notifications in the top right corner of the page and click on this notification:
-
-![Capture d’écran 2022-10-20 à 03 38 29](https://user-images.githubusercontent.com/12702322/196837293-28f471f8-93d7-4567-b6b4-94ac8bf3c6fd.jpg)
-
-- A new page will then open asking you to enter your root password:
-
-![Capture d’écran 2022-10-20 à 03 40 22](https://user-images.githubusercontent.com/12702322/196837520-f504b0aa-1023-4d64-9951-e8b1f7d77e16.jpg)
-
-- Enter it and once done, your Speeder Pad now running offical builds.
+- Your Speeder Pad now running offical builds.
 
 <br />
 
