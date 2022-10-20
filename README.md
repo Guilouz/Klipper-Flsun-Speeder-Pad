@@ -407,6 +407,7 @@ make menuconfig
 ```
 [*] Enable extra low-level configuration options
     Micro-controller Architecture (STMicroelectronics STM32)  --->
+    Processor model (STM32F103)  --->
 [ ] Only 10KiB of RAM (for rare stm32f103x6 variant)
 [ ] Disable SWD at startup (for GigaDevice stm32f103 clones)
     Processor model (STM32F103)
