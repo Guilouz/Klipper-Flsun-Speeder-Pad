@@ -149,7 +149,7 @@ passwd
 - You’ll get asked to enter your current password for verification -> `flsun`.
 
 - After verification, you can type in your new password and press `Enter`.
-  - **Note: You’ll not be able to see any characters on the display while entering the password. So, don’t panic, just type in your password and press `Enter`.**
+  - **Note: You’ll not be able to see any characters on the window while entering the password. So, don’t panic, just type in your password and press `Enter`.**
 
 - Once you’ve successfully verified your password, it’ll get applied right away.
 
