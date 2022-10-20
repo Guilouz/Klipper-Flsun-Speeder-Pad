@@ -130,7 +130,7 @@ Note: A microSD card of at least 32 GB is required.
 
 ![Capture d’écran 2022-09-03 à 14 16 09](https://user-images.githubusercontent.com/12702322/188270050-8db7c386-dd59-49bb-ba04-ad8014766a2e.jpg)
 
-- An authorization window will appear, authorize it. It is also possible that another window asking you to change the password will appear, ignore it.
+- An authorization window will appear, authorize it. It's also possible that another window asking you to change the password will appear, ignore it.
 
 - Once connected, on the left part of the window you have access to the folders and files of your Speeder Pad and on the right part to the SSH command prompt window:
 
