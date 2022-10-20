@@ -356,7 +356,33 @@ sudo reboot
 
 ## Update KlipperScreen
 
-Updated Klipperscreen version for Speeder Pad is available here : [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)
+- Go to your Mainsail Web interface then select the `Machine` tab.
+
+- Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
+
+- Now, still on Mainsail, open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
+```
+[update_manager KlipperScreen]
+type: git_repo
+path: /home/pi/KlipperScreen
+origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+env: /home/pi/.KlipperScreen-env/bin/python
+requirements: scripts/KlipperScreen-requirements.txt
+install_script: scripts/KlipperScreen-install.sh
+```
+- Once done, click on `SAVE & CLOSE` at the top right to save the file.
+
+- You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
+
+- You will see a new KlipperScreen update appear, if you see a ⚠️DIRTY update, just select `Hard Recovery` to update.
+
+![Update Manager](https://user-images.githubusercontent.com/12702322/183909392-24aab778-c8ed-4f81-be39-ac51612bf12c.jpg)
+
+- Once installed you will have the new version of KlipperScreen and future updates will point directly to my repo like this:
+
+![Update](https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg)
+
+More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)
 
 <br />
 
