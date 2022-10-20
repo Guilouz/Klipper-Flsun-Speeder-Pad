@@ -48,6 +48,15 @@ This settings are compatible with FLSUN Speeder Pad.
 
 <br />
 
+Before using Klipper please read this documentations:
+
+- Klipper (Operating System): https://www.klipper3d.org/
+- Moonraker (API Web Server): https://moonraker.readthedocs.io/
+- Mainsail (Web Interface): https://docs.mainsail.xyz/
+- KlipperScreen (Screen Interface): https://klipperscreen.readthedocs.io/
+
+<br />
+
 ## STL Files
 
 Many usefull STL for FLSUN Super Racer and V400 can be found on my profiles:
