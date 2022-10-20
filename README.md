@@ -327,11 +327,9 @@ sudo rm /home/pi/savedVariables3.cfg
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
-- Select `1) [Python 2.7]  (recommended)` by typing `1` then `Enter`
+- Select `1) [Python 2.7]  (recommended)` by typing `1` then `Enter`.
 
-- Then enter the number of Klipper instances you need (number of printers you want to use with your Speeder Pad, a maximum of 3) and confirm by typing `Y`.
-
-- In case you have defined more than 1 instance, when asked to choose custom names, select No by typing `N`.
+- Then enter the number of Klipper instance by typing `1` then `Enter` and confirm by typing `Y`.
 
 - When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
 
