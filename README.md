@@ -16,7 +16,7 @@
 - [Update KlipperScreen](#update-klipperscreen)
 - [Update Timelapse](#update-timelapse)
 - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
-- [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-(nano-v-firmware)
+- [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
 - [Use Configurations](#use-configurations)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use Firmware Retraction](#use-firmware-retraction)
@@ -476,7 +476,7 @@ make menuconfig
 ()  GPIO pins to set at micro-controller startup (NEW)
 ```
 
-![Capture d’écran 2022-09-03 à 15 58 37](https://user-images.githubusercontent.com/12702322/188273866-1981aa1b-f01e-40c4-a8c4-4f1935adb821.jpg)
+![Capture d’écran 2022-10-20 à 18 29 17](https://user-images.githubusercontent.com/12702322/197008068-869826e4-7554-4388-900b-5ab82a20d803.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
