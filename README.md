@@ -15,7 +15,7 @@
 - [Switch to Official Klipper Builds](#switch-to-official-klipper-builds)
 - [Update KlipperScreen](#update-klipperscreen)
 - [Update Timelapse](#update-timelapse)
-- [Update Motherboard Firmware](#update-motherboard-firmware)
+- [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
 - [Use Configurations](#use-configurations)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use Firmware Retraction](#use-firmware-retraction)
@@ -337,13 +337,17 @@ sudo rm /home/pi/savedVariables3.cfg
 
 - When it's done, install `3) [Mainsail]` by typing `3` then `Enter` and select no by typing `n` when asked to add the recommended macros.
 
-- When it's done, install `5) [KlipperScreen]` by typing `5` then `Enter` (this process may take several minutes).
-
 - When it's done, go back to main menu by typing `B` then `Enter`.
 
 - Exit Kiauh by typing `Q` then `Enter`.
 
-- Enter this command to reboot:
+- Enter the following commands (one at a time) to install KlipperScreen:
+```
+git clone https://github.com/jordanruthe/KlipperScreen.git
+cd ~/KlipperScreen
+./scripts/KlipperScreen-install.sh
+```
+- When it's done, enter this command to reboot:
 ```
 sudo reboot
 ```
@@ -353,7 +357,7 @@ sudo reboot
 
 ## Update KlipperScreen
 
-Updated Klipperscreen version for V400 is available here : [KlipperScreen-Flsun-V400](https://github.com/Guilouz/KlipperScreen-Flsun-V400)
+Updated Klipperscreen version for Speeder Pad is available here : [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)
 
 <br />
 
@@ -386,7 +390,7 @@ managed_services: klipper moonraker
 
 <br />
 
-## Update Motherboard Firmware
+## Update V400 Motherboard Firmware
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
 
@@ -450,13 +454,11 @@ I also recommend using a microSD extension for future updates to avoid removing 
 
 ## Use Configurations
 
-- Go to your Mainsail Web interface then click on `Machine` tab.
-
-- Right-click on the `printer.cfg` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
-
 - Download and unzip my repository zip file here : https://github.com/Guilouz/Klipper-Flsun-V400/archive/refs/heads/main.zip
 
-- Then upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory.
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory according to your printer.
 
 - Restart printer to take effect.
 
