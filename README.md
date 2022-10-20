@@ -357,7 +357,7 @@ sudo reboot
 
 ![Capture d’écran 2022-10-20 à 03 40 22](https://user-images.githubusercontent.com/12702322/196837520-f504b0aa-1023-4d64-9951-e8b1f7d77e16.jpg)
 
-- enter it and once done, your Speeder Pad now running offical builds.
+- Enter it and once done, your Speeder Pad now running offical builds.
 
 <br />
 
