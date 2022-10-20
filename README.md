@@ -923,6 +923,4 @@ params: {"script":"SPEED_PROGRESS"}
 
 ## Special Thanks
 
-- [www.lesimprimantes3d.fr](https://www.lesimprimantes3d.fr/) for some photos.
 - [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
-- **Iago Diaz** for testing.
