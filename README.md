@@ -68,7 +68,7 @@ Many usefull STL for FLSUN Super Racer and V400 can be found on my profiles:
 
 ## Enable Root Access
 
-By default, root access is not allowed on Speeder Pad. To enable it, follow these instructions:
+By default, Root access is not allowed on Speeder Pad. To enable it, follow these instructions:
 
 Note: A microSD card of at least 32 GB is required.
 
