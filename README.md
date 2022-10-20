@@ -410,7 +410,6 @@ make menuconfig
     Processor model (STM32F103)  --->
 [ ] Only 10KiB of RAM (for rare stm32f103x6 variant)
 [ ] Disable SWD at startup (for GigaDevice stm32f103 clones)
-    Processor model (STM32F103)
     Bootloader offset (28KiB bootloader)  --->
     Clock Reference (8 MHz crystal)  --->
     Communication interface (Serial (on USART3 PB11/PB10))  --->
