@@ -357,6 +357,8 @@ sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
 cd ~/KlipperScreen
 ./scripts/KlipperScreen-install.sh
 ```
+Note: Installation may take several minutes.
+
 - When it's done, enter this command to reboot:
 ```
 sudo reboot
