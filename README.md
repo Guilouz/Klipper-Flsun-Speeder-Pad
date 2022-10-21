@@ -554,8 +554,10 @@ More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.c
 
 ## Update Timelapse
 
-- In the SSH command prompt window, enter the following command:
+- In the SSH command prompt window, enter the following commands (one at a time):
 ```
+cd ~/
+git clone https://github.com/mainsail-crew/moonraker-timelapse.git
 bash ~/moonraker-timelapse/install.sh
 ```
 - Go to your Mainsail Web interface then click on `Machine` tab.
