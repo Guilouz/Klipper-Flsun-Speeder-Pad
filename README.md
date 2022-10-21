@@ -465,9 +465,9 @@ make
 ```
 - Super Racer motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
 
-- Get the firmware named `Robin_nano_v3.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+- Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
 
-- Copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+- Rename it `Robin_nano_v3.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
 
 - Insert the microSD card into the motherboard then turn on the printer.
 
