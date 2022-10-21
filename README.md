@@ -72,6 +72,7 @@ Before using Klipper please read this documentations:
 - To use Exclude Objects function, see here: https://docs.mainsail.xyz/features/exclude_objects
 
 - To use Timelapse function, see here: https://github.com/mainsail-crew/moonraker-timelapse/blob/main/docs/configuration.md
+  - PDF with settings can be found here: [Instructions for timelapse (corrected).pdf](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/files/9842081/Instructions.for.timelapse.corrected.pdf)
 
 - To display thumbnails on screen, see here: https://klipperscreen.readthedocs.io/en/latest/Thumbnails/
 
@@ -992,4 +993,5 @@ params: {"script":"SPEED_PROGRESS"}
 - [FLSUN](https://flsun3d.com/) for sending me a free V400 and Speeder Pad.
 - [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
 - [Desuuuu](https://github.com/Desuuuu/klipper-macros) & [danorder](https://github.com/danorder) for the basics of some macros.
+- [Jonny Lissoos](https://www.facebook.com/JonnyEL972) for his Timelapse instruction PDF.
 - [Iago Diaz](https://www.facebook.com/iago.diaz.90) & [Mathieu Chantome](https://www.facebook.com/mathieu.chantome) for their tests.
