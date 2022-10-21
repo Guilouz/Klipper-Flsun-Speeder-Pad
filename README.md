@@ -449,12 +449,12 @@ make menuconfig
     Processor model (STM32F407)  --->
     Bootloader offset (48KiB bootloader (MKS Robin Nano V3))  --->
     Clock Reference (8 MHz crystal)  --->
-    Communication interface (Serial (on USART3 PB11/PB10))  --->
+    Communication interface (USB (on PA11/PA12))  --->
 (250000) Baud rate for serial port
 ()  GPIO pins to set at micro-controller startup (NEW)
 ```
 
-![Capture d’écran 2022-10-20 à 18 29 17](https://user-images.githubusercontent.com/12702322/197008068-869826e4-7554-4388-900b-5ab82a20d803.jpg)
+![Capture d’écran 2022-10-21 à 15 28 29](https://user-images.githubusercontent.com/12702322/197207233-cac4f384-0827-4ae0-ba58-44158240d989.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
