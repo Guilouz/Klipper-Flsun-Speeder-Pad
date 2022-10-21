@@ -467,7 +467,7 @@ make
 
 - Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
 
-- Rename it `Robin_nano_v3.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+- Rename it to `Robin_nano_v3.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
 
 - Insert the microSD card into the motherboard then turn on the printer.
 
@@ -512,7 +512,7 @@ make
 
 - Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
 
-- Rename it `firmware.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+- Rename it to `firmware.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
 
 - Insert the microSD card into the motherboard then turn on the printer.
 
