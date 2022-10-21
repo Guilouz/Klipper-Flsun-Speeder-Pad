@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [About](#about)
+- [Useful Information](#useful-information)
 - [STL Files](#stl-files)
 - [Enable Root Access](#enable-root-access)
 - [SSH Connection](#ssh-connection)
@@ -55,6 +56,24 @@ Before using Klipper please read this documentations:
 - Moonraker (API Web Server): https://moonraker.readthedocs.io/
 - Mainsail (Web Interface): https://docs.mainsail.xyz/
 - KlipperScreen (Screen Interface): https://klipperscreen.readthedocs.io/
+
+<br />
+
+## Useful Information
+
+- To calibrate your extruder, see here: https://www.klipper3d.org/Rotation_Distance.html 
+
+- To adjust Pressure Advance, see here: https://www.klipper3d.org/Pressure_Advance.html
+
+- To adjust manually Resonance Compensation, see here: https://www.klipper3d.org/Resonance_Compensation.html
+
+- To mesure Resonances with ADXL, see here: https://www.klipper3d.org/Measuring_Resonances.html
+
+- To use Exclude Objects function, see here: https://docs.mainsail.xyz/features/exclude_objects
+
+- To use Timelapse function, see here: https://github.com/mainsail-crew/moonraker-timelapse/blob/main/docs/configuration.md
+
+- To display thumbnails on screen, see here: https://klipperscreen.readthedocs.io/en/latest/Thumbnails/
 
 <br />
 
@@ -621,14 +640,6 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 - Adjust Z-OFFSET, first you need to move to Z=0 and then adjust nozzle position with a sheet of paper.
   - Note: The Z-Offset is saved in real time including when adjusting babysteps.
-
-- To calibrate your extruder, see here: https://www.klipper3d.org/Rotation_Distance.html 
-
-- To adjust Pressure Advance, see here: https://www.klipper3d.org/Pressure_Advance.html
-
-- To adjust manually Resonance Compensation, see here: https://www.klipper3d.org/Resonance_Compensation.html
-
-- To mesure Resonances with ADXL, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
 <br />
 
