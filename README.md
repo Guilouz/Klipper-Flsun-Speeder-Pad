@@ -1,4 +1,4 @@
-# FLSUN Speeder Pad Configurations
+ # FLSUN Speeder Pad Configurations
 
 ![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/196842330-e200350d-496f-4a1b-a8f7-1793d781dccb.jpg)
 
@@ -352,7 +352,7 @@ sudo rm /home/pi/savedVariables3.cfg
 
 - Enter the following commands (one at a time) to install KlipperScreen:
 ```
-git clone git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
 cd ~/KlipperScreen
 ./scripts/KlipperScreen-install.sh
