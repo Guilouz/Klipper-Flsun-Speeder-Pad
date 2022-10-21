@@ -558,7 +558,7 @@ More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.c
 ```
 cd ~/
 git clone https://github.com/mainsail-crew/moonraker-timelapse.git
-/home/pi/moonraker-timelapse/install.sh -c /home/pi/printer_data/config
+bash /home/pi/moonraker-timelapse/install.sh -c /home/pi/printer_data/config
 ```
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
