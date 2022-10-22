@@ -5,7 +5,7 @@
 ## Table of Contents
 
 - [About](#about)
-- [Useful Information](#useful-information)
+- [Useful Links](#useful-links)
 - [STL Files](#stl-files)
 - [Enable Root Access](#enable-root-access)
 - [SSH Connection](#ssh-connection)
@@ -59,7 +59,7 @@ Before using Klipper please read this documentations:
 
 <br />
 
-## Useful Information
+## Useful Links
 
 - To calibrate your extruder, see here: https://www.klipper3d.org/Rotation_Distance.html 
 
