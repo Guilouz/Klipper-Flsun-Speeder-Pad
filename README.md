@@ -993,7 +993,7 @@ params: {"script":"SPEED_PROGRESS"}
 
 ## MCU Connection Issue
 
-- If you're having trouble connecting your printer to Klipper, connect in SSH then enter the following command to retrieve the motherboard serial USB:
+- If you're having trouble connecting your printer to Klipper, connect in SSH then enter the following command to retrieve the motherboard USB serial:
 ```
 ls /dev/serial/by-id/*
 ```
