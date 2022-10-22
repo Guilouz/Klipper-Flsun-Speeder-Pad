@@ -340,7 +340,6 @@ git clone https://github.com/th33xitus/kiauh.git
 sudo rm -rf /home/pi/.moonraker_database_1
 sudo rm -rf /home/pi/.moonraker_database_2
 sudo rm -rf /home/pi/.moonraker_database_3
-sudo rm -rf /home/pi/gcode_files
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
 sudo rm /home/pi/.gitconfig
@@ -379,8 +378,9 @@ cd ~/KlipperScreen
 ```
 Note: Installation may take several minutes.
 
-- When it's done, enter this command to reboot:
+- When it's done, enter this command to reboot (one at a time):
 ```
+ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_data/gcodes/USB-Disk
 sudo reboot
 ```
 - Your Speeder Pad now running offical builds.
@@ -993,6 +993,7 @@ params: {"script":"SPEED_PROGRESS"}
 - [FLSUN](https://flsun3d.com/) for sending me a free V400 and Speeder Pad.
 - [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
 - [NERO 3D](https://www.youtube.com/channel/UCmV40QWkVeRs_nAvEOE_P-g) for his tips about Input Shaper with a Raspberry Pi Pico.
+- [ManuMod](https://github.com/ManuMod) for his tips about symlink on USB-Disk folder.
 - [Desuuuu](https://github.com/Desuuuu/klipper-macros) & [danorder](https://github.com/danorder) for the basics of some macros.
 - [Jonny Lissoos](https://www.facebook.com/JonnyEL972) for his Timelapse instruction PDF.
 - [Iago Diaz](https://www.facebook.com/iago.diaz.90) & [Mathieu Chantome](https://www.facebook.com/mathieu.chantome) for their tests.
