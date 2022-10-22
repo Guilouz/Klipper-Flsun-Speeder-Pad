@@ -18,7 +18,7 @@
 - [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
 - [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr-13-firmware)
 - [Update KlipperScreen](#update-klipperscreen)
-- [Update Timelapse](#update-timelapse)
+- [Install and Update Timelapse](#install-and-update-timelapse)
 - [Use Configurations](#use-configurations)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use Firmware Retraction](#use-firmware-retraction)
@@ -572,7 +572,7 @@ More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.c
 
 <br />
 
-## Update Timelapse
+## Install and Update Timelapse
 
 - In the SSH command prompt window, enter the following commands (one at a time):
 ```
