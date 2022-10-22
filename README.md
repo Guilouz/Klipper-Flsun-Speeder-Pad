@@ -24,6 +24,7 @@
 - [Use Firmware Retraction](#use-firmware-retraction)
 - [Use ADXL345](#use-adxl345)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
+- [MCU Connection Issue](#mcu-connection-issue)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -340,7 +341,6 @@ git clone https://github.com/th33xitus/kiauh.git
 sudo rm -rf /home/pi/.moonraker_database_1
 sudo rm -rf /home/pi/.moonraker_database_2
 sudo rm -rf /home/pi/.moonraker_database_3
-sudo rm -rf /home/pi/gcode_files
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
 sudo rm /home/pi/.gitconfig
@@ -379,8 +379,9 @@ cd ~/KlipperScreen
 ```
 Note: Installation may take several minutes.
 
-- When it's done, enter this command to reboot:
+- When it's done, enter this command to reboot (one at a time):
 ```
+ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_data/gcodes/USB-Disk
 sudo reboot
 ```
 - Your Speeder Pad now running offical builds.
@@ -716,13 +717,15 @@ ls /dev/serial/by-id/*
 ```
 serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 ```
-- Save and restart firmware.
+- Click on `SAVE & RESTART` at the top right to save the file.
 
 - Then uncomment (remove the #) to the following line in the `printer.cfg` file to enable ADXL support:
 ```
 [include adxl345.cfg]
 ```
-- After saving and restarting the firmware you should see the ADXL MCU connecting to Klipper.
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- You should see the ADXL MCU connecting to Klipper.
 
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
@@ -988,11 +991,36 @@ params: {"script":"SPEED_PROGRESS"}
 
 <br />
 
+## MCU Connection Issue
+
+- If you're having trouble connecting your printer to Klipper, connect in SSH then enter the following command to retrieve the motherboard USB serial:
+```
+ls /dev/serial/by-id/*
+```
+- You should see the  USB serial appear like this:
+
+![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open `printer.cfg` file and find `[mcu]` section.
+
+- Edit the following existing line with serial you have just obtained like this:
+```
+serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+```
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- Your printer should connect to your PAD.
+
+<br />
+
 ## Special Thanks
 
 - [FLSUN](https://flsun3d.com/) for sending me a free V400 and Speeder Pad.
 - [digitalninja-ro](https://github.com/digitalninja-ro/klipper-neopixel) for Klipper NeoPixel Templates.
 - [NERO 3D](https://www.youtube.com/channel/UCmV40QWkVeRs_nAvEOE_P-g) for his tips about Input Shaper with a Raspberry Pi Pico.
+- [ManuMod](https://github.com/ManuMod) for his tips about symlink on USB-Disk folder.
 - [Desuuuu](https://github.com/Desuuuu/klipper-macros) & [danorder](https://github.com/danorder) for the basics of some macros.
 - [Jonny Lissoos](https://www.facebook.com/JonnyEL972) for his Timelapse instruction PDF.
 - [Iago Diaz](https://www.facebook.com/iago.diaz.90) & [Mathieu Chantome](https://www.facebook.com/mathieu.chantome) for their tests.
