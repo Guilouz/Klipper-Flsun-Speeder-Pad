@@ -1005,7 +1005,7 @@ ls /dev/serial/by-id/*
 
 - Open `printer.cfg` file and find `[mcu]` section.
 
-- Edit the following line with serial you have just obtained like this:
+- Edit the following existing line with serial you have just obtained like this:
 ```
 serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
 ```
