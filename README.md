@@ -999,7 +999,7 @@ ls /dev/serial/by-id/*
 ```
 - You should see the  USB serial appear like this:
 
-![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362535-45d45390-4ba9-4661-8514-ca891fc73101.jpg)
+![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
