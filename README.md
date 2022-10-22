@@ -24,6 +24,7 @@
 - [Use Firmware Retraction](#use-firmware-retraction)
 - [Use ADXL345](#use-adxl345)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
+- [MCU Connection Issue](#mcu-connection-issue)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -716,13 +717,15 @@ ls /dev/serial/by-id/*
 ```
 serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 ```
-- Save and restart firmware.
+- Click on `SAVE & RESTART` at the top right to save the file.
 
 - Then uncomment (remove the #) to the following line in the `printer.cfg` file to enable ADXL support:
 ```
 [include adxl345.cfg]
 ```
-- After saving and restarting the firmware you should see the ADXL MCU connecting to Klipper.
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- You should see the ADXL MCU connecting to Klipper.
 
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
@@ -985,6 +988,30 @@ method: printer.gcode.script
 params: {"script":"SPEED_PROGRESS"}
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+<br />
+
+## MCU Connection Issue
+
+- If you're having trouble connecting your printer to Klipper, connect in SSH then enter the following command to retrieve the motherboard serial USB:
+```
+ls /dev/serial/by-id/*
+```
+- You should see the  USB serial appear like this:
+
+![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362535-45d45390-4ba9-4661-8514-ca891fc73101.jpg)
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open `printer.cfg` file and find `[mcu]` section.
+
+- Edit the following line with serial you have just obtained like this:
+```
+serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+```
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- Your printer should connect to your PAD.
 
 <br />
 
