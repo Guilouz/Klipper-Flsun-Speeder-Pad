@@ -17,14 +17,14 @@
 - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
 - [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
 - [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr-13-firmware)
+- [Use Configurations](#use-configurations)
+- [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
 - [Update KlipperScreen](#update-klipperscreen)
 - [Install and Update Timelapse](#install-and-update-timelapse)
-- [Use Configurations](#use-configurations)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use Firmware Retraction](#use-firmware-retraction)
 - [Use ADXL345](#use-adxl345)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
-- [MCU Connection Issue](#mcu-connection-issue)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -541,6 +541,54 @@ make
 
 <br />
 
+## Use Configurations
+
+- Download and unzip my repository zip file here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/archive/refs/heads/main.zip
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory according to your printer.
+
+- Restart printer to take effect.
+
+- Change your Start and End Gcode in your Slicer settings like this:
+
+  - For **Cura**:
+    - Start Gcode: `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
+    - End Gcode: `END_PRINT`
+    
+  - For **PrusaSlicer** / **SuperSlicer**:
+    - Start Gcode: `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
+    - End Gcode: `END_PRINT`
+
+<br />
+
+## Get USB Serial from Motherboard
+
+- Connect your printer to one of the Pad's USB ports.
+
+- Connect in SSH then enter the following command to retrieve the motherboard USB serial:
+```
+ls /dev/serial/by-id/*
+```
+- You should see the  USB serial appear like this:
+
+![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open `printer.cfg` file and find `[mcu]` section.
+
+- Edit the following existing line with serial you have just obtained like this:
+```
+serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+```
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- Your printer should connect to your PAD.
+
+<br />
+
 ## Update KlipperScreen
 
 - Go to your Mainsail Web interface then select the `Machine` tab.
@@ -601,28 +649,6 @@ managed_services: klipper moonraker
 - You will see a new `timelapse` line appear.
 
 ![Capture d’écran 2022-09-04 à 18 46 12](https://user-images.githubusercontent.com/12702322/188324381-3ab16337-e7da-4029-a318-ba41a4884ded.jpg)
-
-<br />
-
-## Use Configurations
-
-- Download and unzip my repository zip file here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/archive/refs/heads/main.zip
-
-- Go to your Mainsail Web interface then click on `Machine` tab.
-
-- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory according to your printer.
-
-- Restart printer to take effect.
-
-- Change your Start and End Gcode in your Slicer settings like this:
-
-  - For **Cura**:
-    - Start Gcode: `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
-    - End Gcode: `END_PRINT`
-    
-  - For **PrusaSlicer** / **SuperSlicer**:
-    - Start Gcode: `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
-    - End Gcode: `END_PRINT`
 
 <br />
 
@@ -988,30 +1014,6 @@ method: printer.gcode.script
 params: {"script":"SPEED_PROGRESS"}
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
-
-<br />
-
-## MCU Connection Issue
-
-- If you're having trouble connecting your printer to Klipper, connect in SSH then enter the following command to retrieve the motherboard USB serial:
-```
-ls /dev/serial/by-id/*
-```
-- You should see the  USB serial appear like this:
-
-![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
-
-- Go to your Mainsail Web interface then click on `Machine` tab.
-
-- Open `printer.cfg` file and find `[mcu]` section.
-
-- Edit the following existing line with serial you have just obtained like this:
-```
-serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
-```
-- Click on `SAVE & RESTART` at the top right to save the file.
-
-- Your printer should connect to your PAD.
 
 <br />
 
