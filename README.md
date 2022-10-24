@@ -471,8 +471,8 @@ make menuconfig
     Bootloader offset (48KiB bootloader (MKS Robin Nano V3))  --->
     Clock Reference (8 MHz crystal)  --->
     Communication interface (USB (on PA11/PA12))  --->
-(250000) Baud rate for serial port
-()  GPIO pins to set at micro-controller startup (NEW)
+    USB ids  --->
+()  GPIO pins to set at micro-controller startup
 ```
 
 ![Capture d’écran 2022-10-21 à 15 28 29](https://user-images.githubusercontent.com/12702322/197207233-cac4f384-0827-4ae0-ba58-44158240d989.jpg)
