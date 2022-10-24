@@ -13,7 +13,8 @@
 - [Update Ubuntu dependencies](#update-ubuntu-dependencies)
 - [Change Timezone](#change-timezone)
 - [Change Wi-Fi Location](#change-wi-fi-location)
-- [Switch to Official Klipper Builds](#switch-to-official-klipper-builds)
+- [Delete Flsun Builds](#delete-flsun-builds)
+- [Install Official Builds (1 instance)](#install-official-builds-1-instance)
 - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
 - [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
 - [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr-13-firmware)
@@ -304,7 +305,7 @@ sudo service network-manager restart
 
 <br />
 
-## Switch to Official Klipper Builds
+## Delete Flsun Builds
 
 To upgrade to official builds, follow these instructions:
 
@@ -348,6 +349,11 @@ sudo rm /home/pi/savedVariables1.cfg
 sudo rm /home/pi/savedVariables2.cfg
 sudo rm /home/pi/savedVariables3.cfg
 ```
+
+<br />
+
+## Install Official Builds (1 instance)
+
 - Relaunch Kiauh by entering this command:
 ```
 ./kiauh/kiauh.sh
