@@ -581,7 +581,7 @@ make
 
 - Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
 
-- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (by default 7125, 7126, 7127, ...):
+- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (by default 7125, 7126, 7127, ...) like this:
 
 ![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
 
