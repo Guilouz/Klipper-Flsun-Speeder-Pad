@@ -423,7 +423,7 @@ sudo reboot
 
 ![Capture d’écran 2022-10-24 à 22 34 07](https://user-images.githubusercontent.com/12702322/197724920-c8f79d1c-cf21-4e6d-a94f-4a20477645cd.jpg)
 
-- When it's done, you get your 3 instances with their IP addresses and ports:
+- When it's done, you get your 3 instances with their IP addresses and ports, write them down they will be useful later:
 
 ![Capture d’écran 2022-10-24 à 22 40 51](https://user-images.githubusercontent.com/12702322/197725342-1eb93080-4b94-4fe3-bbf3-51cacaa6ca6a.jpg)
 
