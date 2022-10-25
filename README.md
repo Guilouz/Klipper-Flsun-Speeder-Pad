@@ -386,18 +386,71 @@ cd ~/KlipperScreen
 ```
 Note: Installation may take several minutes.
 
-- When it's done, enter this command to reboot (one at a time):
+- When it's done, enter this commands (one at a time):
 ```
 ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_data/gcodes/USB-Disk
 sudo reboot
 ```
-- Your Speeder Pad now running offical builds.
+- Your Speeder Pad now running offical builds with 1 instance.
 
 <br />
 
 ## Install Official Builds (3 instances)
 
-- Under construction
+- Relaunch Kiauh by entering this command:
+```
+./kiauh/kiauh.sh
+```
+- Enter in `1) [Install]` menu by typing `1` then `Enter`:
+
+![Capture d’écran 2022-09-03 à 15 39 18](https://user-images.githubusercontent.com/12702322/188273051-df392b33-ee7b-47d6-8166-f5be167b42f2.jpg)
+
+- Install `1) [Klipper]` by typing `1` then `Enter`.
+
+- Select `1) [Python 2.7]  (recommended)` by typing `1` then `Enter`.
+
+- Then enter the number of Klipper instances by typing `3` then `Enter` and confirm by typing `Y`:
+
+![Capture d’écran 2022-10-24 à 22 25 52](https://user-images.githubusercontent.com/12702322/197723826-72b546ed-16f3-4971-ad54-ab67b3ba8674.jpg)
+
+- When asked to use custom names, select no by typing `N` then `Enter`:
+
+![Capture d’écran 2022-10-24 à 22 26 12](https://user-images.githubusercontent.com/12702322/197724310-2357b324-c229-4077-a29b-b4db80010054.jpg)
+
+- When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
+
+- Then enter the number of Moonraker instances by typing `3` then `Enter` and confirm by typing `Y`:
+
+![Capture d’écran 2022-10-24 à 22 34 07](https://user-images.githubusercontent.com/12702322/197724920-c8f79d1c-cf21-4e6d-a94f-4a20477645cd.jpg)
+
+- When it's done, you get your 3 instances with their IP addresses and ports:
+
+![Capture d’écran 2022-10-24 à 22 40 51](https://user-images.githubusercontent.com/12702322/197725342-1eb93080-4b94-4fe3-bbf3-51cacaa6ca6a.jpg)
+
+
+- Install `3) [Mainsail]` by typing `3` then `Enter` and select no by typing `n` when asked to add the recommended macros.
+
+- When it's done, go back to main menu by typing `B` then `Enter`.
+
+- Exit Kiauh by typing `Q` then `Enter`.
+
+- Enter the following commands (one at a time) to install KlipperScreen:
+```
+git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+cd ~/KlipperScreen
+./scripts/KlipperScreen-install.sh
+```
+Note: Installation may take several minutes.
+
+- When it's done, enter this commands (one at a time):
+```
+ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_1_data/gcodes/USB-Disk
+ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_2_data/gcodes/USB-Disk
+ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_3_data/gcodes/USB-Disk
+sudo reboot
+```
+- Your Speeder Pad now running offical builds with 3 instances.
 
 <br />
 
@@ -582,7 +635,7 @@ make
 
 - Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
 
-- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (by default 7125, 7126, 7127, ...) like this:
+- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (The same IP addresses and ports obtained after installing Moonraker) like this:
 
 ![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
 
