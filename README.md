@@ -285,24 +285,6 @@ echo -e "iw reg set FR\nexit 0" | sudo tee -a /etc/rc.local
 ```
 sudo reboot
 ```
-<br />
-<br />
-
-- If you are experiencing Wifi disconnects, you can disable Power Save functionality with this command:
-```
-sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-```
-- On the page that appears, change the value to 2 instead of 3 as follows:
-```
-[connection]
-wifi.powersave = 2
-```
-- Then press `Ctrl+X` to exit then `Y` to save and `Enter` to confirm.
-
-- Enter this command to restart Wi-Fi service:
-```
-sudo service network-manager restart
-```
 
 <br />
 
