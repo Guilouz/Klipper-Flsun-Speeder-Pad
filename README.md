@@ -23,6 +23,7 @@
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
 - [Update KlipperScreen](#update-klipperscreen)
 - [Install and Update Timelapse](#install-and-update-timelapse)
+- [Slicer Side Changes](#slicer-side-changes)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use ADXL345](#use-adxl345)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
@@ -587,33 +588,7 @@ make
 
 - Restart Speeder Pad and printer to take effect.
 
-- You can now select printer you want at startup on the screen. You can also enable `default_printer` setting in `KlipperScreen.conf` to start directly on printer you want and switch to others with shuffle button on the left side.
-
-<br />
-
-**Slicer Side Changes:**
-
-- Change your Start and End Gcode in your Slicer settings like this:
-
-  - For **Cura**:
-    - Start Gcode: `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
-    - End Gcode: `END_PRINT`
-    
-  - For **PrusaSlicer** / **SuperSlicer**:
-    - Start Gcode: `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
-    - End Gcode: `END_PRINT`
- 
- <br />
-
-- Firmware retraction gives an advantage compared to Slicer retraction, it can be modified during a print (from Mainsail or KlipperScreen) and therefore the same gcode can be printed with different parameters without the need to be re-sliced.
-
-  - For **Cura**, it's needed to install `Klipper Settings Plugin` (available here: [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) and enable `Enable Firmware Retraction` setting like that:
-
-  ![190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04](https://user-images.githubusercontent.com/12702322/197653257-9a4c29cc-64c0-4aa4-9077-32b30a9634d2.jpg)
-
-  - For **PrusaSclicer / SuperSlicer**, you just need to enable `Use firmware retraction` setting like that:
-
-![Capture d’écran 2022-09-16 à 02 14 56](https://user-images.githubusercontent.com/12702322/190531620-fd64b261-1fc7-41f3-82de-96fba5ab8315.jpg)
+**Note:** You can select printer you want at startup on the screen. You can also enable `default_printer` setting in `KlipperScreen.conf` to start directly on printer you want and switch to others with shuffle button on the left side.
 
 <br />
 
@@ -703,6 +678,32 @@ managed_services: klipper moonraker
 - You will see a new `timelapse` line appear.
 
 ![Capture d’écran 2022-09-04 à 18 46 12](https://user-images.githubusercontent.com/12702322/188324381-3ab16337-e7da-4029-a318-ba41a4884ded.jpg)
+
+<br />
+
+## Slicer Side Changes
+
+- Change your Start and End Gcode in your Slicer settings like this:
+
+  - For **Cura**:
+    - Start Gcode: `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
+    - End Gcode: `END_PRINT`
+    
+  - For **PrusaSlicer** / **SuperSlicer**:
+    - Start Gcode: `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
+    - End Gcode: `END_PRINT`
+ 
+ <br />
+
+- Firmware retraction gives an advantage compared to Slicer retraction, it can be modified during a print (from Mainsail or KlipperScreen) and therefore the same gcode can be printed with different parameters without the need to be re-sliced.
+
+  - For **Cura**, it's needed to install `Klipper Settings Plugin` (available here: [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) and enable `Enable Firmware Retraction` setting like that:
+
+  ![190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04](https://user-images.githubusercontent.com/12702322/197653257-9a4c29cc-64c0-4aa4-9077-32b30a9634d2.jpg)
+
+  - For **PrusaSclicer / SuperSlicer**, you just need to enable `Use firmware retraction` setting like that:
+
+![Capture d’écran 2022-09-16 à 02 14 56](https://user-images.githubusercontent.com/12702322/190531620-fd64b261-1fc7-41f3-82de-96fba5ab8315.jpg)
 
 <br />
 
@@ -803,22 +804,22 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 **Available modes:**
 
-- Turn On Neopixels
-- Turn Off Neopixels
-- Turn On Neopixels in blue
-- Turn On Neopixels in red
-- Turn On Neopixels in green
-- Turn On Neopixels in yellow
-- Turn On Neopixels in orange
-- Turn On Neopixels in violet
-- Turn on Neopixels based on nozzle temperature (All LEDs)
-- Turn on Neopixels based on nozzle temperature (LED by LED)
-- Turn on Neopixels based on bed temperature (All LEDs)
-- Turn on Neopixels based on bed temperature (LED by LED)
-- Turn on Neopixels based on printing progress (All LEDs)
-- Turn on Neopixels based on printing progress (LED by LED)
-- Turn on Neopixels based on printing speed (All LEDs)
-- Turn on Neopixels based on printing speed (LED by LED)
+- Turn On Neopixels with `NEOPIXEL_ON` macro
+- Turn Off Neopixels with `NEOPIXEL_OFF` macro
+- Turn On Neopixels in blue with `NEOPIXEL_BLUE` macro
+- Turn On Neopixels in red with `NEOPIXEL_RED` macro
+- Turn On Neopixels in green with `NEOPIXEL_GREEN` macro
+- Turn On Neopixels in yellow with `NEOPIXEL_YELLOW` macro
+- Turn On Neopixels in orange with `NEOPIXEL_ORANGE` macro
+- Turn On Neopixels in violet with `NEOPIXEL_VIOLET` macro
+- Turn on Neopixels based on nozzle temperature (All LEDs) with `HOTEND_GLOW` macro
+- Turn on Neopixels based on nozzle temperature (LED by LED) with `HOTEND_PROGRESS` macro
+- Turn on Neopixels based on bed temperature (All LEDs) with `BED_GLOW` macro
+- Turn on Neopixels based on bed temperature (LED by LED) with `BED_PROGRESS` macro
+- Turn on Neopixels based on printing progress (All LEDs) with `PERCENT_GLOW` macro
+- Turn on Neopixels based on printing progress (LED by LED) with `PERCENT_PROGRESS` macro
+- Turn on Neopixels based on printing speed (All LEDs) with `SPEED_GLOW` macro
+- Turn on Neopixels based on printing speed (LED by LED) with `SPEED_PROGRESS` macro
 
 **Necessary:**
 
