@@ -15,6 +15,7 @@
 - [Change Wi-Fi Location](#change-wi-fi-location)
 - [Delete Flsun Builds](#delete-flsun-builds)
 - [Install Official Builds (1 instance)](#install-official-builds-1-instance)
+- [Install Official Builds (3 instances)](#install-official-builds-3-instances)
 - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
 - [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
 - [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr-13-firmware)
@@ -23,7 +24,6 @@
 - [Update KlipperScreen](#update-klipperscreen)
 - [Install and Update Timelapse](#install-and-update-timelapse)
 - [Calibrate your Printer](#calibrate-your-printer)
-- [Use Firmware Retraction](#use-firmware-retraction)
 - [Use ADXL345](#use-adxl345)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - [Special Thanks](#special-thanks)
@@ -394,6 +394,12 @@ sudo reboot
 
 <br />
 
+## Install Official Builds (3 instances)
+
+- Under construction
+
+<br />
+
 ## Update V400 Motherboard Firmware
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
@@ -549,13 +555,43 @@ make
 
 ## Use Configurations
 
+**In case you use 1 instance:**
+
 - Download and unzip my repository zip file here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/archive/refs/heads/main.zip
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
 - Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory according to your printer.
 
-- Restart printer to take effect.
+- Restart Speeder Pad and printer to take effect.
+
+<br />
+
+**In case you use 3 instances:**
+
+- Download and unzip my repository zip file here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/archive/refs/heads/main.zip
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory according to your printer.
+
+- Open the `KlipperScreen.conf` file and edit it to enable multiple instance by removing the `#` symbols like this:
+
+![Sans titre-1 copie](https://user-images.githubusercontent.com/12702322/197651386-5a33d848-0416-421a-871f-c25288c84d4d.jpg)
+
+- Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
+
+- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (by default 7125, 7126, 7127, ...):
+
+![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
+
+- Restart Speeder Pad and printer to take effect.
+
+- You can now select printer you want at startup on the screen. You can also enable `default_printer` setting in `KlipperScreen.conf` to start directly on printer you want and switch to others with shuffle button on the left side.
+
+<br />
+
+**Slicer Side Changes:**
 
 - Change your Start and End Gcode in your Slicer settings like this:
 
@@ -566,6 +602,18 @@ make
   - For **PrusaSlicer** / **SuperSlicer**:
     - Start Gcode: `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
     - End Gcode: `END_PRINT`
+ 
+ <br />
+
+- Firmware retraction gives an advantage compared to Slicer retraction, it can be modified during a print (from Mainsail or KlipperScreen) and therefore the same gcode can be printed with different parameters without the need to be re-sliced.
+
+  - For **Cura**, it's needed to install `Klipper Settings Plugin` (available here: [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) and enable `Enable Firmware Retraction` setting like that:
+
+  ![190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04](https://user-images.githubusercontent.com/12702322/197653257-9a4c29cc-64c0-4aa4-9077-32b30a9634d2.jpg)
+
+  - For **PrusaSclicer / SuperSlicer**, you just need to enable `Use firmware retraction` setting like that:
+
+![Capture d’écran 2022-09-16 à 02 14 56](https://user-images.githubusercontent.com/12702322/190531620-fd64b261-1fc7-41f3-82de-96fba5ab8315.jpg)
 
 <br />
 
@@ -674,20 +722,6 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 - Adjust Z-OFFSET, first you need to move to Z=0 and then adjust nozzle position with a sheet of paper.
   - Note: The Z-Offset is saved in real time including when adjusting babysteps.
-
-<br />
-
-## Use Firmware Retraction
-
-Firmware retraction gives an advantage compared to Slicer retraction, it can be modified during a print (from Mainsail or KlipperScreen) and therefore the same gcode can be printed with different parameters without the need to be re-sliced.
-
-- For **Cura**, it's needed to install `Klipper Settings Plugin` (available here: [Klipper Settings Plugin](https://github.com/jjgraphix/KlipperSettingsPlugin)) and enable `Enable Firmware Retraction` setting like that:
-
-![Capture d’écran 2022-09-16 à 02 27 23](https://user-images.githubusercontent.com/12702322/190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04.jpg)
-
-- For **PrusaSclicer / SuperSlicer**, you just need to enable `Use firmware retraction` setting like that:
-
-![Capture d’écran 2022-09-16 à 02 14 56](https://user-images.githubusercontent.com/12702322/190531620-fd64b261-1fc7-41f3-82de-96fba5ab8315.jpg)
 
 <br />
 
