@@ -639,6 +639,12 @@ make
 
 ![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
 
+- You can now select `Printers` on left tab and switch to others printers.
+
+- You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files for each printer.
+
+**Note:** Changes in the `KlipperScreen.conf` file only have an effect on the first configured printer, it's not needed on others.
+
 - Restart Speeder Pad and printer to take effect.
 
 **Note:** You can select printer you want at startup on the screen. You can also enable `default_printer` setting in `KlipperScreen.conf` to start directly on printer you want and switch to others with shuffle button on the left side.
