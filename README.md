@@ -625,24 +625,33 @@ make
 
 - You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files for each printer.
 
-- Open `printer.cfg` file, find `[save_variables]` section and edit variable filename path for each configured printer:
+- Open `printer.cfg` file, find `[save_variables]` and `[virtual_sdcard] sections and edit paths for each configured printer:
 
 **For 1st printer:**
 ```
 [save_variables]
 filename: ~/printer_1_data/config/variables.cfg
+
+[virtual_sdcard]
+path: ~/printer_1_data/gcodes
 ```
 
 **For 2nd printer:**
 ```
 [save_variables]
 filename: ~/printer_2_data/config/variables.cfg
+
+[virtual_sdcard]
+path: ~/printer_2_data/gcodes
 ```
 
 **For 3rd printer:**
 ```
 [save_variables]
 filename: ~/printer_3_data/config/variables.cfg
+
+[virtual_sdcard]
+path: ~/printer_3_data/gcodes
 ```
 
 **Note:** Changes in the `KlipperScreen.conf` file only have an effect on the first configured printer, it's not needed on others.
