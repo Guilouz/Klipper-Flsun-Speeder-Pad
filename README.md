@@ -615,6 +615,25 @@ make
 
 ![Sans titre-1 copie](https://user-images.githubusercontent.com/12702322/197651386-5a33d848-0416-421a-871f-c25288c84d4d.jpg)
 
+- Open `printer.cfg` file, find `[save_variables]` section and edit variable filename path:
+
+**For 1st printer:**
+```
+[save_variables]
+filename: ~/printer_1_data/config/variables.cfg
+```
+
+**For 2nd printer:**
+```
+[save_variables]
+filename: ~/printer_2_data/config/variables.cfg
+```
+
+**For 3rd printer:**
+```
+[save_variables]
+filename: ~/printer_3_data/config/variables.cfg
+```
 - Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
 
 - Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (The same IP addresses and ports obtained after installing Moonraker) like this:
