@@ -756,6 +756,8 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 - Start HOTEND PID and save configuration.
 
+- Calibrate your extruder by calculing Rotation Distance.
+
 - Start ENDSTOP CALIBRATION and save configuration.
 
 - Start DELTA CALIBRATION and save configuration.
