@@ -625,7 +625,7 @@ make
 
 - You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files for each printer.
 
-- Open `printer.cfg` file, find `[save_variables]` and `[virtual_sdcard] sections and edit paths for each configured printer:
+- Open `printer.cfg` file, find `[save_variables]` and `[virtual_sdcard]` sections and edit paths for each configured printer:
 
 **For 1st printer:**
 ```
