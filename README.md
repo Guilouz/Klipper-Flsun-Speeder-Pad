@@ -615,7 +615,17 @@ make
 
 ![Sans titre-1 copie](https://user-images.githubusercontent.com/12702322/197651386-5a33d848-0416-421a-871f-c25288c84d4d.jpg)
 
-- Open `printer.cfg` file, find `[save_variables]` section and edit variable filename path:
+- Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
+
+- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (The same IP addresses and ports obtained after installing Moonraker) like this:
+
+![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
+
+- You can now select `Printers` on left tab and switch to others printers.
+
+- You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files for each printer.
+
+- Open `printer.cfg` file, find `[save_variables]` section and edit variable filename path for each configured printer:
 
 **For 1st printer:**
 ```
@@ -634,15 +644,6 @@ filename: ~/printer_2_data/config/variables.cfg
 [save_variables]
 filename: ~/printer_3_data/config/variables.cfg
 ```
-- Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
-
-- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (The same IP addresses and ports obtained after installing Moonraker) like this:
-
-![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
-
-- You can now select `Printers` on left tab and switch to others printers.
-
-- You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files for each printer.
 
 **Note:** Changes in the `KlipperScreen.conf` file only have an effect on the first configured printer, it's not needed on others.
 
