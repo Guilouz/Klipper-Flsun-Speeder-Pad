@@ -25,7 +25,8 @@
 - [Install and Update Timelapse](#install-and-update-timelapse)
 - [Slicer Side Changes](#slicer-side-changes)
 - [Calibrate your Printer](#calibrate-your-printer)
-- [Use ADXL345](#use-adxl345)
+- [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
+- [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - [Special Thanks](#special-thanks)
 
@@ -609,7 +610,7 @@ make
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory according to your printer.
+- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg` and `adxl345_fysetc.cfg` files located in `Configurations` directory according to your printer.
 
 - Open the `KlipperScreen.conf` file and edit it to enable multiple instance by removing the `#` symbols like this:
 
@@ -623,7 +624,7 @@ make
 
 - You can now select `Printers` on left tab and switch to others printers.
 
-- You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files for each printer.
+- You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg` and `adxl345_fysetc.cfg` files for each printer.
 
 - Open `printer.cfg` file, find `[save_variables]` and `[virtual_sdcard]` sections and edit paths for each configured printer:
 
@@ -813,10 +814,17 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 <br />
 
-## Use ADXL345
+## Use ADXL345 with Raspberry Pi Pico
 
-To use ADXL345 with FLSUN Speeder Pad for measuring Resonances it's necessary to use it via USB with a Raspberry Pi Pico.
+You can use ADXL345 with FLSUN Speeder Pad for measuring Resonances via USB with a Raspberry Pi Pico.
 
+**Needed:**
+- Raspberry Pi Pico
+- ADXL345 Accelerometer
+- USB-A/Male to Micro-USB/Male Cable
+- Cable, tin and soldering iron
+
+**Wiring:**
 ![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
 
 - Some dependencies are required to use ADXL345, install them with this following commands (one at a time):
@@ -861,13 +869,13 @@ make
 ```
 ls /dev/serial/by-id/*
 ```
-- You should see 2 serial appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`:
+- You should see 2 serials appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`:
 
 ![Capture d’écran 2022-09-03 à 18 48 39](https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg)
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Open `adxl345.cfg` file and edit following line with serial you have just obtained:
+- Open `adxl345_pico.cfg` file and edit following line with serial you have just obtained:
 ```
 serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 ```
@@ -875,11 +883,89 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 - Then uncomment (remove the #) to the following line in the `printer.cfg` file to enable ADXL support:
 ```
-[include adxl345.cfg]
+[include adxl345_pico.cfg]
 ```
 - Click on `SAVE & RESTART` at the top right to save the file.
 
-- You should see the ADXL MCU connecting to Klipper.
+- You should see the `ADXL MCU` connecting to Klipper.
+
+- To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
+
+<br />
+
+## Use ADXL345 with Fysetc Portable Input Shaper
+
+You can use Fysetc Portable Input Shaper with FLSUN Speeder Pad for measuring Resonances via USB.
+
+**Needed:**
+- Fysetc Portable Input Shaper accelerometer available: [Here](https://fr.aliexpress.com/item/1005004555226273.html?spm=a2g0o.productlist.0.0.7e701327UZtVKE&algo_pvid=f25b0d36-5b57-4cbb-810d-40049619c920&algo_exp_id=f25b0d36-5b57-4cbb-810d-40049619c920-9&pdp_ext_f=%7B%22sku_id%22%3A%2212000029604437979%22%7D&pdp_npi=2%40dis%21EUR%2122.88%2119.68%21%21%21%21%21%402100bb5116668994876576555e3324%2112000029604437979%21sea&curPageLogUid=FMrXiSXrU6V9) 
+- USB-A/Male to USB-C/Male Cable
+
+**Note:** You can cut the yellow edges to reduce the width
+
+![Capture d’écran 2022-10-27 à 21 40 08](https://user-images.githubusercontent.com/12702322/198383353-5e08d6dc-82d1-4491-b9ff-e9812d2ede15.jpg)
+
+- Some dependencies are required to use this accelerometer, install them with this following commands (one at a time):
+```
+sudo apt update
+sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
+```
+- Followed by this command to install Numpy in Klipper's environment:
+```
+~/klippy-env/bin/pip install -v numpy
+```
+- It's also necessary to compile firmware for Raspberry Pico, enter the following commands (one at a time):
+```
+cd ~/klipper/
+make menuconfig
+```
+- Select these settings:
+```
+[] Enable extra low-level configuration options
+Micro-controller Architecture = (Raspberry Pi RP2040)
+Communication interface = (USB)
+```
+
+![Capture d’écran 2022-09-03 à 18 28 10](https://user-images.githubusercontent.com/12702322/188279790-bba11b1c-16df-4e8e-bb80-e9400a1a4962.jpg)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following commands to compile firmware (one at a time):
+```
+make clean
+make
+```
+- Get the firmware named `klipper.uf2` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+
+- Connect it to the computer via USB while holding down the button.
+
+- A folder named `RPI-RP2` will appear and copy the `klipper.uf2` file to the root, wait for a few seconds, when done, the folder will close automatically.
+
+- Now plug it into one of the Speeder Pad's USB ports.
+
+- Type this command to retrieve the serial:
+```
+ls /dev/serial/by-id/*
+```
+- You should see 2 serials appear, that of the Fysetc Portable Input Shaper is the one with the mention `Klipper_rp2040`:
+
+![Capture d’écran 2022-09-03 à 18 48 39](https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg)
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open `adxl345_fysetc.cfg` file and edit following line with serial you have just obtained:
+```
+serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
+```
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- Then uncomment (remove the #) to the following line in the `printer.cfg` file to enable ADXL support:
+```
+[include adxl345_fysetc.cfg]
+```
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- You should see the `PIS MCU` connecting to Klipper.
 
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
