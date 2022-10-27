@@ -16,9 +16,10 @@
 - [Delete Flsun Builds](#delete-flsun-builds)
 - [Install Official Builds (1 instance)](#install-official-builds-1-instance)
 - [Install Official Builds (3 instances)](#install-official-builds-3-instances)
-- [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
-- [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
-- [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr-13-firmware)
+- Update Motherboard Firmware
+  - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
+  - [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
+  - [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr-13-firmware)
 - [Use Configurations](#use-configurations)
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
 - [Update KlipperScreen](#update-klipperscreen)
