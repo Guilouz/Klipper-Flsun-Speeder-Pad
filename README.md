@@ -695,7 +695,7 @@ serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
 
 - Go to your Mainsail Web interface then select the `Machine` tab.
 
-- Open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
+- Open the `moonraker.conf` file and add the following lines:
 ```
 [update_manager KlipperScreen]
 type: git_repo
