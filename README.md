@@ -730,7 +730,8 @@ More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.c
 ```
 cd ~/
 git clone https://github.com/mainsail-crew/moonraker-timelapse.git
-bash /home/pi/moonraker-timelapse/install.sh -c /home/pi/printer_data/config
+ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker/moonraker/components/timelapse.py"
+ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_data/config/timelapse.cfg"
 ```
 
 **In case you use 3 instances:**
