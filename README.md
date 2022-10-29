@@ -1232,7 +1232,7 @@ params: {"script":"SPEED_PROGRESS"}
 
 ## Improve Webcams Support
 
-It's possible to improve Webcams support and in particular the framerate by uninstalling mjpg-streamer and installing Crownest daemon (see [here](https://github.com/mainsail-crew/crowsnest) for more info).
+It's possible to improve Webcams support and in particular the framerate by uninstalling mjpg-streamer and installing Crowsnest daemon (see [here](https://github.com/mainsail-crew/crowsnest) for more info).
 
 <br />
 
@@ -1265,6 +1265,17 @@ make install
 
 - When asked to add Crowsnest Update Manager entry to moonraker.conf `No` by typing `N`.
 
+- If you use 1 instance enter this command:
+```
+cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_data/config/crowsnest.conf
+```
+- If you use 3 instances enter this commands (one at a time):
+```
+cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_1_data/config/crowsnest.conf
+cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_2_data/config/crowsnest.conf
+cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_3_data/config/crowsnest.conf
+```
+
 <br />
 
 **Updating Crownest:**
@@ -1282,7 +1293,7 @@ origin: https://github.com/mainsail-crew/crowsnest.git
 
 - You can now click the refresh button (still in the Machine tab) on the Update Manager tile.
 
-- You will see a new crownest line appear.
+- You will see a new crowsnest line appear.
 
 <br />
 
