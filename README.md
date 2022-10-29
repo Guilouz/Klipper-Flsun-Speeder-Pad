@@ -29,6 +29,7 @@
 - [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
 - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
+- [Improve Webcams Support](#improve-webcams-support)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -694,9 +695,7 @@ serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
 
 - Go to your Mainsail Web interface then select the `Machine` tab.
 
-- Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
-
-- Now, still on Mainsail, open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
+- Open the `moonraker.conf` file and modify the `[update_manager KlipperScreen]` section  as follows:
 ```
 [update_manager KlipperScreen]
 type: git_repo
@@ -746,9 +745,7 @@ ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/prin
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Right-click on the `moonraker.conf` file then `Download` to make a backup of the original file. Keep this file carefully for possible backtracking.
-
-- Now, still on Mainsail, open the `moonraker.conf` file and add the following lines:
+- Open the `moonraker.conf` file and add the following lines:
 ```
 [timelapse]
 
@@ -1230,6 +1227,62 @@ method: printer.gcode.script
 params: {"script":"SPEED_PROGRESS"}
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+<br />
+
+## Improve Webcams Support
+
+It's possible to improve Webcams support and in particular the framerate by uninstalling mjpg-streamer and installing Crownest daemon (see [here](https://github.com/mainsail-crew/crowsnest) for more info).
+
+<br />
+
+**Uninstalling mjpg-streamer:**
+
+- In the SSH command prompt window, enter the following command to launch Kiauh:
+```
+./kiauh/kiauh.sh
+```
+- Enter in `3) [Remove]` menu by typing `3` then `Enter`.
+
+- Remove `7) [MJPG-Streamer]` by typing `7` then `Enter` (you will need to enter the Root password).
+
+- When it's done, go back to main menu by typing `B` then `Enter`.
+
+- Exit Kiauh by typing `Q` then `Enter`.
+
+<br />
+
+**Installing Crownest:**
+
+- Enter the following commands (one at a time):
+```
+cd ~
+git clone https://github.com/mainsail-crew/crowsnest.git
+cd ~/crowsnest
+make install
+```
+- When asked to uninstall webcamd service select `Yes` by typing `Y`.
+
+- When asked to add Crowsnest Update Manager entry to moonraker.conf `No` by typing `N`.
+
+<br />
+
+**Updating Crownest:**
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open the `moonraker.conf` file and add the following lines:
+```
+[update_manager crowsnest]
+type: git_repo
+path: ~/crowsnest
+origin: https://github.com/mainsail-crew/crowsnest.git
+```
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+- You can now click the refresh button (still in the Machine tab) on the Update Manager tile.
+
+- You will see a new crownest line appear.
 
 <br />
 
