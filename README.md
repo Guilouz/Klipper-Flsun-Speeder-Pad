@@ -374,6 +374,7 @@ Note: Installation may take several minutes.
 
 - When it's done, enter this commands (one at a time):
 ```
+cd ~
 ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_data/gcodes/USB-Disk
 sudo reboot
 ```
@@ -431,6 +432,7 @@ Note: Installation may take several minutes.
 
 - When it's done, enter this commands (one at a time):
 ```
+cd ~
 ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_1_data/gcodes/USB-Disk
 ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_2_data/gcodes/USB-Disk
 ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_3_data/gcodes/USB-Disk
