@@ -1266,12 +1266,14 @@ make install
 
 - When asked to add Crowsnest Update Manager entry to moonraker.conf `No` by typing `N`.
 
-- If you use 1 instance enter this command:
+- If you use 1 instance enter this commands (one at a time):
 ```
+cd ~
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_data/config/crowsnest.conf
 ```
 - If you use 3 instances enter this commands (one at a time):
 ```
+cd ~
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_1_data/config/crowsnest.conf
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_2_data/config/crowsnest.conf
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_3_data/config/crowsnest.conf
