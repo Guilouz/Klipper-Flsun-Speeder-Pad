@@ -50,7 +50,7 @@ This procedure explains the whole process in order to obtain Root access on the 
 This settings are compatible with FLSUN Speeder Pad.
 
 - Useful and automated macros with notifications to KlipperScreen
-- Configuration for ADXL345 via USB with Raspberry Pico
+- Configuration for ADXL345
 - Improved Start/End Gcodes
 - And more...
 
