@@ -1272,6 +1272,7 @@ make install
 ```
 cd ~
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_data/config/crowsnest.conf
+sudo reboot
 ```
 - If you use 3 instances enter this commands (one at a time):
 ```
@@ -1279,6 +1280,7 @@ cd ~
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_1_data/config/crowsnest.conf
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_2_data/config/crowsnest.conf
 cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_3_data/config/crowsnest.conf
+sudo reboot
 ```
 
 <br />
