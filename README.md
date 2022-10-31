@@ -1302,7 +1302,7 @@ origin: https://github.com/mainsail-crew/crowsnest.git
 
 - You will see a new crowsnest line appear.
 
-- You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the WEBCAMS tab of Mainsail settings.
+- You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the `WEBCAMS` tab of Mainsail settings.
 
 ![Capture d’écran 2022-10-29 à 21 46 51](https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg)
 
