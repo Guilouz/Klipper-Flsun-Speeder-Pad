@@ -1255,53 +1255,41 @@ It's possible to improve Webcams support and in particular the framerate by unin
 
 <br />
 
-**Uninstalling mjpg-streamer:**
-
-- In the SSH command prompt window, enter the following command to launch Kiauh:
-```
-./kiauh/kiauh.sh
-```
-- Enter in `3) [Remove]` menu by typing `3` then `Enter`.
-
-- Remove `7) [MJPG-Streamer]` by typing `7` then `Enter` (you will need to enter the Root password).
-
-- When it's done, go back to main menu by typing `B` then `Enter`.
-
-- Exit Kiauh by typing `Q` then `Enter`.
-
-<br />
-
-**Installing Crownest:**
+**Installing Crowsnest:**
 
 - Enter the following commands (one at a time):
 ```
 cd ~
-git clone https://github.com/mainsail-crew/crowsnest.git
+git clone --branch ref/installer https://github.com/mainsail-crew/crowsnest.git
 cd ~/crowsnest
-make install
+sudo make config
 ```
-- When asked to uninstall webcamd service select `Yes` by typing `Y`.
+- When asked to install Crowsnest select `Yes` by typing `Y` then `Enter`.
 
-- When asked to add Crowsnest Update Manager entry to moonraker.conf `No` by typing `N`.
+- When asked to specify path for config file (crowsnest.conf):
+  - **For 1 instance:** You can press `Enter` directly
+  - **For 3 instances type:** `/home/pi/printer_1_data/config`
 
-- If you use 1 instance enter this commands (one at a time):
+- When asked to specify path for log file (crowsnest.logs):
+  - **For 1 instance:** You can press `Enter` directly
+  - **For 3 instances type:** `/home/pi/printer_1_data/logs`
+
+- When asked to specify path for environment file (crowsnest.env):
+  - **For 1 instance:** You can press `Enter` directly
+  - **For 3 instances type:** `/home/pi/printer_1_data/systemd`
+
+- When asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
+
+- When asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
+
+- Then enter this command to restart:
 ```
-cd ~
-cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_data/config/crowsnest.conf
-sudo reboot
-```
-- If you use 3 instances enter this commands (one at a time):
-```
-cd ~
-cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_1_data/config/crowsnest.conf
-cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_2_data/config/crowsnest.conf
-cp /home/pi/crowsnest/sample_configs/mainsail_default.conf /home/pi/printer_3_data/config/crowsnest.conf
 sudo reboot
 ```
 
 <br />
 
-**Updating Crownest:**
+**Updating Crowsnest:**
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -1309,6 +1297,7 @@ sudo reboot
 ```
 [update_manager crowsnest]
 type: git_repo
+primary_branch: ref/installer
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
 ```
