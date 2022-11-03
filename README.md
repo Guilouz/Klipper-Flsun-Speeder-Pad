@@ -859,15 +859,15 @@ Communication interface = (USB)
 make clean
 make
 ```
-- Get the firmware named `klipper.uf2` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+- Plug Raspberry Pi Pico into one of the Speeder Pad's USB ports while holding down the `BOOTSEL` button.
 
-- Connect the Raspberry Pi Pico to the computer via USB while holding down the `BOOTSEL` button.
-
-- Copy `klipper.uf2` file to the Raspberry Pico, it reboots as soon as it installs the firmware.
-
-- Now plug it into one of the Speeder Pad's USB ports.
-
-- Type this command to retrieve the serial:
+- Type this commands to flash firmware (one at a time):
+```
+sudo mount /dev/sda1 /mnt
+sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
+sudo umount /mnt
+```
+- And now, type this command to retrieve the serial:
 ```
 ls /dev/serial/by-id/*
 ```
@@ -891,6 +891,14 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 - You should see the `ADXL MCU` connecting to Klipper.
 
+- You can test accelerometer by entering this command:
+```
+ACCELEROMETER_QUERY
+```
+- Something like this must be returned:
+```
+accelerometer values (x, y, z): 5551.544565, 7048.078582, -1924.535449
+```
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
 <br />
@@ -937,15 +945,15 @@ Communication interface = (USB)
 make clean
 make
 ```
-- Get the firmware named `klipper.uf2` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+- Plug Portable Input Shaper into one of the Speeder Pad's USB ports while holding down the button.
 
-- Connect it to the computer via USB while holding down the button.
-
-- A folder named `RPI-RP2` will appear and copy the `klipper.uf2` file to the root, wait for a few seconds, when done, the folder will close automatically.
-
-- Now plug it into one of the Speeder Pad's USB ports.
-
-- Type this command to retrieve the serial:
+- Type this commands to flash firmware (one at a time):
+```
+sudo mount /dev/sda1 /mnt
+sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
+sudo umount /mnt
+```
+- And now, type this command to retrieve the serial:
 ```
 ls /dev/serial/by-id/*
 ```
@@ -969,6 +977,14 @@ serial: /dev/serial/by-id/usb-Klipper_rp2040_E6605481DB318D34-if00
 
 - You should see the `PIS MCU` connecting to Klipper.
 
+- You can test accelerometer by entering this command:
+```
+ACCELEROMETER_QUERY
+```
+- Something like this must be returned:
+```
+accelerometer values (x, y, z): 5551.544565, 7048.078582, -1924.535449
+```
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
 <br />
