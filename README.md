@@ -1260,7 +1260,7 @@ It's possible to improve Webcams support and in particular the framerate by unin
 - Enter the following commands (one at a time):
 ```
 cd ~
-git clone --branch ref/installer https://github.com/mainsail-crew/crowsnest.git
+git clone --branch develop https://github.com/mainsail-crew/crowsnest.git
 cd ~/crowsnest
 sudo make config
 ```
@@ -1298,7 +1298,7 @@ sudo make install
 ```
 [update_manager crowsnest]
 type: git_repo
-primary_branch: ref/installer
+primary_branch: develop
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
 ```
