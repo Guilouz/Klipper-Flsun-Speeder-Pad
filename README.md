@@ -82,6 +82,8 @@ Before using Klipper please read this documentations:
 
 - To display thumbnails on screen, see here: https://klipperscreen.readthedocs.io/en/latest/Thumbnails/
 
+- Speeder Pad Mainsail Theme: [Speeder Pad Mainsail Theme.zip](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/files/9944550/Speeder.Pad.Mainsail.Theme.zip)
+
 <br />
 
 ## STL Files
