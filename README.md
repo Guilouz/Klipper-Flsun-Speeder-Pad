@@ -1282,7 +1282,7 @@ sudo make config
 
 - When asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
 
-- Then enter this command to restart:
+- Then enter this command to install:
 ```
 sudo make install
 ```
