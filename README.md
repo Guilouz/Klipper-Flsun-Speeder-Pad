@@ -1284,8 +1284,9 @@ sudo make config
 
 - Then enter this command to restart:
 ```
-sudo reboot
+sudo make install
 ```
+- When asked to reboot NOW select `Yes` by typing `y` then `Enter`.
 
 <br />
 
