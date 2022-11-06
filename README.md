@@ -901,6 +901,12 @@ ACCELEROMETER_QUERY
 ```
 accelerometer values (x, y, z): 5551.544565, 7048.078582, -1924.535449
 ```
+- Enter this command to measure the noise of the accelerometer for each axis:
+```
+MEASURE_AXES_NOISE
+```
+- You should get some baseline numbers for the noise of accelerometer on the axes (should be somewhere in the range of ~1-100). Too high axes noise (e.g. 1000 and more) can be indicative of the sensor issues, problems with its power, or too noisy imbalanced fans.
+
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
 <br />
@@ -987,6 +993,12 @@ ACCELEROMETER_QUERY
 ```
 accelerometer values (x, y, z): 5551.544565, 7048.078582, -1924.535449
 ```
+- Enter this command to measure the noise of the accelerometer for each axis:
+```
+MEASURE_AXES_NOISE
+```
+- You should get some baseline numbers for the noise of accelerometer on the axes (should be somewhere in the range of ~1-100). Too high axes noise (e.g. 1000 and more) can be indicative of the sensor issues, problems with its power, or too noisy imbalanced fans.
+
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
 <br />
