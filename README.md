@@ -909,6 +909,8 @@ MEASURE_AXES_NOISE
 
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
+**Note:** After tests, it's better to disable the ADXL by commenting out the `[include adxl345_pico.cfg]` line again.
+
 <br />
 
 ## Use ADXL345 with Fysetc Portable Input Shaper
@@ -1000,6 +1002,8 @@ MEASURE_AXES_NOISE
 - You should get some baseline numbers for the noise of accelerometer on the axes (should be somewhere in the range of ~1-100). Too high axes noise (e.g. 1000 and more) can be indicative of the sensor issues, problems with its power, or too noisy imbalanced fans.
 
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
+
+**Note:** After tests, it's better to disable the ADXL by commenting out the `[include adxl345_fysetc.cfg]` line again.
 
 <br />
 
