@@ -740,6 +740,7 @@ ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_data/config/timelapse.cfg"
 sudo systemctl restart moonraker
 sudo systemctl restart klipper
+sudo apt install ffmpeg
 ```
 
 **In case you use 3 instances:**
@@ -754,6 +755,7 @@ ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/prin
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_3_data/config/timelapse.cfg"
 sudo systemctl restart moonraker
 sudo systemctl restart klipper
+sudo apt install ffmpeg
 ```
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
