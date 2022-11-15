@@ -333,6 +333,7 @@ sudo rm -rf /home/pi/.moonraker_database_2
 sudo rm -rf /home/pi/.moonraker_database_3
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
+sudo rm -rf /home/pi/moonraker-timelapse
 sudo rm /home/pi/.gitconfig
 sudo rm /home/pi/savedVariables1.cfg
 sudo rm /home/pi/savedVariables2.cfg
@@ -733,19 +734,29 @@ More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.c
 **In case you use 1 instance:**
 ```
 cd ~/
+sudo systemctl stop klipper
+sudo systemctl stop moonraker
 git clone https://github.com/mainsail-crew/moonraker-timelapse.git
 ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker/moonraker/components/timelapse.py"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_data/config/timelapse.cfg"
+sudo systemctl restart moonraker
+sudo systemctl restart klipper
+sudo apt install ffmpeg
 ```
 
 **In case you use 3 instances:**
 ```
 cd ~/
+sudo systemctl stop klipper
+sudo systemctl stop moonraker
 git clone https://github.com/mainsail-crew/moonraker-timelapse.git
 ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker/moonraker/components/timelapse.py"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_1_data/config/timelapse.cfg"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_2_data/config/timelapse.cfg"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_3_data/config/timelapse.cfg"
+sudo systemctl restart moonraker
+sudo systemctl restart klipper
+sudo apt install ffmpeg
 ```
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
@@ -1278,7 +1289,7 @@ It's possible to improve Webcams support and in particular the framerate by unin
 - Enter the following commands (one at a time):
 ```
 cd ~
-git clone --branch develop https://github.com/mainsail-crew/crowsnest.git
+git clone https://github.com/mainsail-crew/crowsnest.git
 cd ~/crowsnest
 sudo make config
 ```
@@ -1316,9 +1327,9 @@ sudo make install
 ```
 [update_manager crowsnest]
 type: git_repo
-primary_branch: develop
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
+install_script: tools/install.sh
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
 
@@ -1329,6 +1340,17 @@ origin: https://github.com/mainsail-crew/crowsnest.git
 - You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the `WEBCAMS` tab of Mainsail settings.
 
 ![Capture d’écran 2022-10-29 à 21 46 51](https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg)
+
+<br />
+
+
+**Uninstalling Crowsnest:**
+
+- If needed you can uninstall Crowsnest by entering the following commands (one at a time):
+```
+cd ~/crowsnest
+sudo make uninstall
+```
 
 <br />
 
