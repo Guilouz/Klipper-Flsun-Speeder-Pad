@@ -1289,7 +1289,7 @@ It's possible to improve Webcams support and in particular the framerate by unin
 - Enter the following commands (one at a time):
 ```
 cd ~
-git clone --branch develop https://github.com/mainsail-crew/crowsnest.git
+git clone https://github.com/mainsail-crew/crowsnest.git
 cd ~/crowsnest
 sudo make config
 ```
@@ -1327,9 +1327,9 @@ sudo make install
 ```
 [update_manager crowsnest]
 type: git_repo
-primary_branch: develop
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
+install_script: tools/install.sh
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
 
@@ -1340,6 +1340,17 @@ origin: https://github.com/mainsail-crew/crowsnest.git
 - You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the `WEBCAMS` tab of Mainsail settings.
 
 ![Capture d’écran 2022-10-29 à 21 46 51](https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg)
+
+<br />
+
+
+**Uninstalling Crowsnest:**
+
+- If needed you can uninstall Crowsnest by entering the following commands (one at a time):
+```
+cd ~/crowsnest
+sudo make uninstall
+```
 
 <br />
 
