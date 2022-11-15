@@ -333,6 +333,7 @@ sudo rm -rf /home/pi/.moonraker_database_2
 sudo rm -rf /home/pi/.moonraker_database_3
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
+sudo rm -rf /home/pi/moonraker-timelapse
 sudo rm /home/pi/.gitconfig
 sudo rm /home/pi/savedVariables1.cfg
 sudo rm /home/pi/savedVariables2.cfg
