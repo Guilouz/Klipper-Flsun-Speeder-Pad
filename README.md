@@ -743,6 +743,7 @@ ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/prin
 sudo systemctl restart moonraker
 sudo systemctl restart klipper
 sudo apt install ffmpeg
+sudo reboot
 ```
 
 **In case you use 3 instances:**
@@ -758,6 +759,7 @@ ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/prin
 sudo systemctl restart moonraker
 sudo systemctl restart klipper
 sudo apt install ffmpeg
+sudo reboot
 ```
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
@@ -878,6 +880,7 @@ make
 
 - Type this commands to flash firmware (one at a time):
 ```
+cd ~
 sudo mount /dev/sda1 /mnt
 sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
 sudo umount /mnt
@@ -973,6 +976,7 @@ make
 
 - Type this commands to flash firmware (one at a time):
 ```
+cd ~
 sudo mount /dev/sda1 /mnt
 sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
 sudo umount /mnt
