@@ -680,7 +680,7 @@ path: ~/printer_3_data/gcodes
 ```
 ls /dev/serial/by-id/*
 ```
-- You should see the  USB serial appear like this:
+- You should see the USB serial appear like this (serial is different depending on the motherboard):
 
 ![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
 
