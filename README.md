@@ -859,8 +859,9 @@ make menuconfig
 - Select these settings:
 ```
 [] Enable extra low-level configuration options
-Micro-controller Architecture = (Raspberry Pi RP2040)
-Communication interface = (USB)
+   Micro-controller Architecture = (Raspberry Pi RP2040)  --->
+   Bootloader offset (No bootloader)  --->
+   Communication interface = (USB)  --->
 ```
 
 ![Capture d’écran 2022-09-03 à 18 28 10](https://user-images.githubusercontent.com/12702322/188279790-bba11b1c-16df-4e8e-bb80-e9400a1a4962.jpg)
@@ -953,8 +954,9 @@ make menuconfig
 - Select these settings:
 ```
 [] Enable extra low-level configuration options
-Micro-controller Architecture = (Raspberry Pi RP2040)
-Communication interface = (USB)
+   Micro-controller Architecture = (Raspberry Pi RP2040)  --->
+   Bootloader offset (No bootloader)  --->
+   Communication interface = (USB)  --->
 ```
 
 ![Capture d’écran 2022-09-03 à 18 28 10](https://user-images.githubusercontent.com/12702322/188279790-bba11b1c-16df-4e8e-bb80-e9400a1a4962.jpg)
