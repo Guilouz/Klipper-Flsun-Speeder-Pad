@@ -93,6 +93,7 @@ Many usefull STL for FLSUN Super Racer and V400 can be found on my profiles:
 - Printables: [Here](https://www.printables.com/social/352655-guilouz/models)
 - Thingiverse: [Here](https://www.thingiverse.com/guilouz/designs)
 - ADXL345 Mount for Super Racer : [Here](https://www.printables.com/model/245136-adxl345-mount-for-flsun-super-racer)
+- Fysetc Portable Input Shaper Mount for Super Racer : [Here](https://www.thingiverse.com/thing:5634625)
 
 <br />
 
