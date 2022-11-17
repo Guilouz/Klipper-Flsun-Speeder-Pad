@@ -1336,6 +1336,7 @@ sudo make install
 type: git_repo
 path: ~/crowsnest
 origin: https://github.com/mainsail-crew/crowsnest.git
+managed_services: crowsnest
 install_script: tools/install.sh
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
