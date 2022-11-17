@@ -1298,7 +1298,7 @@ It's possible to improve Webcams support and in particular the framerate by unin
 cd ~
 git clone https://github.com/mainsail-crew/crowsnest.git
 cd ~/crowsnest
-sudo make config
+make config
 ```
 - When asked to install Crowsnest select `Yes` by typing `Y` then `Enter`.
 
