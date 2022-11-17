@@ -1357,6 +1357,7 @@ install_script: tools/install.sh
 ```
 cd ~/crowsnest
 make uninstall
+sudo rm -rf /home/pi/crowsnest
 ```
 
 <br />
