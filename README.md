@@ -1356,7 +1356,7 @@ install_script: tools/install.sh
 - If needed you can uninstall Crowsnest by entering the following commands (one at a time):
 ```
 cd ~/crowsnest
-sudo make uninstall
+make uninstall
 ```
 
 <br />
