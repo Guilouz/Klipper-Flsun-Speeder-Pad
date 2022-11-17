@@ -735,13 +735,9 @@ More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.c
 **In case you use 1 instance:**
 ```
 cd ~/
-sudo systemctl stop klipper
-sudo systemctl stop moonraker
 git clone https://github.com/mainsail-crew/moonraker-timelapse.git
 ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker/moonraker/components/timelapse.py"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_data/config/timelapse.cfg"
-sudo systemctl restart moonraker
-sudo systemctl restart klipper
 sudo apt install ffmpeg
 sudo reboot
 ```
@@ -749,15 +745,11 @@ sudo reboot
 **In case you use 3 instances:**
 ```
 cd ~/
-sudo systemctl stop klipper
-sudo systemctl stop moonraker
 git clone https://github.com/mainsail-crew/moonraker-timelapse.git
 ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker/moonraker/components/timelapse.py"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_1_data/config/timelapse.cfg"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_2_data/config/timelapse.cfg"
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_3_data/config/timelapse.cfg"
-sudo systemctl restart moonraker
-sudo systemctl restart klipper
 sudo apt install ffmpeg
 sudo reboot
 ```
