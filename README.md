@@ -217,7 +217,7 @@ sudo dpkg-reconfigure tzdata
 ```
 - On the page that appears, select your geographic area from the list and press `Enter`.
 
-- then select your timezone in the new list and press `Enter`.
+- Then select your timezone in the new list and press `Enter`.
 
 - You can then verify that the change has been taken into account by retyping this command:
 ```
