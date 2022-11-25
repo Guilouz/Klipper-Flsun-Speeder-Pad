@@ -211,18 +211,14 @@ To change Timezone, follow these instructions:
 ```
 timedatectl
 ```
-- You can view the available timezones by entering this command:
+- You can change your timezone by entering this command:
 ```
-timedatectl list-timezones
+sudo dpkg-reconfigure tzdata
 ```
-- You can also find your timezone using this command (replace Paris with your nearest major city):
-```
-timedatectl list-timezones | grep -i Paris
-```
-- You can now set the new timezone with this command (replace Europe/Paris by the new timezone):
-```
-sudo timedatectl set-timezone Europe/Paris
-```
+- On the page that appears, select your geographic area from the list and press `Enter`.
+
+- then select your timezone in the new list and press `Enter`.
+
 - You can then verify that the change has been taken into account by retyping this command:
 ```
 timedatectl
