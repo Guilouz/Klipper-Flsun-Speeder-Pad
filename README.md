@@ -196,6 +196,15 @@ sudo apt update
 ```
 sudo apt full-upgrade
 ```
+- Then install needed dependencies:
+```
+sudo apt install autoconf
+```
+- Then remove not needed dependencies (one command at a time):
+```
+sudo apt-get remove tailscale
+sudo apt autoremove
+```
 - And this command to reboot:
 ```
 sudo reboot
@@ -335,8 +344,6 @@ sudo rm /home/pi/.gitconfig
 sudo rm /home/pi/savedVariables1.cfg
 sudo rm /home/pi/savedVariables2.cfg
 sudo rm /home/pi/savedVariables3.cfg
-sudo apt-get remove tailscale
-sudo apt autoremove
 ```
 
 <br />
@@ -367,7 +374,6 @@ sudo apt autoremove
 
 - Enter the following commands (one at a time) to install KlipperScreen:
 ```
-sudo apt install autoconf
 git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
 cd ~/KlipperScreen
@@ -426,7 +432,6 @@ sudo reboot
 
 - Enter the following commands (one at a time) to install KlipperScreen:
 ```
-sudo apt install autoconf
 git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
 cd ~/KlipperScreen
