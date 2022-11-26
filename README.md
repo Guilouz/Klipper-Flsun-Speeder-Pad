@@ -365,6 +365,7 @@ sudo rm /home/pi/savedVariables3.cfg
 
 - Enter the following commands (one at a time) to install KlipperScreen:
 ```
+sudo apt install autoconf
 git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
 cd ~/KlipperScreen
@@ -423,6 +424,7 @@ sudo reboot
 
 - Enter the following commands (one at a time) to install KlipperScreen:
 ```
+sudo apt install autoconf
 git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
 cd ~/KlipperScreen
