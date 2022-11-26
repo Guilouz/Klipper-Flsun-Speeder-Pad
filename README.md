@@ -1297,7 +1297,7 @@ git clone https://github.com/mainsail-crew/crowsnest.git
 cd ~/crowsnest
 make config
 ```
-- When asked to install Crowsnest select `Yes` by typing `Y` then `Enter`.
+- When asked to Continue select `Yes` by typing `Y` then `Enter`.
 
 - When asked to specify path for config file (crowsnest.conf):
   - **For 1 instance:** You can press `Enter` directly
