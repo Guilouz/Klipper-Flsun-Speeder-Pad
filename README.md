@@ -202,7 +202,7 @@ sudo apt install autoconf
 ```
 - Then remove not needed dependencies (one command at a time):
 ```
-sudo apt-get remove tailscale
+sudo apt remove tailscale
 sudo apt autoremove
 ```
 - And this command to reboot:
