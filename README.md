@@ -335,6 +335,8 @@ sudo rm /home/pi/.gitconfig
 sudo rm /home/pi/savedVariables1.cfg
 sudo rm /home/pi/savedVariables2.cfg
 sudo rm /home/pi/savedVariables3.cfg
+sudo apt-get remove tailscale
+sudo apt autoremove
 ```
 
 <br />
