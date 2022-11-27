@@ -23,13 +23,13 @@
 - [Use Configurations](#use-configurations)
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
 - [Update KlipperScreen](#update-klipperscreen)
+- [Improve Webcams Support](#improve-webcams-support)
 - [Install and Update Timelapse](#install-and-update-timelapse)
 - [Slicer Side Changes](#slicer-side-changes)
 - [Calibrate your Printer](#calibrate-your-printer)
 - [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
 - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
-- [Improve Webcams Support](#improve-webcams-support)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -729,6 +729,84 @@ More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.c
 
 <br />
 
+## Improve Webcams Support
+
+It's possible to improve Webcams support and in particular the framerate by uninstalling mjpg-streamer and installing Crowsnest daemon (see [here](https://github.com/mainsail-crew/crowsnest) for more info).
+
+<br />
+
+**Installing Crowsnest:**
+
+- Enter the following commands (one at a time):
+```
+cd ~
+git clone https://github.com/mainsail-crew/crowsnest.git
+cd ~/crowsnest
+make config
+```
+- When asked to Continue select `Yes` by typing `Y` then `Enter`.
+
+- When asked to specify path for config file (crowsnest.conf):
+  - **For 1 instance:** You can press `Enter` directly
+  - **For 3 instances type:** `/home/pi/printer_1_data/config`
+
+- When asked to specify path for log file (crowsnest.logs):
+  - **For 1 instance:** You can press `Enter` directly
+  - **For 3 instances type:** `/home/pi/printer_1_data/logs`
+
+- When asked to specify path for environment file (crowsnest.env):
+  - **For 1 instance:** You can press `Enter` directly
+  - **For 3 instances type:** `/home/pi/printer_1_data/systemd`
+
+- When asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
+
+- When asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
+
+- Then enter this command to install:
+```
+sudo make install
+```
+- When asked to reboot NOW select `Yes` by typing `y` then `Enter`.
+
+<br />
+
+**Updating Crowsnest:**
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open the `moonraker.conf` file and add the following lines:
+```
+[update_manager crowsnest]
+type: git_repo
+path: ~/crowsnest
+origin: https://github.com/mainsail-crew/crowsnest.git
+managed_services: crowsnest
+install_script: tools/install.sh
+```
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+- You can now click the refresh button (still in the Machine tab) on the Update Manager tile.
+
+- You will see a new crowsnest line appear.
+
+- You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the `WEBCAMS` tab of Mainsail settings.
+
+![Capture d’écran 2022-10-29 à 21 46 51](https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg)
+
+<br />
+
+
+**Uninstalling Crowsnest:**
+
+- If needed you can uninstall Crowsnest by entering the following commands (one at a time):
+```
+cd ~/crowsnest
+make uninstall
+sudo rm -rf /home/pi/crowsnest
+```
+
+<br />
+
 ## Install and Update Timelapse
 
 - In the SSH command prompt window, enter the following commands (one at a time):
@@ -1275,84 +1353,6 @@ method: printer.gcode.script
 params: {"script":"SPEED_PROGRESS"}
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
-
-<br />
-
-## Improve Webcams Support
-
-It's possible to improve Webcams support and in particular the framerate by uninstalling mjpg-streamer and installing Crowsnest daemon (see [here](https://github.com/mainsail-crew/crowsnest) for more info).
-
-<br />
-
-**Installing Crowsnest:**
-
-- Enter the following commands (one at a time):
-```
-cd ~
-git clone https://github.com/mainsail-crew/crowsnest.git
-cd ~/crowsnest
-make config
-```
-- When asked to Continue select `Yes` by typing `Y` then `Enter`.
-
-- When asked to specify path for config file (crowsnest.conf):
-  - **For 1 instance:** You can press `Enter` directly
-  - **For 3 instances type:** `/home/pi/printer_1_data/config`
-
-- When asked to specify path for log file (crowsnest.logs):
-  - **For 1 instance:** You can press `Enter` directly
-  - **For 3 instances type:** `/home/pi/printer_1_data/logs`
-
-- When asked to specify path for environment file (crowsnest.env):
-  - **For 1 instance:** You can press `Enter` directly
-  - **For 3 instances type:** `/home/pi/printer_1_data/systemd`
-
-- When asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
-
-- When asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
-
-- Then enter this command to install:
-```
-sudo make install
-```
-- When asked to reboot NOW select `Yes` by typing `y` then `Enter`.
-
-<br />
-
-**Updating Crowsnest:**
-
-- Go to your Mainsail Web interface then click on `Machine` tab.
-
-- Open the `moonraker.conf` file and add the following lines:
-```
-[update_manager crowsnest]
-type: git_repo
-path: ~/crowsnest
-origin: https://github.com/mainsail-crew/crowsnest.git
-managed_services: crowsnest
-install_script: tools/install.sh
-```
-- Once done, click on `SAVE & RESTART` at the top right to save the file.
-
-- You can now click the refresh button (still in the Machine tab) on the Update Manager tile.
-
-- You will see a new crowsnest line appear.
-
-- You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the `WEBCAMS` tab of Mainsail settings.
-
-![Capture d’écran 2022-10-29 à 21 46 51](https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg)
-
-<br />
-
-
-**Uninstalling Crowsnest:**
-
-- If needed you can uninstall Crowsnest by entering the following commands (one at a time):
-```
-cd ~/crowsnest
-make uninstall
-sudo rm -rf /home/pi/crowsnest
-```
 
 <br />
 
