@@ -196,10 +196,6 @@ sudo apt update
 ```
 sudo apt full-upgrade
 ```
-- Then install needed dependencies:
-```
-sudo apt install autoconf
-```
 - Then remove not needed dependencies (one command at a time):
 ```
 sudo apt remove tailscale
