@@ -867,6 +867,10 @@ managed_services: klipper moonraker
   - For **PrusaSlicer** / **SuperSlicer**:
     - Start Gcode: `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
     - End Gcode: `END_PRINT`
+
+  - For **LycheeSlicer**:
+    - Start Gcode: `START_PRINT BED_TEMP={bed_temp} EXTRUDER_TEMP={temp}`
+    - End Gcode: `END_PRINT`
  
  <br />
 
