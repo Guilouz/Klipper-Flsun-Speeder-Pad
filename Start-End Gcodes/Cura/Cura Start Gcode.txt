@@ -2,7 +2,7 @@
 ;Filament type = {material_type}
 ;Filament name = {material_brand} {material_name}
 ;Filament weight = {filament_weight}
-;M109 S{material_print_temperature_layer_0}
-;M190 S{material_bed_temperature_layer_0}
+;M109 S{material_print_temperature}
+;M190 S{material_bed_temperature}
 
 START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}
