@@ -861,16 +861,41 @@ managed_services: klipper moonraker
 - Change your Start and End Gcode in your Slicer settings like this:
 
   - For **Cura**:
-    - Start Gcode: `START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}`
-    - End Gcode: `END_PRINT`
+    - Start Gcode:
+      ```
+      ;Nozzle diameter = {machine_nozzle_size}
+      ;Filament type = {material_type}
+      ;Filament name = {material_brand} {material_name}
+      ;Filament weight = {filament_weight}
+      ;M109 S{material_print_temperature}
+      ;M190 S{material_bed_temperature}
+      
+      START_PRINT BED_TEMP={material_bed_temperature_layer_0} EXTRUDER_TEMP={material_print_temperature_layer_0}
+      ```
+    - End Gcode:
+      ```
+      END_PRINT
+      ```
     
   - For **PrusaSlicer** / **SuperSlicer**:
-    - Start Gcode: `START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]`
-    - End Gcode: `END_PRINT`
+    - Start Gcode:
+      ```
+      START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]
+      ```
+    - End Gcode:
+      ```
+      END_PRINT
+      ```
 
   - For **LycheeSlicer**:
-    - Start Gcode: `START_PRINT BED_TEMP={bed_temp} EXTRUDER_TEMP={temp}`
-    - End Gcode: `END_PRINT`
+    - Start Gcode:
+      ```
+      START_PRINT BED_TEMP={bed_temp} EXTRUDER_TEMP={temp}
+      ```
+    - End Gcode:
+      ```
+      END_PRINT
+      ```
  
  <br />
 
