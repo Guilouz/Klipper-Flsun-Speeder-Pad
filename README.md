@@ -1103,15 +1103,15 @@ MEASURE_AXES_NOISE
 
 <br />
 
-**Wiring for V400:**
+**Wiring for V400 (MKS Robin Nano V2.0):**
 
 ![wiring](https://user-images.githubusercontent.com/12702322/189106620-6ebc2983-be6f-4fb2-a36e-89bb4cd7e54b.png)
 
-**Wiring for Super Racer (Nano V3.0/V3.1):**
+**Wiring for Super Racer (MKS Robin Nano V3.0/V3.1):**
 
 ![wiring](https://user-images.githubusercontent.com/12702322/197017354-f78b9ec9-e959-41ba-b178-14a05bc11da8.png)
 
-**Wiring for Super Racer (SKR 1.3):**
+**Wiring for Super Racer (BigTreeTech SKR 1.3):**
 
 ![wiring](https://user-images.githubusercontent.com/12702322/197060341-a616cc7e-d92d-47be-963e-61aeb41b734b.jpg)
 
