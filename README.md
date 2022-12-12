@@ -5,6 +5,7 @@
 ## Table of Contents
 
 - [About](#about)
+- [Repo Changelog](#repo-changelog)
 - [Useful Links](#useful-links)
 - [STL Files](#stl-files)
 - [Restore OS Image File](#restore-os-image-file)
@@ -63,6 +64,17 @@ Before using Klipper please read this documentations:
 - Moonraker (API Web Server): https://moonraker.readthedocs.io/
 - Mainsail (Web Interface): https://docs.mainsail.xyz/
 - KlipperScreen (Screen Interface): https://klipperscreen.readthedocs.io/
+
+<br />
+
+## Repo Changelog
+
+**12/12/2022:**
+  - Updated `macros.cfg` file ([gcode_macro START_PRINT]) for latest Klipper changes with gcode_arcs
+  - Added how to add camera support on Speeder Pad screen in [Improve Webcams Support](#improve-webcams-support) section
+  - Updated `klipperscreen.conf` file to support camera url
+  - Added new section to [Update V400 Motherboard Firmware (BigTreeTech SKR 3.0)](#update-v400-motherboard-firmware-bigtreetech-skr-30)
+  - Added new BigTreeTech SKR 3.0 config files for V400
 
 <br />
 
