@@ -7,7 +7,7 @@
 - [About](#about)
 - [Useful Links](#useful-links)
 - [STL Files](#stl-files)
-- [Enable Root Access](#enable-root-access)
+- [Restore OS Image File](#restore-os-image-file)
 - [SSH Connection](#ssh-connection)
 - [Change Password](#change-password)
 - [Update Ubuntu dependencies](#update-ubuntu-dependencies)
@@ -97,9 +97,9 @@ Many usefull STL for FLSUN Super Racer and V400 can be found on my profiles:
 
 <br />
 
-## Enable Root Access
+## Restore OS Image File
 
-By default, Root access is not allowed on Speeder Pad. To enable it, follow these instructions:
+By default, Root access is not allowed on Speeder Pad. To enable it, follow these instructions to restore OS image file:
 
 Note: A microSD card of at least 32 GB is required.
 
@@ -147,25 +147,27 @@ Note: A microSD card of at least 32 GB is required.
 
 - Download and install the MobaXterm software here: https://mobaxterm.mobatek.net/download-home-edition.html
 
-- Launch it then click on the `Session` icon then `SSH`:
+- Launch it then click on the `Session` icon:
 
-![Capture d’écran 2022-08-31 à 00 27 15](https://user-images.githubusercontent.com/12702322/187554613-7c3b7776-2e9e-41cd-a331-9bcb29324e07.jpg)
+![Capture d’écran 2022-12-12 à 02 03 41](https://user-images.githubusercontent.com/12702322/206940814-f1702b7b-d65a-491b-824d-d3b43a066151.jpg)
 
-![Capture d’écran 2022-08-31 à 00 28 03](https://user-images.githubusercontent.com/12702322/187554724-47adc66d-b76a-4351-8d81-c077c41072c2.jpg)
+- Then on then `SSH` icon:
+
+![Capture d’écran 2022-12-12 à 02 08 09](https://user-images.githubusercontent.com/12702322/206940944-c0817b21-7cce-471c-90bd-f8dfc1ce22f2.jpg)
 
 - Enter the IP address of your Speeder Pad in the `Remote Host` field, check the `Specify username` box and enter the username `pi` in the field then click on `OK`:
 
-![Capture d’écran 2022-09-03 à 14 10 39](https://user-images.githubusercontent.com/12702322/188269957-c6e8fd1c-f9e1-44ed-86bf-6bd5ced24552.jpg)
+![Capture d’écran 2022-12-12 à 02 10 23](https://user-images.githubusercontent.com/12702322/206941163-a3c8d2cc-1a1b-467b-8c57-9a3ca0095b29.jpg)
 
 - On the new displayed window, enter the password `flsun` (it's not displayed when typing, this is normal):
 
-![Capture d’écran 2022-09-03 à 14 16 09](https://user-images.githubusercontent.com/12702322/188270050-8db7c386-dd59-49bb-ba04-ad8014766a2e.jpg)
+![Capture d’écran 2022-12-12 à 02 12 15](https://user-images.githubusercontent.com/12702322/206941248-47377e1f-fbba-4ed6-b2b4-c1a030d9d056.jpg)
 
 - An authorization window will appear, authorize it. It's also possible that another window asking you to change the password will appear, ignore it.
 
 - Once connected, on the left part of the window you have access to the folders and files of your Speeder Pad and on the right part to the SSH command prompt window:
 
-![Capture d’écran 2022-09-03 à 14 20 15](https://user-images.githubusercontent.com/12702322/188270163-c9e24cf3-d11a-4870-bc0b-343b1bd32d61.jpg)
+![Capture d’écran 2022-12-12 à 02 13 17](https://user-images.githubusercontent.com/12702322/206941372-21da318e-0175-4219-bc4d-7fbf3f360dcb.jpg)
 
 <br />
 
@@ -310,11 +312,11 @@ git clone https://github.com/th33xitus/kiauh.git
 ```
 - This window should appear:
 
-![Capture d’écran 2022-09-03 à 15 13 44](https://user-images.githubusercontent.com/12702322/188272063-58e8e06c-338a-42a1-abb0-5492dbe781c4.jpg)
+![Capture d’écran 2022-12-12 à 02 16 15](https://user-images.githubusercontent.com/12702322/206941553-23be7162-0e73-43fa-a548-7011b231edd7.jpg)
 
 - Enter in `3) [Remove]` menu by typing `3` then `Enter`:
 
-![Capture d’écran 2022-09-03 à 15 26 31](https://user-images.githubusercontent.com/12702322/188272462-49994d56-11a7-438a-bbd8-f0511c36640d.jpg)
+![Capture d’écran 2022-12-12 à 02 17 02](https://user-images.githubusercontent.com/12702322/206941616-bc67ccbb-650d-43c4-ab77-a88044501e8a.jpg)
 
 - Remove `5) [KlipperScreen]` by typing `5` then `Enter` (you will need to enter the Root password).
 
@@ -352,13 +354,15 @@ sudo rm /home/pi/savedVariables3.cfg
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-![Capture d’écran 2022-09-03 à 15 39 18](https://user-images.githubusercontent.com/12702322/188273051-df392b33-ee7b-47d6-8166-f5be167b42f2.jpg)
+![Capture d’écran 2022-12-12 à 02 18 22](https://user-images.githubusercontent.com/12702322/206941715-af819654-88af-4423-97ae-9299618b4e53.jpg)
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
 - Select `1) [Python 3.x]  (recommended)` by typing `1` then `Enter`.
 
-- Then enter the number of Klipper instance by typing `1` then `Enter` and confirm by typing `Y`.
+- Then enter the number of Klipper instance by typing `1` and `Enter` to confirm:
+
+![Capture d’écran 2022-12-12 à 01 57 02](https://user-images.githubusercontent.com/12702322/206940381-4ecf5d7f-a763-49c0-98f9-e7aee72b518f.jpg)
 
 - When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
 
@@ -395,30 +399,29 @@ sudo reboot
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-![Capture d’écran 2022-09-03 à 15 39 18](https://user-images.githubusercontent.com/12702322/188273051-df392b33-ee7b-47d6-8166-f5be167b42f2.jpg)
+![Capture d’écran 2022-12-12 à 02 18 22](https://user-images.githubusercontent.com/12702322/206941715-af819654-88af-4423-97ae-9299618b4e53.jpg)
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
 - Select `1) [Python 3.x]  (recommended)` by typing `1` then `Enter`.
 
-- Then enter the number of Klipper instances by typing `3` then `Enter` and confirm by typing `Y`:
+- Then enter the number of Klipper instances by typing `3` and `Enter` to confirm:
 
-![Capture d’écran 2022-10-24 à 22 25 52](https://user-images.githubusercontent.com/12702322/197723826-72b546ed-16f3-4971-ad54-ab67b3ba8674.jpg)
+![Capture d’écran 2022-12-12 à 02 23 50](https://user-images.githubusercontent.com/12702322/206942150-f6ec553f-e44d-4b95-8cc4-afb715d8c659.jpg)
 
-- When asked to use custom names, select no by typing `N` then `Enter`:
+- When asked to assign custom names, select NO by typing `N` then `Enter`:
 
-![Capture d’écran 2022-10-24 à 22 26 12](https://user-images.githubusercontent.com/12702322/197724310-2357b324-c229-4077-a29b-b4db80010054.jpg)
+![Capture d’écran 2022-12-12 à 02 26 10](https://user-images.githubusercontent.com/12702322/206942312-2992495b-956c-48ec-8a68-68bc5aeb9bd6.jpg)
 
 - When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
 
 - Then enter the number of Moonraker instances by typing `3` then `Enter` and confirm by typing `Y`:
 
-![Capture d’écran 2022-10-24 à 22 34 07](https://user-images.githubusercontent.com/12702322/197724920-c8f79d1c-cf21-4e6d-a94f-4a20477645cd.jpg)
+![Capture d’écran 2022-12-12 à 02 34 51](https://user-images.githubusercontent.com/12702322/206942863-61f55f6a-a8c8-4234-b3cc-cfca87e6ccfa.jpg)
 
 - When it's done, you get your 3 instances with their IP addresses and ports, write them down they will be useful later:
 
-![Capture d’écran 2022-10-24 à 22 40 51](https://user-images.githubusercontent.com/12702322/197725342-1eb93080-4b94-4fe3-bbf3-51cacaa6ca6a.jpg)
-
+![Capture d’écran 2022-12-12 à 02 44 04](https://user-images.githubusercontent.com/12702322/206943753-4f871a6b-0917-4096-9dc9-0801eae58892.jpg)
 
 - Install `3) [Mainsail]` by typing `3` then `Enter` and select no by typing `n` when asked to add the recommended macros.
 
