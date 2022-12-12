@@ -356,7 +356,7 @@ sudo rm /home/pi/savedVariables3.cfg
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
-- Select `1) [Python 2.7]  (recommended)` by typing `1` then `Enter`.
+- Select `1) [Python 3.x]  (recommended)` by typing `1` then `Enter`.
 
 - Then enter the number of Klipper instance by typing `1` then `Enter` and confirm by typing `Y`.
 
@@ -399,7 +399,7 @@ sudo reboot
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
-- Select `1) [Python 2.7]  (recommended)` by typing `1` then `Enter`.
+- Select `1) [Python 3.x]  (recommended)` by typing `1` then `Enter`.
 
 - Then enter the number of Klipper instances by typing `3` then `Enter` and confirm by typing `Y`:
 
