@@ -200,6 +200,7 @@ sudo apt full-upgrade
 ```
 sudo apt remove tailscale
 sudo apt autoremove
+sudo rm /etc/apt/sources.list.d/tailscale.list
 ```
 - And this command to reboot:
 ```
