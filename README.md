@@ -767,6 +767,22 @@ sudo rm -rf /home/pi/crowsnest
 
 <br />
 
+
+**Add camera support on the Speeder Pad screen:**
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open the `KlipperScreen.conf` file and and uncomment the line:
+```
+camera_url: http://127.0.0.1/webcam/?action=stream
+```
+- Click on SAVE & RESTART at the top right to save the file.
+
+- A new `Camera` icon will appear in the `Actions` menu.
+
+
+<br />
+
 ## Install and Update Timelapse
 
 - In the SSH command prompt window, enter the following commands (one at a time):
