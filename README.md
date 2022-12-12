@@ -17,9 +17,9 @@
 - [Install Official Builds (1 instance)](#install-official-builds-1-instance)
 - [Install Official Builds (3 instances)](#install-official-builds-3-instances)
 - Update Motherboard Firmware
-  - [Update V400 Motherboard Firmware](#update-v400-motherboard-firmware)
-  - [Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware](#update-super-racer-motherboard-nano-v30v31-firmware)
-  - [Update Super Racer Motherboard (SKR 1.3) Firmware](#update-super-racer-motherboard-skr-13-firmware)
+  - [Update V400 Motherboard Firmware (MKS Robin Nano V2.0)](#update-v400-motherboard-firmware-mks-robin-nano-v20)
+  - [Update Super Racer Motherboard Firmware (MKS Robin Nano V3.0/V3.1)](#update-super-racer-motherboard-firmware-mks-robin-nano-v30v31)
+  - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 1.3)](#update-super-racer-motherboard-firmware-bigtreetech-skr-13)
 - [Use Configurations](#use-configurations)
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
 - [Update KlipperScreen](#update-klipperscreen)
@@ -450,7 +450,7 @@ sudo reboot
 
 <br />
 
-## Update V400 Motherboard Firmware
+## Update V400 Motherboard Firmware (MKS Robin Nano V2.0)
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
 
@@ -464,20 +464,8 @@ cd ~/klipper/
 make menuconfig
 ```
 - Select these settings:
-```
-[*] Enable extra low-level configuration options
-    Micro-controller Architecture (STMicroelectronics STM32)  --->
-    Processor model (STM32F103)  --->
-[ ] Only 10KiB of RAM (for rare stm32f103x6 variant)
-[ ] Disable SWD at startup (for GigaDevice stm32f103 clones)
-    Bootloader offset (28KiB bootloader)  --->
-    Clock Reference (8 MHz crystal)  --->
-    Communication interface (Serial (on USART3 PB11/PB10))  --->
-(250000) Baud rate for serial port
-()  GPIO pins to set at micro-controller startup
-```
 
-![Capture d’écran 2022-09-03 à 15 58 37](https://user-images.githubusercontent.com/12702322/188273866-1981aa1b-f01e-40c4-a8c4-4f1935adb821.jpg)
+![Capture d’écran 2022-12-12 à 02 59 51](https://user-images.githubusercontent.com/12702322/206945000-ec21cbf0-25ea-41dd-a5f1-26ee96732a77.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
@@ -500,19 +488,9 @@ make
 
 - Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO35.BIN.CUR`.
 
-Note: Access to the microSD port of the motherboard being impossible as it is, because of the pneufit just in front, I modeled a new support available in `STL Files` section.
-
-EDIT: On new V400 microSD port is now accessible, it's not needed to print a new support.
-
-![1](https://user-images.githubusercontent.com/12702322/188274940-e660a798-93a0-495f-9cf0-842c3893f6d4.jpg)
-
-I also recommend using a microSD extension for future updates to avoid removing the cover each time.
-
-![PXL_20220830_171401777 jpg f3eeafe2288a0e0428950cfca7c5eec7](https://user-images.githubusercontent.com/12702322/188275110-b74b6cf9-ab33-403e-be87-4fcad06fa6f5.jpg)
-
 <br />
 
-## Update Super Racer Motherboard (Nano V3.0/V3.1) Firmware
+## Update Super Racer Motherboard Firmware (MKS Robin Nano V3.0/V3.1)
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
 
@@ -526,18 +504,7 @@ cd ~/klipper/
 make menuconfig
 ```
 - Select these settings:
-```
-[*] Enable extra low-level configuration options
-    Micro-controller Architecture (STMicroelectronics STM32)  --->
-    Processor model (STM32F407)  --->
-    Bootloader offset (48KiB bootloader (MKS Robin Nano V3))  --->
-    Clock Reference (8 MHz crystal)  --->
-    Communication interface (USB (on PA11/PA12))  --->
-    USB ids  --->
-()  GPIO pins to set at micro-controller startup
-```
-
-![Capture d’écran 2022-10-21 à 15 28 29](https://user-images.githubusercontent.com/12702322/197207233-cac4f384-0827-4ae0-ba58-44158240d989.jpg)
+![Capture d’écran 2022-12-12 à 03 05 15](https://user-images.githubusercontent.com/12702322/206945543-71505dac-830a-4c9a-8328-becd2deb5780.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
@@ -558,7 +525,7 @@ make
 
 <br />
 
-## Update Super Racer Motherboard (SKR 1.3) Firmware
+## Update Super Racer Motherboard Firmware (BigTreeTech SKR 1.3)
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
 
@@ -572,17 +539,7 @@ cd ~/klipper/
 make menuconfig
 ```
 - Select these settings:
-```
-[*] Enable extra low-level configuration options
-    Micro-controller Architecture (LPC176x (Smoothieboard))  --->
-    Processor model (lpc1768 (100 MHz))  --->
-[*] Target board uses Smoothieware bootloader (NEW)
-    Communication interface (USB)  --->
-    USB ids  --->
-()  GPIO pins to set at micro-controller startup
-```
-
-![Capture d’écran 2022-10-20 à 22 31 36](https://user-images.githubusercontent.com/12702322/197057250-1b904584-57cc-4705-b753-37eacfa82764.jpg)
+![Capture d’écran 2022-12-12 à 03 11 55](https://user-images.githubusercontent.com/12702322/206946211-00f0fc3f-19ae-4ea7-8c57-3304cf25803e.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
@@ -910,8 +867,7 @@ managed_services: klipper moonraker
 
   - For **PrusaSclicer / SuperSlicer**, you just need to enable `Use firmware retraction` setting like that:
 
-![Capture d’écran 2022-09-16 à 02 14 56](https://user-images.githubusercontent.com/12702322/190531620-fd64b261-1fc7-41f3-82de-96fba5ab8315.jpg)
-
+![Capture d’écran 2022-12-12 à 03 21 47](https://user-images.githubusercontent.com/12702322/206947349-f522cf58-ce9f-4bd4-88a6-e73893efeaa3.jpg)
 <br />
 
 ## Calibrate your Printer
@@ -963,14 +919,7 @@ cd ~/klipper/
 make menuconfig
 ```
 - Select these settings:
-```
-[] Enable extra low-level configuration options
-   Micro-controller Architecture = (Raspberry Pi RP2040)  --->
-   Bootloader offset (No bootloader)  --->
-   Communication interface = (USB)  --->
-```
-
-![Capture d’écran 2022-09-03 à 18 28 10](https://user-images.githubusercontent.com/12702322/188279790-bba11b1c-16df-4e8e-bb80-e9400a1a4962.jpg)
+![Capture d’écran 2022-12-12 à 03 17 31](https://user-images.githubusercontent.com/12702322/206946770-d3ef1763-072e-48c8-8e48-7549f6dfd995.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
@@ -1059,14 +1008,7 @@ cd ~/klipper/
 make menuconfig
 ```
 - Select these settings:
-```
-[] Enable extra low-level configuration options
-   Micro-controller Architecture = (Raspberry Pi RP2040)  --->
-   Bootloader offset (No bootloader)  --->
-   Communication interface = (USB)  --->
-```
-
-![Capture d’écran 2022-09-03 à 18 28 10](https://user-images.githubusercontent.com/12702322/188279790-bba11b1c-16df-4e8e-bb80-e9400a1a4962.jpg)
+![Capture d’écran 2022-12-12 à 03 17 31](https://user-images.githubusercontent.com/12702322/206946812-b862ebc9-0787-4951-9686-6d9c288c0375.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
