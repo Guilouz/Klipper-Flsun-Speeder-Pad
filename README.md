@@ -70,7 +70,7 @@ Before using Klipper please read this documentations:
 ## Repo Changelog
 
 **13/12/2022:**
-  - Fixed delete `.gitconfig` file before installing Kiauh
+  - Fixed delete `.gitconfig` file before installing Kiauh in [Delete Flsun Builds](#delete-flsun-builds) section
 
 **12/12/2022:**
   - Updated `macros.cfg` file ([gcode_macro START_PRINT]) for latest Klipper changes with gcode_arcs
