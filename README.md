@@ -320,7 +320,11 @@ sudo reboot
 
 To upgrade to official builds, follow these instructions:
 
-- In the SSH command prompt window, enter the following command to install Kiauh:
+- In the SSH command prompt window, enter the following command:
+```
+sudo rm /home/pi/.gitconfig
+```
+- Then, enter the following command to install Kiauh:
 ```
 git clone https://github.com/th33xitus/kiauh.git
 ```
@@ -356,7 +360,6 @@ sudo rm -rf /home/pi/.moonraker_database_3
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
 sudo rm -rf /home/pi/moonraker-timelapse
-sudo rm /home/pi/.gitconfig
 sudo rm /home/pi/savedVariables1.cfg
 sudo rm /home/pi/savedVariables2.cfg
 sudo rm /home/pi/savedVariables3.cfg
