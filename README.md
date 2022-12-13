@@ -69,6 +69,9 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**13/12/2022:**
+  - Fixed delete `.gitconfig` file before installing Kiauh
+
 **12/12/2022:**
   - Updated `macros.cfg` file ([gcode_macro START_PRINT]) for latest Klipper changes with gcode_arcs
   - Added how to add camera support on Speeder Pad screen in [Improve Webcams Support](#improve-webcams-support) section
