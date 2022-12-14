@@ -223,6 +223,8 @@ sudo apt full-upgrade
 sudo apt remove tailscale
 sudo apt autoremove
 sudo rm /etc/apt/sources.list.d/tailscale.list
+sudo rm /usr/share/keyrings/tailscale-archive-keyring.gpg
+sudo rm -rf /var/lib/tailscale
 ```
 - And this command to reboot:
 ```
