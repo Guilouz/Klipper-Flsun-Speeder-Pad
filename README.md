@@ -222,9 +222,19 @@ sudo apt full-upgrade
 ```
 sudo apt remove tailscale
 sudo apt autoremove
-sudo rm /etc/apt/sources.list.d/tailscale.list
-sudo rm /usr/share/keyrings/tailscale-archive-keyring.gpg
 sudo rm -rf /var/lib/tailscale
+sudo rm -rf /var/cache/tailscale
+sudo rm -f /etc/apt/sources.list.d/tailscale.list
+sudo rm -f /etc/default/tailscaled
+sudo rm -f /etc/systemd/system/multi-user.target.wants/tailscaled.service
+sudo rm -f /etc/systemd/system/tailscaled.service
+sudo rm -f /usr/share/keyrings/tailscale-archive-keyring.gpg
+sudo rm -f /var/cache/apt/archives/tailscale_1.32.2_armhf.deb
+sudo rm -f /var/lib/dpkg/info/tailscale.list
+sudo rm -f /var/lib/dpkg/info/tailscale.postrm
+sudo rm -f /var/lib/systemd/deb-systemd-helper-enabled/multi-user.target.wants/tailscaled.service
+sudo rm -f /var/lib/systemd/deb-systemd-helper-enabled/tailscaled.service.dsh-also
+sudo rm -f /var/lib/systemd/deb-systemd-helper-masked/tailscaled.service
 ```
 - And this command to reboot:
 ```
@@ -327,7 +337,7 @@ To upgrade to official builds, follow these instructions:
 
 - In the SSH command prompt window, enter the following command:
 ```
-sudo rm /home/pi/.gitconfig
+sudo rm -f /home/pi/.gitconfig
 ```
 - Then, enter the following command to install Kiauh:
 ```
@@ -365,9 +375,9 @@ sudo rm -rf /home/pi/.moonraker_database_3
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
 sudo rm -rf /home/pi/moonraker-timelapse
-sudo rm /home/pi/savedVariables1.cfg
-sudo rm /home/pi/savedVariables2.cfg
-sudo rm /home/pi/savedVariables3.cfg
+sudo rm -f /home/pi/savedVariables1.cfg
+sudo rm -f /home/pi/savedVariables2.cfg
+sudo rm -f /home/pi/savedVariables3.cfg
 ```
 
 <br />
