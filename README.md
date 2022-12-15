@@ -220,11 +220,14 @@ sudo apt full-upgrade
 ```
 - Then remove not needed dependencies (one command at a time):
 ```
-sudo apt remove tailscale
+sudo apt remove --purge tailscale
 sudo apt autoremove
 sudo rm /etc/apt/sources.list.d/tailscale.list
 sudo rm /usr/share/keyrings/tailscale-archive-keyring.gpg
-sudo rm -rf /var/lib/tailscale
+sudo rm -rf /var/cache/tailscale
+sudo apt autoclean
+sudo apt clean
+
 ```
 - And this command to reboot:
 ```
