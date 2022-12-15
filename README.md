@@ -362,15 +362,11 @@ git clone https://github.com/th33xitus/kiauh.git
 
 - Enter the following commands (one at a time):
 ```
-sudo rm -rf /home/pi/.moonraker_database_1
-sudo rm -rf /home/pi/.moonraker_database_2
-sudo rm -rf /home/pi/.moonraker_database_3
+sudo rm -rf /home/pi/.moonraker_database_1 && rm -rf /home/pi/.moonraker_database_2 && rm -rf /home/pi/.moonraker_database_3
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
 sudo rm -rf /home/pi/moonraker-timelapse
-sudo rm /home/pi/savedVariables1.cfg
-sudo rm /home/pi/savedVariables2.cfg
-sudo rm /home/pi/savedVariables3.cfg
+sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /home/pi/savedVariables3.cfg
 ```
 
 <br />
