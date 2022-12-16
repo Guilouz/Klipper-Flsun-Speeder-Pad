@@ -71,6 +71,7 @@ Before using Klipper please read this documentations:
 
 **16/12/2022:**
   - Fixed Start Gcode for PrusaSlicer / SuperSlicer (Thanks to Julien Geffray)
+  - Changed Hotend preheat to 150C° instead of 100C° in START_PRINT macro
 
 **13/12/2022:**
   - Fixed delete `.gitconfig` file before installing Kiauh in [Delete Flsun Builds](#delete-flsun-builds) section
