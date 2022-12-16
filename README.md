@@ -69,6 +69,9 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**16/12/2022:**
+  - Fixed Start Gcode for PrusaSlicer / SuperSlicer (Thanks to Julien Geffray)
+
 **13/12/2022:**
   - Fixed delete `.gitconfig` file before installing Kiauh in [Delete Flsun Builds](#delete-flsun-builds) section
 
