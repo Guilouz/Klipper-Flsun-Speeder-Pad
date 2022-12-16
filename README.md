@@ -220,11 +220,14 @@ sudo apt full-upgrade
 ```
 - Then remove not needed dependencies (one command at a time):
 ```
-sudo apt remove tailscale
+sudo apt remove --purge tailscale
 sudo apt autoremove
 sudo rm /etc/apt/sources.list.d/tailscale.list
 sudo rm /usr/share/keyrings/tailscale-archive-keyring.gpg
-sudo rm -rf /var/lib/tailscale
+sudo rm -rf /var/cache/tailscale
+sudo apt autoclean
+sudo apt clean
+
 ```
 - And this command to reboot:
 ```
@@ -345,7 +348,9 @@ git clone https://github.com/th33xitus/kiauh.git
 
 ![Capture d’écran 2022-12-12 à 02 17 02](https://user-images.githubusercontent.com/12702322/206941616-bc67ccbb-650d-43c4-ab77-a88044501e8a.jpg)
 
-- Remove `5) [KlipperScreen]` by typing `5` then `Enter` (you will need to enter the Root password).
+- Remove `7) [MJPG-Streamer]` by typing `7` then `Enter` (you will need to enter the Root password).
+
+- Remove `5) [KlipperScreen]` by typing `5` then `Enter`.
 
 - Remove `3) [Mainsail]` by typing `3` then `Enter`.
 
@@ -359,15 +364,11 @@ git clone https://github.com/th33xitus/kiauh.git
 
 - Enter the following commands (one at a time):
 ```
-sudo rm -rf /home/pi/.moonraker_database_1
-sudo rm -rf /home/pi/.moonraker_database_2
-sudo rm -rf /home/pi/.moonraker_database_3
+sudo rm -rf /home/pi/.moonraker_database_1 && rm -rf /home/pi/.moonraker_database_2 && rm -rf /home/pi/.moonraker_database_3
 sudo rm -rf /home/pi/klipper_config
 sudo rm -rf /home/pi/klipper_logs
 sudo rm -rf /home/pi/moonraker-timelapse
-sudo rm /home/pi/savedVariables1.cfg
-sudo rm /home/pi/savedVariables2.cfg
-sudo rm /home/pi/savedVariables3.cfg
+sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /home/pi/savedVariables3.cfg
 ```
 
 <br />
