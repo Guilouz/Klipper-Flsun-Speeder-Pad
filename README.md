@@ -933,6 +933,8 @@ managed_services: klipper moonraker
     - Start Gcode:
       ```
       START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]
+      M104 S[first_layer_temperature]
+      M190 S[first_layer_bed_temperature]
       ```
     - End Gcode:
       ```
