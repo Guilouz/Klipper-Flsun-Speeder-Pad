@@ -69,6 +69,9 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**24/12/2022:**
+  - Updated `macros.cfg` file ([gcode_macro START_PRINT])
+
 **16/12/2022:**
   - Fixed Start Gcode for PrusaSlicer / SuperSlicer (Thanks to Julien Geffray)
   - Changed Hotend preheat to 150C° instead of 100C° in START_PRINT macro
