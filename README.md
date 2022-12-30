@@ -69,6 +69,9 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**30/12/2022:**
+  - Fixed bad character in `printer.cfg` files for Super Racer
+
 **24/12/2022:**
   - Updated `macros.cfg` file ([gcode_macro START_PRINT])
 
