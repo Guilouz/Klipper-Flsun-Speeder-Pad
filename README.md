@@ -18,7 +18,7 @@
 - [Install Official Builds (1 instance)](#install-official-builds-1-instance)
 - [Install Official Builds (3 instances)](#install-official-builds-3-instances)
 - Update Motherboard Firmware
-  - [Update V400 Motherboard Firmware (MKS Robin Nano V2.0)](#update-v400-motherboard-firmware-mks-robin-nano-v20)
+  - [Update V400 Motherboard Firmware (MKS Robin Nano V2.0 / Nano V2.1 Clone)](#update-v400-motherboard-firmware-mks-robin-nano-v20--nano-v21-clone)
   - [Update V400 Motherboard Firmware (BigTreeTech SKR 3.0)](#update-v400-motherboard-firmware-bigtreetech-skr-30)
   - [Update Super Racer Motherboard Firmware (MKS Robin Nano V3.0/V3.1)](#update-super-racer-motherboard-firmware-mks-robin-nano-v30v31)
   - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 1.3)](#update-super-racer-motherboard-firmware-bigtreetech-skr-13)
@@ -484,7 +484,7 @@ sudo reboot
 
 <br />
 
-## Update V400 Motherboard Firmware (MKS Robin Nano V2.0)
+## Update V400 Motherboard Firmware (MKS Robin Nano V2.0 / Nano V2.1 Clone)
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
 
