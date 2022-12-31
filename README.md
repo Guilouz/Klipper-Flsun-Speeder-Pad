@@ -1107,7 +1107,7 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 ~/klippy-env/bin/pip install -v numpy
 ```
-- It's also necessary to compile firmware for Raspberry Pico, enter the following commands (one at a time):
+- It's also necessary to compile firmware for Fysetc Portable Input Shaper, enter the following commands (one at a time):
 ```
 cd ~/klipper/
 make menuconfig
