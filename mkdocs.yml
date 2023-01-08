@@ -1,0 +1,54 @@
+site_name: Klipper FLSun Speeder Pad
+theme:
+      name: material
+      features:
+            - content.code.copy
+            - navigation.indexes
+
+nav:
+      - Introduction: index.md
+      - Re-Install:
+              - Prerequisites: reinstall/prerequisites.md
+              - Flash SD Card: reinstall/flash-sd-card.md
+              - Flash Speeder Pad: reinstall/flash-speeder-pad.md
+              - Configure WiFi: reinstall/configure-wifi.md
+              - Connecting to SSH: reinstall/connecting-to-ssh.md
+              - Update Ubuntu: reinstall/update-ubuntu.md
+              - Change Timezone: reinstall/change-timezone.md
+              - Change WiFi Location: reinstall/change-wifi-location.md
+
+      - Configuration:
+              - Delete Old Configs: configuration/delete-old.md
+              - Single Instance:
+                      - Install: configuration/single-instance/install.md
+                      - Configure: configuration/single-instance/configure.md
+              - Multiple Instances:
+                      - Install: configuration/multiple-instances/install.md
+                      - Configure: configuration/multiple-instances/configure.md
+              - USB Serial: configuration/usb-serial.md
+              - Update KlipperScreen: configuration/update-klipperscreen.md
+              - Crowsnest: configuration/crowsnest.md
+              - Slicer Changes:
+                      - Start / End GCode: configuration/slicer-changes/start-end.md
+                      - Firmware Retraction: configuration/slicer-changes/firmware-retraction.md
+              - Calibration: configuration/calibration.md
+              - ADXL345:
+                      - configuration/adxl345/index.md
+                      - Raspberry Pi Pico: configuration/adxl345/raspberry-pi-pico.md
+                      - Fysetc Portable Input Shaper: configuration/adxl345/fysetc.md
+              - Neopixels: configuration/neopixels.md
+
+      - Firmware:
+              - firmware/index.md
+              - Super Racer:
+                      - MKS Robin Nano v3.x: firmware/super-racer/mks-robin-nano-3-x.md
+                      - BigTreeTech SKR 1.3: firmware/super-racer/bigtreetech-skr-1-3.md
+              - v400:
+                      - MKS Robin Nano v2.0 / Nano v2.1 Clone: firmware/v400/mks-robin-nano-2-0.md
+                      - BigTreeTech SKR 3.0: firmware/v400/bigtreetech-skr-3-0.md
+
+      - Misc:
+              - Change Log: misc/changelog.md
+              - STL Files: misc/stl-files.md
+              - Useful Links: misc/useful-links.md
+              - Thanks: misc/thanks.md
