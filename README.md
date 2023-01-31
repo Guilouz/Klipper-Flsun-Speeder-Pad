@@ -1449,7 +1449,7 @@ The V400 was shipped with a spare Thermistor, which you can use to monitor the E
 [temperature_sensor Enclosure]
 sensor_pin: PC2
 sensor_type: EPCOS 100K B57560G104F
-min_temp: -5!i!
+min_temp: -5
 max_temp: 70
 ```
 
