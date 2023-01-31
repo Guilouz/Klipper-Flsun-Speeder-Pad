@@ -32,6 +32,7 @@
 - [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
 - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
+- [Add Enclosure Temperature Sensor](#add-enclosure-temperature-sensor)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -1434,6 +1435,23 @@ method: printer.gcode.script
 params: {"script":"SPEED_PROGRESS"}
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+<br />
+
+## Add Enclosure Temperature Sensor
+The V400 was shipped with a spare Thermistor, which you can use to monitor the Enclosure temperature. On the MKS Robin Nano board, connect the Thermistor to the `TH2` slot and place the sensor end in your enclosure. Add the following into your `printer.cfg` and click on `SAVE & RESTART`:
+
+```
+########################################
+# Enclosure Sensor Settings
+########################################
+
+[temperature_sensor Enclosure]
+sensor_pin: PC2
+sensor_type: EPCOS 100K B57560G104F
+min_temp: -5!i!
+max_temp: 70
+```
 
 <br />
 
