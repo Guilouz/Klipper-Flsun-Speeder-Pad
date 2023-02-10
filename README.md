@@ -24,6 +24,7 @@
   - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 1.3)](#update-super-racer-motherboard-firmware-bigtreetech-skr-13)
 - [Use Configurations](#use-configurations)
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
+- [Fix Shutdown button in Mainsail](#fix-shutdown-button-in-mainsail)
 - [Update KlipperScreen](#update-klipperscreen)
 - [Improve Webcams Support](#improve-webcams-support)
 - [Install and Update Timelapse](#install-and-update-timelapse)
@@ -68,6 +69,9 @@ Before using Klipper please read this documentations:
 <br />
 
 ## Repo Changelog
+
+**10/02/2023:**
+  - Added new section to fix Shutdown button in Mainsail (need to have latest update of Moonraker)
 
 **30/12/2022:**
   - Fixed bad character in `printer.cfg` files for Super Racer
@@ -743,6 +747,29 @@ serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
 - Click on `SAVE & RESTART` at the top right to save the file.
 
 - Your printer should connect to your PAD.
+
+<br />
+
+## Fix Shutdown button in Mainsail
+
+Shutdown button in Mainsail only restarts the Pad because some distros don't support `poweroff` function and this is the case for the Ubuntu Operating System of the Pad.
+
+To correct this, in the SSH command prompt window, enter the following commands (one at time):
+```
+cd ~/moonraker/scripts
+./set-policykit-rules.sh
+sudo reboot
+```
+- After reboot, go to your Mainsail Web interface then select the `Machine` tab.
+
+- Open the `moonraker.conf` file and add the following lines:
+```
+[machine]
+shutdown_action: halt
+```
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+- The Shutdown button now properly shuts off the Pad.
 
 <br />
 
