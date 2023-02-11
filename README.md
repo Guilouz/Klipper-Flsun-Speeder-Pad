@@ -362,7 +362,7 @@ git clone https://github.com/th33xitus/kiauh.git
 
 ![Capture d’écran 2022-12-12 à 02 17 02](https://user-images.githubusercontent.com/12702322/206941616-bc67ccbb-650d-43c4-ab77-a88044501e8a.jpg)
 
-- Remove `7) [MJPG-Streamer]` by typing `7` then `Enter` (you will need to enter the Root password).
+- Remove `8) [MJPG-Streamer]` by typing `8` then `Enter` (you will need to enter the Root password).
 
 - Remove `5) [KlipperScreen]` by typing `5` then `Enter`.
 
