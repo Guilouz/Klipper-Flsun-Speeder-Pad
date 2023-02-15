@@ -736,6 +736,13 @@ ls /dev/serial/by-id/*
 
 ![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
 
+- If you have multiple printers connected and only see one motherboard when running this command, try this command instead :
+```
+ls /dev/serial/by-path/*
+```
+
+- If the second command shows multiple results but the first one does not, adjust the directions accordingly, so all instances of ```/by-id/``` are replaced with ```/by-path/```
+
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
 - Open `printer.cfg` file and find `[mcu]` section.
@@ -1473,3 +1480,4 @@ params: {"script":"SPEED_PROGRESS"}
 - [Desuuuu](https://github.com/Desuuuu/klipper-macros) & [danorder](https://github.com/danorder) for the basics of some macros.
 - [Jonny Lissoos](https://www.facebook.com/JonnyEL972) for his Timelapse instruction PDF.
 - [Iago Diaz](https://www.facebook.com/iago.diaz.90) & [Mathieu Chantome](https://www.facebook.com/mathieu.chantome) for their tests.
+- [AbomShep](https://github.com/AbomShep) for his tips to connect multiple printers on one board.
