@@ -1099,7 +1099,7 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
   This could prevent the nozzle from scratching or sinking on the bed in the event of an incorrect adjustment of the Z-Offset.
   
-- After performing all printer calibrations, then start a print and adjust the first layer using babysteps via the `Adjustments` button in KlipperScreen or via the `Printhead` section in Mainsail:
+- After performing all printer calibrations, then start a print and adjust the first layer using babysteps via the `Adjustments` button in KlipperScreen or via the `Headline` section in Mainsail:
 
   <img src="https://user-images.githubusercontent.com/12702322/219790848-3df39a8d-f5e8-4d1b-97bf-976226c09b20.png" width="400">
 
