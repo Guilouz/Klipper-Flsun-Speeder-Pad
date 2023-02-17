@@ -76,6 +76,7 @@ Before using Klipper please read this documentations:
   - New version of KlipperScreen which now allows to calibrate the Z-Offset and apply a safety Gcode Offset of 2mm before starting the first print
   - Added configuration files for Super Racer with BigTreetech SKR 2.0 Rev A and Rev B
   - Added new section to fix Shutdown button in Mainsail
+  - Improved 'Calibrate your Printer' section for new changes
   - Added Start / End Gcode for Simplify3D
 
 **10/02/2023:**
