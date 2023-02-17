@@ -1,0 +1,1 @@
+START_PRINT BED_TEMP=[platform0_temperature] EXTRUDER_TEMP=[extruder0_temperature]
