@@ -22,6 +22,7 @@
   - [Update V400 Motherboard Firmware (BigTreeTech SKR 3.0)](#update-v400-motherboard-firmware-bigtreetech-skr-30)
   - [Update Super Racer Motherboard Firmware (MKS Robin Nano V3.0/V3.1)](#update-super-racer-motherboard-firmware-mks-robin-nano-v30v31)
   - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 1.3)](#update-super-racer-motherboard-firmware-bigtreetech-skr-13)
+  - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 2.0)](#update-super-racer-motherboard-firmware-bigtreetech-skr-20)
 - [Use Configurations](#use-configurations)
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
 - [Fix Shutdown button in Mainsail](#fix-shutdown-button-in-mainsail)
@@ -69,6 +70,13 @@ Before using Klipper please read this documentations:
 <br />
 
 ## Repo Changelog
+
+**17/02/2023:**
+  - Updated all configuration files so that they are in line with the new version of KlipperScreen. **All your files need to be replaced with the new ones**
+  - New version of KlipperScreen which now allows to calibrate the Z-Offset and apply a safety Gcode Offset of 2mm before starting the first print
+  - Added configuration files for Super Racer with BigTreetech SKR 2.0 Rev A and Rev B
+  - Added new section to fix Shutdown button in Mainsail
+  - Added Start / End Gcode for Simplify3D
 
 **10/02/2023:**
   - Added new section to fix Shutdown button in Mainsail (need to have latest update of Moonraker)
@@ -143,7 +151,7 @@ Note: A microSD card of at least 32 GB is required.
 
 - Launch Raspberry Pi Imager:
 
-![187550209-0614dc72-369c-4dbd-be49-226c02d87a56](https://user-images.githubusercontent.com/12702322/194968538-4aa44d04-9965-4a57-88c0-99a5deed1670.png)
+  <img src="https://user-images.githubusercontent.com/12702322/194968538-4aa44d04-9965-4a57-88c0-99a5deed1670.png">
 
 - Select `Speeder_Pad_V1.1_Restoration-221019.xz` image file as `Operating System` by selecting `Use custom`.
 
@@ -157,11 +165,11 @@ Note: A microSD card of at least 32 GB is required.
 
 - A loading bar should appear:
 
-![3](https://user-images.githubusercontent.com/12702322/196795418-12e3064a-59bd-4bfe-b326-036553e77808.png)
+  <img src="https://user-images.githubusercontent.com/12702322/196795418-12e3064a-59bd-4bfe-b326-036553e77808.png" width="700">
 
 - And wait until the bar is fully charged and green, this may take several minutes (10/15 minutes):
 
-![4](https://user-images.githubusercontent.com/12702322/196795445-4f680693-a39d-4f79-a605-bb0b380cf57c.png)
+  <img src="https://user-images.githubusercontent.com/12702322/196795445-4f680693-a39d-4f79-a605-bb0b380cf57c.png" width="700">
 
 - When it's done, turn off Speeder Pad and remove the microSD card.
 
@@ -651,6 +659,48 @@ make
 
 <br />
 
+## Update Super Racer Motherboard Firmware (BigTreeTech SKR 2.0)
+
+There are two revisions of BigTreetech SKR 2.0 motherboards, one with an **SMT32F407** processor called **Rev A** and the other with an **SMT32F429** processor called **Rev B**:
+
+| SMT32F407 (Rev A)   | SMT32F429 (Rev B)                           |
+| :---------: | :----------------------------------: |
+| ![SMT32F407](https://user-images.githubusercontent.com/12702322/219621259-b4c4f4b6-fa66-42cb-94b9-d48a631802c5.png)   | ![SMT32F429](https://user-images.githubusercontent.com/12702322/219621431-3efe5ef1-b546-49c8-8e91-c7b9d6a32f5e.png)  |
+
+It's important that your motherboard firmware version matches with the installed Klipper version.
+
+Version is visible on `System Loads` tile -> `mcu` section (in `Machine` tab).
+
+To update firmware, follow these instructions:
+
+- In the SSH command prompt window, enter the following commands (one at a time):
+```
+cd ~/klipper/
+make menuconfig
+```
+- Select these settings for `BigTreeTech SKR 2.0 Rev A (STM32F407)` :
+![skr2 0-a](https://user-images.githubusercontent.com/12702322/219622176-46c4f792-eb97-4296-b1ba-8585cb1b2d2b.png)
+
+- Select these settings for `BigTreeTech SKR 2.0 Rev B (STM32F429)` :
+![skr2 0-b](https://user-images.githubusercontent.com/12702322/219622198-14757b3a-10b4-4283-bdc1-204b74c4637e.png)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following commands to compile firmware (one at a time):
+```
+make clean
+make
+```
+- Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+
+- Rename it to `firmware.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+
+- Insert the microSD card into the motherboard then turn on the printer.
+
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `FIRMWARE.BIN.CUR`.
+
+<br />
+
 ## Use Configurations
 
 **In case you use 1 instance:**
@@ -675,13 +725,13 @@ make
 
 - Open the `KlipperScreen.conf` file and edit it to enable multiple instance by removing the `#` symbols like this:
 
-![Sans titre-1 copie](https://user-images.githubusercontent.com/12702322/197651386-5a33d848-0416-421a-871f-c25288c84d4d.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/197651386-5a33d848-0416-421a-871f-c25288c84d4d.jpg" width="700">
 
 - Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
 
 - Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (The same IP addresses and ports obtained after installing Moonraker) like this:
 
-![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg" width="700">
 
 - You can now select `Printers` on left tab and switch to others printers.
 
@@ -734,7 +784,7 @@ ls /dev/serial/by-id/*
 ```
 - You should see the USB serial appear like this (serial is different depending on the motherboard):
 
-![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg" width="700">
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -793,11 +843,11 @@ install_script: scripts/KlipperScreen-install.sh
 
 - You will see a new KlipperScreen update appear, if you see a ⚠️DIRTY update, just select `Hard Recovery` to update.
 
-![Update Manager](https://user-images.githubusercontent.com/12702322/183909392-24aab778-c8ed-4f81-be39-ac51612bf12c.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/183909392-24aab778-c8ed-4f81-be39-ac51612bf12c.jpg" width="700">
 
 - Once installed you will have the new version of KlipperScreen and future updates will point directly to my repo like this:
 
-![Update](https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg" width="700">
 
 More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)
 
@@ -865,7 +915,7 @@ install_script: tools/install.sh
 
 - You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the `WEBCAMS` tab of Mainsail settings.
 
-![Capture d’écran 2022-10-29 à 21 46 51](https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg" width="700">
 
 <br />
 
@@ -942,7 +992,7 @@ managed_services: klipper moonraker
 
 - You will see a new `timelapse` line appear.
 
-![Capture d’écran 2022-09-04 à 18 46 12](https://user-images.githubusercontent.com/12702322/188324381-3ab16337-e7da-4029-a318-ba41a4884ded.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/188324381-3ab16337-e7da-4029-a318-ba41a4884ded.jpg" width="700">
 
 <br />
 
@@ -1016,20 +1066,47 @@ managed_services: klipper moonraker
 
 This calibrations can be done by Mainsail Interface with Macros or on Speeder Pad directly.
 
-- Start BED PID and save configuration.
+- Calibrate your extruder by calculing Rotation Distance (see this documentation : <a href="https://www.klipper3d.org/Rotation_Distance.html" target="blank">Rotation Distance | Klipper</a>)
 
-- Start HOTEND PID and save configuration.
+- Calibrate Z-OFFSET with `Z_OFFSET_CALIBRATION` macro.
 
-- Calibrate your extruder by calculing Rotation Distance.
+  - :warning: The leveling sensor must be connected for this operation !
 
-- Start ENDSTOP CALIBRATION and save configuration.
+  - This function performs a palpation on the bed, then raises the hotend and starts the manual adjustment function:
 
-- Start DELTA CALIBRATION and save configuration.
+    <img src="https://user-images.githubusercontent.com/12702322/219629680-28b7180f-5293-4198-9ac6-2da4fea12d1e.png" width="400">
+    
+  - Then remove the leveling sensor and using a piece of "copy machine paper" between the bed and the nozzle, adjust the height of the Z until you feel a little friction when pushing the paper back and forth. This helps determine the actual distance between the nozzle and the bed.
+    
+    Note: Prefer to use the buttons in the `ADVANCED` section, they are more precise and this could prevent the nozzle from forcing on the bed.
+  
+  - Once these steps are completed, you can click on `ACCEPT` to validate the Z-Offset measurement.
+  
+  - It's necessary to save the configuration by clicking on the `SAVE` macro.
 
-- Start BED LEVELING and save configuration.
+- Calibrate ENDSTOPS with `ENDSTOPS_CALIBRATION` macro and save the configuration by clicking on the `SAVE` macro.
 
-- Adjust Z-OFFSET, first you need to move to Z=0 and then adjust nozzle position with a sheet of paper.
-  - Note: The Z-Offset is saved in real time including when adjusting babysteps.
+- Start DELTA CALIBRATION with `DELTA_CALIBRATION` macro and save the configuration by clicking on the `SAVE` macro.
+
+- Start BED LEVELING with `BED_LEVELING` macro and save the configuration by clicking on the `SAVE` macro.
+
+- Start BED PID with `PID_BED_65` macro and save the configuration by clicking on the `SAVE` macro.
+
+- Start HOTEND PID with `PID_HOTEND_220` macro and save the configuration by clicking on the `SAVE` macro.
+
+- After all the calibrations done, I recommend to apply a Safety Offset of 2 mm via the `SECURITY_OFFSET` macro.
+
+  This could prevent the nozzle from scratching or sinking on the bed in the event of an incorrect adjustment of the Z-Offset.
+  
+- After performing all printer calibrations, then start a print and adjust the first layer using babysteps via the `Adjustments` button in KlipperScreen or via the `Printhead` section in Mainsail:
+
+  <img src="https://user-images.githubusercontent.com/12702322/219790848-3df39a8d-f5e8-4d1b-97bf-976226c09b20.png" width="400">
+
+- :warning: Don't save the Z-Offset value, a macro save automatically this value in the variables.cfg file and reload it automatically when Klipper starts:
+
+  <img src="https://user-images.githubusercontent.com/12702322/219791279-35edfc40-e84c-4f77-a7e7-993d28d28dec.png" width="400">
+
+- You can find a test STL to print to fit your first layer here: <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/First_Layer_Test.stl">First_Layer_Test.stl</a>
 
 <br />
 
@@ -1044,7 +1121,8 @@ You can use ADXL345 with FLSUN Speeder Pad for measuring Resonances via USB with
 - Cable, tin and soldering iron
 
 **Wiring:**
-![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
+
+<img src="https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png" width="600">
 
 - Some dependencies are required to use ADXL345, install them with this following commands (one at a time):
 ```
@@ -1085,7 +1163,7 @@ ls /dev/serial/by-id/*
 ```
 - You should see 2 serials appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`:
 
-![Capture d’écran 2022-09-03 à 18 48 39](https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg" width="700">
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -1133,7 +1211,7 @@ You can use Fysetc Portable Input Shaper with FLSUN Speeder Pad for measuring Re
 
 **Note:** You can cut the yellow edges to reduce the width
 
-![Capture d’écran 2022-10-27 à 21 40 08](https://user-images.githubusercontent.com/12702322/198383353-5e08d6dc-82d1-4491-b9ff-e9812d2ede15.jpg)
+<img src="https://user-images.githubusercontent.com/12702322/198383353-5e08d6dc-82d1-4491-b9ff-e9812d2ede15.jpg" width="500">
 
 - Some dependencies are required to use this accelerometer, install them with this following commands (one at a time):
 ```
@@ -1174,7 +1252,7 @@ ls /dev/serial/by-id/*
 ```
 - You should see 2 serials appear, that of the Fysetc Portable Input Shaper is the one with the mention `Klipper_rp2040`:
 
-![Capture d’écran 2022-09-03 à 18 48 39](https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg" width="700">
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -1249,226 +1327,29 @@ MEASURE_AXES_NOISE
 
 **Wiring for V400 (MKS Robin Nano V2.0):**
 
-![wiring](https://user-images.githubusercontent.com/12702322/189106620-6ebc2983-be6f-4fb2-a36e-89bb4cd7e54b.png)
+<img src="https://user-images.githubusercontent.com/12702322/189106620-6ebc2983-be6f-4fb2-a36e-89bb4cd7e54b.png" width="600">
 
 **Wiring for Super Racer (MKS Robin Nano V3.0/V3.1):**
 
-![wiring](https://user-images.githubusercontent.com/12702322/197017354-f78b9ec9-e959-41ba-b178-14a05bc11da8.png)
+<img src="https://user-images.githubusercontent.com/12702322/197017354-f78b9ec9-e959-41ba-b178-14a05bc11da8.png" width="600">
 
 **Wiring for Super Racer (BigTreeTech SKR 1.3):**
 
-![wiring](https://user-images.githubusercontent.com/12702322/197060341-a616cc7e-d92d-47be-963e-61aeb41b734b.jpg)
+<img src="https://user-images.githubusercontent.com/12702322/197060341-a616cc7e-d92d-47be-963e-61aeb41b734b.jpg" width="600">
 
+**Wiring for Super Racer (BigTreeTech SKR 2.0):**
+
+<img src="https://user-images.githubusercontent.com/12702322/219787859-237c8ffc-0716-4e8f-89ee-6b93883a558f.png" width="600">
 
 **Configuration:**
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
+- Then import the `KlipperScreen.conf` file located in `NeoPixels` folder of the pack (make sure you get the correct version V400 or Super Racer in the respective folders).
+
 - Open the `printer.cfg` file and modify the following line by removing the `#` at the very beginning:
 ```
 [include neopixels.cfg]  #Enable if you want to use Neopixels
-```
-- Now open the `KlipperScreen.conf` file and copy all of this code just before line `#~# --- Do not edit below this line. This section is auto generated --- #~#`:
-```
-[menu __main actions neopixels]
-name: {{ gettext('Neopixels') }}
-icon: neopixels
-
-[menu __main actions neopixels led_off]
-name: {{ gettext('Off') }}
-icon: neopixels-off
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_OFF"}
-
-[menu __main actions neopixels led_on]
-name: {{ gettext('On') }}
-icon: neopixels-on
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ON"}
-
-[menu __main actions neopixels led_blue]
-name: {{ gettext('Blue') }}
-icon: neopixels-blue
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_BLUE"}
-
-[menu __main actions neopixels led_red]
-name: {{ gettext('Red') }}
-icon: neopixels-red
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_RED"}
-
-[menu __main actions neopixels led_green]
-name: {{ gettext('Green') }}
-icon: neopixels-green
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_GREEN"}
-
-[menu __main actions neopixels led_yellow]
-name: {{ gettext('Yellow') }}
-icon: neopixels-yellow
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_YELLOW"}
-
-[menu __main actions neopixels led_orange]
-name: {{ gettext('Orange') }}
-icon: neopixels-orange
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ORANGE"}
-
-[menu __main actions neopixels led_violet]
-name: {{ gettext('Violet') }}
-icon: neopixels-violet
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_VIOLET"}
-
-[menu __main actions neopixels hotend_glow]
-name: {{ gettext('Hotend (All)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_GLOW"}
-
-[menu __main actions neopixels hotend_progress]
-name: {{ gettext('Hotend (One by One)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_PROGRESS"}
-
-[menu __main actions neopixels bed_glow]
-name: {{ gettext('Bed (All)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_GLOW"}
-
-[menu __main actions neopixels bed_progress]
-name: {{ gettext('Bed (One by One)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_PROGRESS"}
-
-[menu __main actions neopixels percent_glow]
-name: {{ gettext('Progress (All)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_GLOW"}
-
-[menu __main actions neopixels percent_progress]
-name: {{ gettext('Progress (One by One)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_PROGRESS"}
-
-[menu __main actions neopixels speed_glow]
-name: {{ gettext('Speed (All)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_GLOW"}
-
-[menu __main actions neopixels speed_progress]
-name: {{ gettext('Speed (One by One)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_PROGRESS"}
-
-[menu __print neopixels]
-name: {{ gettext('Neopixels') }}
-icon: neopixels
-
-[menu __print neopixels led_off]
-name: {{ gettext('Off') }}
-icon: neopixels-off
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_OFF"}
-
-[menu __print neopixels led_on]
-name: {{ gettext('On') }}
-icon: neopixels-on
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ON"}
-
-[menu __print neopixels led_blue]
-name: {{ gettext('Blue') }}
-icon: neopixels-blue
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_BLUE"}
-
-[menu __print neopixels led_red]
-name: {{ gettext('Red') }}
-icon: neopixels-red
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_RED"}
-
-[menu __print neopixels led_green]
-name: {{ gettext('Green') }}
-icon: neopixels-green
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_GREEN"}
-
-[menu __print neopixels led_yellow]
-name: {{ gettext('Yellow') }}
-icon: neopixels-yellow
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_YELLOW"}
-
-[menu __print neopixels led_orange]
-name: {{ gettext('Orange') }}
-icon: neopixels-orange
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ORANGE"}
-
-[menu __print neopixels led_violet]
-name: {{ gettext('Violet') }}
-icon: neopixels-violet
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_VIOLET"}
-
-[menu __print neopixels hotend_glow]
-name: {{ gettext('Hotend (All)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_GLOW"}
-
-[menu __print neopixels hotend_progress]
-name: {{ gettext('Hotend (One by One)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_PROGRESS"}
-
-[menu __print neopixels bed_glow]
-name: {{ gettext('Bed (All)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_GLOW"}
-
-[menu __print neopixels bed_progress]
-name: {{ gettext('Bed (One by One)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_PROGRESS"}
-
-[menu __print neopixels percent_glow]
-name: {{ gettext('Progress (All)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_GLOW"}
-
-[menu __print neopixels percent_progress]
-name: {{ gettext('Progress (One by One)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_PROGRESS"}
-
-[menu __print neopixels speed_glow]
-name: {{ gettext('Speed (All)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_GLOW"}
-
-[menu __print neopixels speed_progress]
-name: {{ gettext('Speed (One by One)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_PROGRESS"}
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
 
