@@ -988,6 +988,16 @@ managed_services: klipper moonraker
       ```
       END_PRINT
       ```
+      
+   - For **Simplify3D**:
+    - Start Gcode:
+      ```
+      START_PRINT BED_TEMP=[platform0_temperature] EXTRUDER_TEMP=[extruder0_temperature]
+      ```
+    - End Gcode:
+      ```
+      END_PRINT
+      ```
  
  <br />
 
