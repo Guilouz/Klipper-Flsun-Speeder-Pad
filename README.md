@@ -71,6 +71,10 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**18/02/2023:**
+  - Fixed V400 Hotend LED for some configuration files
+  - Fixed Z-Offset in configuration files
+
 **17/02/2023:**
   - Updated all configuration files so that they are in line with the new version of KlipperScreen. **All your files need to be replaced with the new ones**
   - New version of KlipperScreen which now allows to calibrate the Z-Offset and apply a safety Gcode Offset of 2mm before starting the first print
