@@ -8,7 +8,7 @@
 
 **Update Process:**
 
-- Backup your MCU USB Serial, Rotation Distance, Input Shapping, Pressure Advance and PID values from your `printer.cfg` file.
+- Backup your MCU USB Serial, Rotation Distance, Input Shapping, Pressure Advance and PID values from your existing `printer.cfg` file.
 
 - Download and install new configuration files here: [Use Configurations](#use-configurations).
 
