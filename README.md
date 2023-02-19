@@ -536,7 +536,7 @@ To update firmware, follow these instructions:
 cd ~/klipper/
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
 
 ![Capture d’écran 2022-12-12 à 02 59 51](https://user-images.githubusercontent.com/12702322/206945000-ec21cbf0-25ea-41dd-a5f1-26ee96732a77.jpg)
 
@@ -578,8 +578,10 @@ To update firmware, follow these instructions:
 cd ~/klipper/
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+
 ![Capture d’écran 2022-12-12 à 22 27 05](https://user-images.githubusercontent.com/12702322/207158189-83cac62b-dbed-475d-b9fa-edea571bf294.jpg)
+
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
 - Enter the following commands to compile firmware (one at a time):
@@ -626,7 +628,8 @@ To update firmware, follow these instructions:
 cd ~/klipper/
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+
 ![Capture d’écran 2022-12-12 à 03 05 15](https://user-images.githubusercontent.com/12702322/206945543-71505dac-830a-4c9a-8328-becd2deb5780.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
@@ -661,7 +664,8 @@ To update firmware, follow these instructions:
 cd ~/klipper/
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+
 ![Capture d’écran 2022-12-12 à 03 11 55](https://user-images.githubusercontent.com/12702322/206946211-00f0fc3f-19ae-4ea7-8c57-3304cf25803e.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
@@ -702,10 +706,12 @@ To update firmware, follow these instructions:
 cd ~/klipper/
 make menuconfig
 ```
-- Select these settings for `BigTreeTech SKR 2.0 Rev A (STM32F407)` :
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings for `BigTreeTech SKR 2.0 Rev A (STM32F407)`:
+
 ![skr2 0-a](https://user-images.githubusercontent.com/12702322/219622176-46c4f792-eb97-4296-b1ba-8585cb1b2d2b.png)
 
-- Select these settings for `BigTreeTech SKR 2.0 Rev B (STM32F429)` :
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings for `BigTreeTech SKR 2.0 Rev B (STM32F429)`:
+
 ![skr2 0-b](https://user-images.githubusercontent.com/12702322/219622198-14757b3a-10b4-4283-bdc1-204b74c4637e.png)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
