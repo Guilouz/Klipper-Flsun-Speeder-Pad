@@ -2,9 +2,13 @@
 
 ![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/196842330-e200350d-496f-4a1b-a8f7-1793d781dccb.jpg)
 
+<br />
+
 <img alt="warning" src="https://user-images.githubusercontent.com/12702322/219944940-9b9e8707-6ab6-4f67-ae43-999679f4ab56.png">
 
 Download and install new configuration files here : [Use Configurations](#use-configurations)
+
+<br />
 
 ## Table of Contents
 
