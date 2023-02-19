@@ -6,7 +6,15 @@
 
 <img alt="warning" src="https://user-images.githubusercontent.com/12702322/219944940-9b9e8707-6ab6-4f67-ae43-999679f4ab56.png">
 
-Download and install new configuration files here : [Use Configurations](#use-configurations)
+**Update Process:**
+
+- Backup your USB Serial, Rotation Distance and PID values from your `printer.cfg` file.
+
+- Download and install new configuration files here: [Use Configurations](#use-configurations).
+
+- Report your USB Serial, Rotation Distance and PID values in the new `printer.cfg` file.
+
+- Start the new calibration process here: [Calibrate your Printer](#calibrate-your-printer)
 
 <br />
 
