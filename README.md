@@ -392,7 +392,7 @@ git clone https://github.com/th33xitus/kiauh.git
 
 - Enter in `3) [Remove]` menu by typing `3` then `Enter`:
 
-![Capture d’écran 2022-12-12 à 02 17 02](https://user-images.githubusercontent.com/12702322/206941616-bc67ccbb-650d-43c4-ab77-a88044501e8a.jpg)
+<img width="1302" alt="Capture d’écran 2023-02-19 à 15 25 22" src="https://user-images.githubusercontent.com/12702322/219954428-23757dc0-97e0-49eb-b3f0-ed114b3ae916.png">
 
 - Remove `8) [MJPG-Streamer]` by typing `8` then `Enter` (you will need to enter the Root password).
 
@@ -427,7 +427,7 @@ sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /h
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-![Capture d’écran 2022-12-12 à 02 18 22](https://user-images.githubusercontent.com/12702322/206941715-af819654-88af-4423-97ae-9299618b4e53.jpg)
+<img width="1302" alt="Capture d’écran 2023-02-19 à 15 25 47" src="https://user-images.githubusercontent.com/12702322/219954449-6d80760e-864f-471a-8116-efaabac8fa45.png">
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
@@ -472,7 +472,7 @@ sudo reboot
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-![Capture d’écran 2022-12-12 à 02 18 22](https://user-images.githubusercontent.com/12702322/206941715-af819654-88af-4423-97ae-9299618b4e53.jpg)
+<img width="1302" alt="Capture d’écran 2023-02-19 à 15 25 47" src="https://user-images.githubusercontent.com/12702322/219954458-755d20e5-dc7f-486d-9c5d-858aeef5a2f1.png">
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
