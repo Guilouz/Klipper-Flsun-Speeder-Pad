@@ -87,6 +87,9 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**19/02/2023:**
+  - Fixed "default" bed mesh in START_PRINT macro.
+
 **18/02/2023:**
   - Fixed V400 Hotend LED for some configuration files
   - Fixed Z-Offset in configuration files
