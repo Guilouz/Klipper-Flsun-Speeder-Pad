@@ -1185,13 +1185,12 @@ make
 cd ~
 sudo mount /dev/sda1 /mnt
 sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
-sudo umount /mnt
 ```
 - And now, type this command to retrieve the serial:
 ```
 ls /dev/serial/by-id/*
 ```
-- You should see 2 serials appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`:
+- You should see 2 serials appear, one is your printer serial an other is the Raspberry Pi Pico, the one with the mention `Klipper Rp2040`:
 
   <img src="https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg" width="700">
 
@@ -1274,13 +1273,12 @@ make
 cd ~
 sudo mount /dev/sda1 /mnt
 sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
-sudo umount /mnt
 ```
 - And now, type this command to retrieve the serial:
 ```
 ls /dev/serial/by-id/*
 ```
-- You should see 2 serials appear, that of the Fysetc Portable Input Shaper is the one with the mention `Klipper_rp2040`:
+- You should see 2 serials appear, one is your printer serial an other is the Fysetc Portable Input Shaper, the one with the mention `Klipper Rp2040`:
 
   <img src="https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg" width="700">
 
