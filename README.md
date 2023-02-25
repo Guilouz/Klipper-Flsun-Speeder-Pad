@@ -1186,7 +1186,9 @@ cd ~
 sudo mount /dev/sda1 /mnt
 sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
 ```
-- And now, type this command to retrieve the serial:
+- Now disconnect and reconnect the accelerometer, without holding the `BOOTSEL` button this time to restart it in normal mode.
+
+- Then, type this command to retrieve the serial:
 ```
 ls /dev/serial/by-id/*
 ```
@@ -1274,7 +1276,9 @@ cd ~
 sudo mount /dev/sda1 /mnt
 sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
 ```
-- And now, type this command to retrieve the serial:
+- Now disconnect and reconnect the accelerometer, without holding the button this time to restart it in normal mode.
+
+- Then, type this command to retrieve the serial:
 ```
 ls /dev/serial/by-id/*
 ```
