@@ -392,11 +392,11 @@ git clone https://github.com/th33xitus/kiauh.git
 
 - Enter in `3) [Remove]` menu by typing `3` then `Enter`:
 
-<img width="1302" alt="Capture d’écran 2023-02-19 à 15 25 22" src="https://user-images.githubusercontent.com/12702322/219954428-23757dc0-97e0-49eb-b3f0-ed114b3ae916.png">
+<img width="1302" alt="Capture d’écran 2023-02-28 à 11 32 56" src="https://user-images.githubusercontent.com/12702322/221829210-55866535-b1fd-4914-9ee9-978ee39ec45e.png">
 
-- Remove `8) [MJPG-Streamer]` by typing `8` then `Enter` (you will need to enter the Root password).
+- Remove `9) [MJPG-Streamer]` by typing `9` then `Enter` (you will need to enter the Root password).
 
-- Remove `5) [KlipperScreen]` by typing `5` then `Enter`.
+- Remove `6) [KlipperScreen]` by typing `6` then `Enter`.
 
 - Remove `3) [Mainsail]` by typing `3` then `Enter`.
 
