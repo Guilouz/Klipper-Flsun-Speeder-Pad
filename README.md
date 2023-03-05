@@ -87,7 +87,7 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
-**19/02/2023:**
+**05/03/2023:**
   - Fixed "default" bed mesh in START_PRINT macro.
 
 **18/02/2023:**
