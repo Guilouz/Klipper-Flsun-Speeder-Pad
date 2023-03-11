@@ -87,6 +87,9 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**12/03/2023:**
+  - Improve Gcode Arc support.
+
 **05/03/2023:**
   - Updated macros files to load default Bed Mesh at startup.
 
