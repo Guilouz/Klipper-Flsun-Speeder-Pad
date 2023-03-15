@@ -1243,6 +1243,8 @@ You can use ADXL345 with FLSUN Speeder Pad for measuring Resonances via USB with
 - Some dependencies are required to use ADXL345, install them with this following commands (one at a time):
 ```
 sudo apt update
+```
+```
 sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 - Followed by this command to install Numpy in Klipper's environment:
