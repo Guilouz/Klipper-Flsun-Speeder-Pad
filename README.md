@@ -393,11 +393,11 @@ cd ~ && git clone https://github.com/th33xitus/kiauh.git
 ```
 - This window should appear:
 
-![Capture d’écran 2022-12-12 à 02 16 15](https://user-images.githubusercontent.com/12702322/206941553-23be7162-0e73-43fa-a548-7011b231edd7.jpg)
+<img width="1302" alt="remove1" src="https://user-images.githubusercontent.com/12702322/225440262-79329b4c-b4ad-4199-9534-7003a701c82c.png">
 
 - Enter in `3) [Remove]` menu by typing `3` then `Enter`:
 
-<img width="1302" alt="Capture d’écran 2023-02-28 à 11 32 56" src="https://user-images.githubusercontent.com/12702322/221829210-55866535-b1fd-4914-9ee9-978ee39ec45e.png">
+<img width="1302" alt="remove2" src="https://user-images.githubusercontent.com/12702322/225440293-56ccef51-b580-4f92-aaad-459980b8a22f.png">
 
 - Remove `10) [MJPG-Streamer]` by typing `10` then `Enter` (you will need to enter your user password).
 
@@ -437,7 +437,7 @@ sudo rm -rf /home/pi/.cache && rm -rf /home/pi/.gnupg && rm -rf /home/pi/.local 
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-<img width="1302" alt="Capture d’écran 2023-02-19 à 15 25 47" src="https://user-images.githubusercontent.com/12702322/219954449-6d80760e-864f-471a-8116-efaabac8fa45.png">
+<img width="1303" alt="install1" src="https://user-images.githubusercontent.com/12702322/225440361-a351a1fc-97dd-4d9e-94c9-e7516a17106c.png">
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
@@ -505,7 +505,7 @@ In this section, we will install 3 instances but you can install 2 if you want (
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-<img width="1302" alt="Capture d’écran 2023-02-19 à 15 25 47" src="https://user-images.githubusercontent.com/12702322/219954458-755d20e5-dc7f-486d-9c5d-858aeef5a2f1.png">
+<img width="1303" alt="install1" src="https://user-images.githubusercontent.com/12702322/225440573-aa230cb5-5506-4de5-bbcb-c2b5bf28f701.png">
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
