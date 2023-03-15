@@ -967,7 +967,8 @@ It's possible to improve Webcams support and in particular the framerate by unin
 /home/pi/printer_1_data/logs
 ```
 - For more than 1 instance when asked to specify path for environment file (crowsnest.env) type:
-```/home/pi/printer_1_data/systemd
+```
+/home/pi/printer_1_data/systemd
 ```
 - For more than 1 instance when asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
 
