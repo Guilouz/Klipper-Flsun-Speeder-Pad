@@ -954,25 +954,25 @@ It's possible to improve Webcams support and in particular the framerate by unin
 
 - For 1 instance, nothing is asked and installation is automatic.
 
-- For more than 1 instance, when asked to continue with configuration select `Yes` by typing `y`.
+    - For more than 1 instance, when asked to continue with configuration select `Yes` by typing `y`.
 
-- For more than 1 instance when asked to continue to install Crowsnest select `Yes` by typing `Y` then `Enter`.
+    - For more than 1 instance when asked to continue to install Crowsnest select `Yes` by typing `Y` then `Enter`.
 
-- For more than 1 instance  when asked to specify path for config file (crowsnest.conf) type:
-```
-/home/pi/printer_1_data/config
-```
-- For more than 1 instance when asked to specify path for log file (crowsnest.logs) type:
-```
-/home/pi/printer_1_data/logs
-```
-- For more than 1 instance when asked to specify path for environment file (crowsnest.env) type:
-```
-/home/pi/printer_1_data/systemd
-```
-- For more than 1 instance when asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
+    - For more than 1 instance  when asked to specify path for config file (crowsnest.conf) type:
+    ```
+    /home/pi/printer_1_data/config
+    ```
+    - For more than 1 instance when asked to specify path for log file (crowsnest.logs) type:
+    ```
+    /home/pi/printer_1_data/logs
+    ```
+    - For more than 1 instance when asked to specify path for environment file (crowsnest.env) type:
+    ```
+    /home/pi/printer_1_data/systemd
+    ```
+    - For more than 1 instance when asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
 
-- For more than 1 instance when asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
+    - For more than 1 instance when asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
 
 - When asked to reboot NOW select `Yes` by typing `y` then `Enter`.
 
