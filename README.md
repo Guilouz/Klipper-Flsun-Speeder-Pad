@@ -52,7 +52,7 @@
 - For Advanced Users Only
   - [Enable Root Access](#enable-root-access)
   - [Change SSH Welcome Message and Cleanup Files](#change-ssh-welcome-message-and-cleanup-files)
-  - [Set a static IP address](#set-a-static-ip-adress)
+  - [Set a Static IP Address](#set-a-static-ip-address)
   - [Change Boot Logo](#change-boot-logo)
 - [Special Thanks](#special-thanks)
 
@@ -1504,7 +1504,7 @@ Coming Soon...
 
 <br />
 
-## Set a static IP address
+## Set a Static IP Address
 
 Coming Soon...
 
