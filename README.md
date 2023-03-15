@@ -1266,6 +1266,8 @@ make menuconfig
 - Enter the following commands to compile firmware (one at a time):
 ```
 make clean
+```
+```
 make
 ```
 - Plug Raspberry Pi Pico into one of the Speeder Pad's USB ports while holding down the `BOOTSEL` button.
