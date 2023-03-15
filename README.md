@@ -86,7 +86,7 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
-**14/03/2023:**
+**15/03/2023:**
   - Replace FLSUN restoration image file by new V1.2
 
 **12/03/2023:**
@@ -177,7 +177,7 @@ By default, Root access is not allowed on Speeder Pad. To enable it, follow thes
 
 Note: A microSD card of at least 32 GB is required.
 
-- Download this restoration image and unzip it: [Speeder Pad Restoration Image V1.2](https://drive.google.com/file/d/11FraKdFJ5tIX5uzo8qZxaVx9p5Q_Lzoa/view?usp=share_link)
+- Download this restoration image and unzip it: <a href="https://drive.google.com/file/d/11FraKdFJ5tIX5uzo8qZxaVx9p5Q_Lzoa/view?usp=share_link" target="_blank">Speeder Pad Restoration Image V1.2</a>
 
 - Download and install Raspberry Pi Imager here: https://www.raspberrypi.com/software/
 
