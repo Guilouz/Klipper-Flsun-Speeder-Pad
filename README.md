@@ -1492,6 +1492,30 @@ MEASURE_AXES_NOISE
 
 <br />
 
+## Enable Root Access
+
+Coming Soon...
+
+<br />
+
+## Change SSH Welcome Message and Cleanup Files
+
+Coming Soon...
+
+<br />
+
+## Set a static IP address
+
+Coming Soon...
+
+<br />
+
+## Change Boot Logo
+
+Coming Soon...
+
+<br />
+
 ## Special Thanks
 
 - [FLSUN](https://flsun3d.com/) for sending me a free V400 and Speeder Pad.
