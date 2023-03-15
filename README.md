@@ -26,7 +26,7 @@
 - [STL Files](#stl-files)
 - [Restore OS Image File](#restore-os-image-file)
 - [SSH Connection](#ssh-connection)
-- [Change Password](#change-password)
+- [Change pi User Password](#change-pi-userpassword)
 - [Update Ubuntu dependencies](#update-ubuntu-dependencies)
 - [Change Timezone](#change-timezone)
 - [Change Wi-Fi Location](#change-wi-fi-location)
@@ -49,6 +49,11 @@
 - [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
 - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
+- For Advanced Users Only
+  - [Enable Root Access](#enable-root-access)
+  - [Change SSH Welcome Message and Cleanup Files](#change-ssh-welcome-message-and-cleanup-files)
+  - [Set a static IP address](#set-a-static-ip-adress)
+  - [Change Boot Logo](#change-boot-logo)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -247,7 +252,7 @@ Note: A microSD card of at least 32 GB is required.
 
 <br />
 
-## Change Password
+## Change pi User Password
 
 It's possible to change the password of the `pi` user:
 
