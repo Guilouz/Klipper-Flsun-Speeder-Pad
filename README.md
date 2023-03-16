@@ -885,7 +885,7 @@ cd ~ && ls /dev/serial/by-id/*
 
   <img src="https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg" width="700">
 
-- In case you use same multiple printers connected and you only see one serial when running this command, enter this one instead:
+- In case you use same multiple printers connected on the Speeder Pad and you only see one serial when running this command, enter this one instead:
 ```
 ls /dev/serial/by-path/*
 ```
