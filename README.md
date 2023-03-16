@@ -885,12 +885,11 @@ cd ~ && ls /dev/serial/by-id/*
 
   <img src="https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg" width="700">
 
-- If you have multiple printers connected and only see one motherboard when running this command, try this command instead :
+- In case you use same multiple printers connected and you only see one serial when running this command, enter this one instead:
 ```
 ls /dev/serial/by-path/*
 ```
-
-- If the second command shows multiple results but the first one does not, adjust the directions accordingly, so all instances of ```/by-id/``` are replaced with ```/by-path/```
+- If the second command shows multiple results, adjust the path of the serial accordingly, so all instances of ```/by-id/``` should be replaced with ```/by-path/```.
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
