@@ -1486,7 +1486,34 @@ MEASURE_AXES_NOISE
 
 ## Enable Root Access
 
-Coming Soon...
+- Connect in SSH and enter the following command (you will need to enter your user password):
+```
+sudo -i
+```
+- Then enter this command to change root password:
+```
+passwd
+```
+- Enter a password twice for the root user.
+
+- Then enter the following command:
+```
+sudo nano /etc/ssh/sshd_config
+```
+- Edit the file by replacing the line `#PermitRootLogin prohibit-password` by `PermitRootLogin yes`:
+
+<img width="1303" alt="Capture d’écran 2023-03-15 à 22 17 24" src="https://user-images.githubusercontent.com/12702322/225756175-cd0c2eeb-a9b7-41da-ba88-8bd674ba6ab6.png">
+
+- Then on your keyboard press the keys `Ctrl + X` to exit, `Y` to save and `Enter` to validate.
+
+- Enter this command to apply change:
+```
+sudo service ssh restart
+```
+
+- Log out of the current SSH session.
+
+- You can now login to SSH with `root` user rather than `pi`.
 
 <br />
 
