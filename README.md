@@ -2,6 +2,8 @@
 
 ![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/196842330-e200350d-496f-4a1b-a8f7-1793d781dccb.jpg)
 
+<br />
+
 ## Table of Contents
 
 - [About](#about)
@@ -10,22 +12,23 @@
 - [STL Files](#stl-files)
 - [Restore OS Image File](#restore-os-image-file)
 - [SSH Connection](#ssh-connection)
-- [Change Password](#change-password)
+- [Change pi User Password](#change-pi-userpassword)
 - [Update Ubuntu dependencies](#update-ubuntu-dependencies)
 - [Change Timezone](#change-timezone)
 - [Change Wi-Fi Location](#change-wi-fi-location)
 - [Delete Flsun Builds](#delete-flsun-builds)
 - [Install Official Builds (1 instance)](#install-official-builds-1-instance)
-- [Install Official Builds (3 instances)](#install-official-builds-3-instances)
+- [Install Official Builds (Multiple instances)](#install-official-builds-multiple-instances)
 - Update Motherboard Firmware
   - [Update V400 Motherboard Firmware (MKS Robin Nano V2.0 / Nano V2.1 Clone)](#update-v400-motherboard-firmware-mks-robin-nano-v20--nano-v21-clone)
   - [Update V400 Motherboard Firmware (BigTreeTech SKR 3.0)](#update-v400-motherboard-firmware-bigtreetech-skr-30)
   - [Update Super Racer Motherboard Firmware (MKS Robin Nano V3.0/V3.1)](#update-super-racer-motherboard-firmware-mks-robin-nano-v30v31)
   - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 1.3)](#update-super-racer-motherboard-firmware-bigtreetech-skr-13)
+  - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 2.0)](#update-super-racer-motherboard-firmware-bigtreetech-skr-20)
 - [Use Configurations](#use-configurations)
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
-- [Update KlipperScreen](#update-klipperscreen)
-- [Improve Webcams Support](#improve-webcams-support)
+- [Fix Shutdown button in Mainsail](#fix-shutdown-button-in-mainsail)
+- [Add Webcams Support](#add-webcams-support)
 - [Install and Update Timelapse](#install-and-update-timelapse)
 - [Slicer Side Changes](#slicer-side-changes)
 - [Calibrate your Printer](#calibrate-your-printer)
@@ -33,6 +36,11 @@
 - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - [Add Enclosure Temperature Sensor](#add-enclosure-temperature-sensor)
+- For Advanced Users Only
+  - [Enable Root Access](#enable-root-access)
+  - [Change SSH Welcome Message and Cleanup Files](#change-ssh-welcome-message-and-cleanup-files)
+  - [Set a Static IP Address](#set-a-static-ip-address)
+  - [Change Boot Logo](#change-boot-logo)
 - [Special Thanks](#special-thanks)
 
 <br />
@@ -69,6 +77,33 @@ Before using Klipper please read this documentations:
 <br />
 
 ## Repo Changelog
+
+**15/03/2023:**
+  - Replace FLSUN restoration image file by new V1.2
+
+**12/03/2023:**
+  - Improve Gcode Arc support.
+
+**05/03/2023:**
+  - Updated macros files to load default Bed Mesh at startup.
+
+**19/02/2023:**
+  - Fixed "default" bed mesh in START_PRINT macro.
+
+**18/02/2023:**
+  - Fixed V400 Hotend LED for some configuration files
+  - Fixed Z-Offset in configuration files
+
+**17/02/2023:**
+  - Updated all configuration files so that they are in line with the new version of KlipperScreen. **All your files need to be replaced with the new ones**
+  - New version of KlipperScreen which now allows to calibrate the Z-Offset and apply a safety Gcode Offset of 2mm before starting the first print
+  - Added configuration files for Super Racer with BigTreetech SKR 2.0 Rev A and Rev B
+  - Added new section to fix Shutdown button in Mainsail
+  - Improved 'Calibrate your Printer' section for new changes
+  - Added Start / End Gcode for Simplify3D
+
+**10/02/2023:**
+  - Added new section to fix Shutdown button in Mainsail (need to have latest update of Moonraker)
 
 **30/12/2022:**
   - Fixed bad character in `printer.cfg` files for Super Racer
@@ -124,7 +159,7 @@ Many usefull STL for FLSUN Super Racer and V400 can be found on my profiles:
 - Printables: [Here](https://www.printables.com/social/352655-guilouz/models)
 - Thingiverse: [Here](https://www.thingiverse.com/guilouz/designs)
 - ADXL345 Mount for Super Racer : [Here](https://www.printables.com/model/245136-adxl345-mount-for-flsun-super-racer)
-- Fysetc Portable Input Shaper Mount for Super Racer : [Here](https://www.thingiverse.com/thing:5634625)
+- Fysetc Portable Input Shaper Mount for Super Racer : [Here](https://www.printables.com/model/405796-flsun-super-racer-fysetc-portable-input-shaper-mou/files)
 
 <br />
 
@@ -134,15 +169,15 @@ By default, Root access is not allowed on Speeder Pad. To enable it, follow thes
 
 Note: A microSD card of at least 32 GB is required.
 
-- Download this restoration image and unzip it: [Speeder Pad 1.1 Restoration Image](https://drive.google.com/file/d/1AK9RU-RRE33f7k3TYQ_7vIOV8tARfyd0/view?usp=sharing)
+- Download this restoration image and unzip it: <a href="https://drive.google.com/file/d/11FraKdFJ5tIX5uzo8qZxaVx9p5Q_Lzoa/view?usp=share_link" target="_blank">Speeder Pad Restoration Image V1.2</a>
 
 - Download and install Raspberry Pi Imager here: https://www.raspberrypi.com/software/
 
 - Launch Raspberry Pi Imager:
 
-![187550209-0614dc72-369c-4dbd-be49-226c02d87a56](https://user-images.githubusercontent.com/12702322/194968538-4aa44d04-9965-4a57-88c0-99a5deed1670.png)
+  <img src="https://user-images.githubusercontent.com/12702322/194968538-4aa44d04-9965-4a57-88c0-99a5deed1670.png">
 
-- Select `Speeder_Pad_V1.1_Restoration-221019.xz` image file as `Operating System` by selecting `Use custom`.
+- Select `Speeder_Pad_V1.2_Restoration-230303.xz` image file as `Operating System` by selecting `Use custom`.
 
 - Select your microSD card as `Storage`.
 
@@ -154,17 +189,19 @@ Note: A microSD card of at least 32 GB is required.
 
 - A loading bar should appear:
 
-![3](https://user-images.githubusercontent.com/12702322/196795418-12e3064a-59bd-4bfe-b326-036553e77808.png)
+  <img src="https://user-images.githubusercontent.com/12702322/196795418-12e3064a-59bd-4bfe-b326-036553e77808.png" width="700">
 
 - And wait until the bar is fully charged and green, this may take several minutes (10/15 minutes):
 
-![4](https://user-images.githubusercontent.com/12702322/196795445-4f680693-a39d-4f79-a605-bb0b380cf57c.png)
+  <img src="https://user-images.githubusercontent.com/12702322/196795445-4f680693-a39d-4f79-a605-bb0b380cf57c.png" width="700">
 
 - When it's done, turn off Speeder Pad and remove the microSD card.
 
 - Turn Speeder Pad back on, it should start normally and arrive on KlipperScreen splashscreen.
 
-- Go to `Menu` --> `Network` and connect it to your WiFi network.
+- Wait until KlipperScreen show a connection error message on the Speeder Pad and go to `Menu` --> `Network` and connect it to your WiFi network.
+
+- Once connected, restart the Speeder Pad for the connection to take effect.
 
 - You can now connect to SSH with this login: 
 ```
@@ -202,7 +239,7 @@ Note: A microSD card of at least 32 GB is required.
 
 <br />
 
-## Change Password
+## Change pi User Password
 
 It's possible to change the password of the `pi` user:
 
@@ -221,7 +258,7 @@ passwd
 
 ## Update Ubuntu dependencies
 
-- In the SSH command prompt window, enter the following command to download updates list (you will need to enter the Root password):
+- In the SSH command prompt window, enter the following command to download updates list (you will need to enter your user password):
 ```
 sudo apt update
 ```
@@ -229,16 +266,15 @@ sudo apt update
 ```
 sudo apt full-upgrade
 ```
-- Then remove not needed dependencies (one command at a time):
+- Then remove not needed dependencies if present (one command at a time):
 ```
-sudo apt remove --purge tailscale
 sudo apt autoremove
-sudo rm /etc/apt/sources.list.d/tailscale.list
-sudo rm /usr/share/keyrings/tailscale-archive-keyring.gpg
-sudo rm -rf /var/cache/tailscale
+```
+```
 sudo apt autoclean
+```
+```
 sudo apt clean
-
 ```
 - And this command to reboot:
 ```
@@ -296,7 +332,7 @@ country 00: DFS-UNSET
 ```
 sudo cat /usr/share/zoneinfo/zone.tab
 ```
-- To change the location enter the following command replacing `FR` by your country (you will need to enter the Root password):
+- To change the location enter the following command replacing `FR` by your country (you will need to enter your user password):
 ```
 sudo iw reg set FR
 ```
@@ -316,7 +352,7 @@ country FR: DFS-ETSI
         (5945 - 6425 @ 160), (N/A, 23), (N/A), NO-OUTDOOR
         (57000 - 71000 @ 2160), (N/A, 40), (N/A)
 ```
-- To make the location permanent, enter the following command replacing `FR` by your country (you will need to enter the Root password):
+- To make the location permanent, enter the following command replacing `FR` by your country (you will need to enter your user password):
 ```
 sudo sed -i 's/^REG.*=$/&FR/' /etc/default/crda
 ```
@@ -339,13 +375,9 @@ sudo reboot
 
 To upgrade to official builds, follow these instructions:
 
-- In the SSH command prompt window, enter the following command:
+- In the SSH command prompt window, enter the following command to install Kiauh:
 ```
-sudo rm /home/pi/.gitconfig
-```
-- Then, enter the following command to install Kiauh:
-```
-git clone https://github.com/th33xitus/kiauh.git
+cd ~ && git clone https://github.com/th33xitus/kiauh.git
 ```
 - Launch Kiauh by entering this command:
 ```
@@ -353,15 +385,15 @@ git clone https://github.com/th33xitus/kiauh.git
 ```
 - This window should appear:
 
-![Capture d’écran 2022-12-12 à 02 16 15](https://user-images.githubusercontent.com/12702322/206941553-23be7162-0e73-43fa-a548-7011b231edd7.jpg)
+<img width="1302" alt="remove1" src="https://user-images.githubusercontent.com/12702322/225440262-79329b4c-b4ad-4199-9534-7003a701c82c.png">
 
 - Enter in `3) [Remove]` menu by typing `3` then `Enter`:
 
-![Capture d’écran 2022-12-12 à 02 17 02](https://user-images.githubusercontent.com/12702322/206941616-bc67ccbb-650d-43c4-ab77-a88044501e8a.jpg)
+<img width="1302" alt="remove2" src="https://user-images.githubusercontent.com/12702322/225440293-56ccef51-b580-4f92-aaad-459980b8a22f.png">
 
-- Remove `7) [MJPG-Streamer]` by typing `7` then `Enter` (you will need to enter the Root password).
+- Remove `10) [MJPG-Streamer]` by typing `10` then `Enter` (you will need to enter your user password).
 
-- Remove `5) [KlipperScreen]` by typing `5` then `Enter`.
+- Remove `7) [KlipperScreen]` by typing `7` then `Enter`.
 
 - Remove `3) [Mainsail]` by typing `3` then `Enter`.
 
@@ -376,10 +408,15 @@ git clone https://github.com/th33xitus/kiauh.git
 - Enter the following commands (one at a time):
 ```
 sudo rm -rf /home/pi/.moonraker_database_1 && rm -rf /home/pi/.moonraker_database_2 && rm -rf /home/pi/.moonraker_database_3
-sudo rm -rf /home/pi/klipper_config
-sudo rm -rf /home/pi/klipper_logs
-sudo rm -rf /home/pi/moonraker-timelapse
+```
+```
+sudo rm -rf /home/pi/klipper_config && rm -rf /home/pi/klipper_logs && rm -rf /home/pi/moonraker-timelapse
+```
+```
 sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /home/pi/savedVariables3.cfg
+```
+```
+sudo rm -rf /home/pi/.cache && rm -rf /home/pi/.gnupg && rm -rf /home/pi/.local && rm -rf /home/pi/.config
 ```
 
 <br />
@@ -392,7 +429,7 @@ sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /h
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-![Capture d’écran 2022-12-12 à 02 18 22](https://user-images.githubusercontent.com/12702322/206941715-af819654-88af-4423-97ae-9299618b4e53.jpg)
+<img width="1303" alt="install1" src="https://user-images.githubusercontent.com/12702322/225440361-a351a1fc-97dd-4d9e-94c9-e7516a17106c.png">
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
@@ -412,24 +449,47 @@ sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /h
 
 - Enter the following commands (one at a time) to install KlipperScreen:
 ```
-git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
-cd ~/KlipperScreen
-./scripts/KlipperScreen-install.sh
+cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 ```
+```
+sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+```
+```
+./KlipperScreen/scripts/KlipperScreen-install.sh
+```
+
 Note: Installation may take several minutes.
 
 - When it's done, enter this commands (one at a time):
 ```
-cd ~
-ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_data/gcodes/USB-Disk
+cd ~ && ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_data/gcodes/USB-Disk
+```
+```
 sudo reboot
 ```
+- After reboot, go to your Mainsail Web interface then select the `Machine` tab.
+
+- Open the `moonraker.conf` file and add the following lines at the end of the file:
+```
+[update_manager KlipperScreen]
+type: git_repo
+path: /home/pi/KlipperScreen
+origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+env: /home/pi/.KlipperScreen-env/bin/python
+requirements: scripts/KlipperScreen-requirements.txt
+install_script: scripts/KlipperScreen-install.sh
+```
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+- You will get the latest versions of KlipperScreen which point to my repo (More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)).
+
 - Your Speeder Pad now running offical builds with 1 instance.
 
 <br />
 
-## Install Official Builds (3 instances)
+## Install Official Builds (Multiple instances)
+
+In this section, we will install 3 instances but you can install 2 if you want (no more than 3 is recommended).
 
 - Relaunch Kiauh by entering this command:
 ```
@@ -437,7 +497,7 @@ sudo reboot
 ```
 - Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-![Capture d’écran 2022-12-12 à 02 18 22](https://user-images.githubusercontent.com/12702322/206941715-af819654-88af-4423-97ae-9299618b4e53.jpg)
+<img width="1303" alt="install1" src="https://user-images.githubusercontent.com/12702322/225440573-aa230cb5-5506-4de5-bbcb-c2b5bf28f701.png">
 
 - Install `1) [Klipper]` by typing `1` then `Enter`.
 
@@ -469,21 +529,46 @@ sudo reboot
 
 - Enter the following commands (one at a time) to install KlipperScreen:
 ```
-git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
-cd ~/KlipperScreen
-./scripts/KlipperScreen-install.sh
+cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 ```
+```
+sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+```
+```
+./KlipperScreen/scripts/KlipperScreen-install.sh
+```
+
 Note: Installation may take several minutes.
 
 - When it's done, enter this commands (one at a time):
 ```
-cd ~
-ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_1_data/gcodes/USB-Disk
+cd ~ && ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_1_data/gcodes/USB-Disk
+```
+```
 ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_2_data/gcodes/USB-Disk
+```
+```
 ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_3_data/gcodes/USB-Disk
+```
+```
 sudo reboot
 ```
+- After reboot, go to your Mainsail Web interface then select the `Machine` tab.
+
+- Open the `moonraker.conf` file and add the following lines at the end of the file:
+```
+[update_manager KlipperScreen]
+type: git_repo
+path: /home/pi/KlipperScreen
+origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+env: /home/pi/.KlipperScreen-env/bin/python
+requirements: scripts/KlipperScreen-requirements.txt
+install_script: scripts/KlipperScreen-install.sh
+```
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+- You will get the latest versions of KlipperScreen which point to my repo (More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)).
+
 - Your Speeder Pad now running offical builds with 3 instances.
 
 <br />
@@ -499,9 +584,11 @@ To update firmware, follow these instructions:
 - In the SSH command prompt window, enter the following commands (one at a time):
 ```
 cd ~/klipper/
+```
+```
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
 
 ![Capture d’écran 2022-12-12 à 02 59 51](https://user-images.githubusercontent.com/12702322/206945000-ec21cbf0-25ea-41dd-a5f1-26ee96732a77.jpg)
 
@@ -510,6 +597,8 @@ make menuconfig
 - Enter the following commands to compile firmware (one at a time):
 ```
 make clean
+```
+```
 make
 ```
 - Then this one to convert firmware:
@@ -541,15 +630,21 @@ To update firmware, follow these instructions:
 - In the SSH command prompt window, enter the following commands (one at a time):
 ```
 cd ~/klipper/
+```
+```
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+
 ![Capture d’écran 2022-12-12 à 22 27 05](https://user-images.githubusercontent.com/12702322/207158189-83cac62b-dbed-475d-b9fa-edea571bf294.jpg)
+
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
 - Enter the following commands to compile firmware (one at a time):
 ```
 make clean
+```
+```
 make
 ```
 - Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
@@ -589,9 +684,12 @@ To update firmware, follow these instructions:
 - In the SSH command prompt window, enter the following commands (one at a time):
 ```
 cd ~/klipper/
+```
+```
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+
 ![Capture d’écran 2022-12-12 à 03 05 15](https://user-images.githubusercontent.com/12702322/206945543-71505dac-830a-4c9a-8328-becd2deb5780.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
@@ -599,6 +697,8 @@ make menuconfig
 - Enter the following commands to compile firmware (one at a time):
 ```
 make clean
+```
+```
 make
 ```
 - Super Racer motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
@@ -624,9 +724,12 @@ To update firmware, follow these instructions:
 - In the SSH command prompt window, enter the following commands (one at a time):
 ```
 cd ~/klipper/
+```
+```
 make menuconfig
 ```
-- Select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+
 ![Capture d’écran 2022-12-12 à 03 11 55](https://user-images.githubusercontent.com/12702322/206946211-00f0fc3f-19ae-4ea7-8c57-3304cf25803e.jpg)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
@@ -634,10 +737,60 @@ make menuconfig
 - Enter the following commands to compile firmware (one at a time):
 ```
 make clean
+```
+```
 make
 ```
 - Super Racer motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
 
+- Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+
+- Rename it to `firmware.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+
+- Insert the microSD card into the motherboard then turn on the printer.
+
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `FIRMWARE.BIN.CUR`.
+
+<br />
+
+## Update Super Racer Motherboard Firmware (BigTreeTech SKR 2.0)
+
+There are two revisions of BigTreetech SKR 2.0 motherboards, one with an **SMT32F407** processor called **Rev A** and the other with an **SMT32F429** processor called **Rev B**:
+
+| SMT32F407 (Rev A)   | SMT32F429 (Rev B)                           |
+| :---------: | :----------------------------------: |
+| ![SMT32F407](https://user-images.githubusercontent.com/12702322/219621259-b4c4f4b6-fa66-42cb-94b9-d48a631802c5.png)   | ![SMT32F429](https://user-images.githubusercontent.com/12702322/219621431-3efe5ef1-b546-49c8-8e91-c7b9d6a32f5e.png)  |
+
+It's important that your motherboard firmware version matches with the installed Klipper version.
+
+Version is visible on `System Loads` tile -> `mcu` section (in `Machine` tab).
+
+To update firmware, follow these instructions:
+
+- In the SSH command prompt window, enter the following commands (one at a time):
+```
+cd ~/klipper/
+```
+```
+make menuconfig
+```
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings for `BigTreeTech SKR 2.0 Rev A (STM32F407)`:
+
+![skr2 0-a](https://user-images.githubusercontent.com/12702322/219622176-46c4f792-eb97-4296-b1ba-8585cb1b2d2b.png)
+
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings for `BigTreeTech SKR 2.0 Rev B (STM32F429)`:
+
+![skr2 0-b](https://user-images.githubusercontent.com/12702322/219622198-14757b3a-10b4-4283-bdc1-204b74c4637e.png)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following commands to compile firmware (one at a time):
+```
+make clean
+```
+```
+make
+```
 - Get the firmware named `klipper.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
 
 - Rename it to `firmware.bin` and copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
@@ -656,13 +809,13 @@ make
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg` and `adxl345.cfg` files located in `Configurations` directory according to your printer.
+- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg` and `adxl345_fysetc.cfg` files located in `Configurations` directory according to your printer.
 
 - Restart Speeder Pad and printer to take effect.
 
 <br />
 
-**In case you use 3 instances:**
+**In case you use more than 1 instance:**
 
 - Download and unzip my repository zip file here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/archive/refs/heads/main.zip
 
@@ -672,13 +825,13 @@ make
 
 - Open the `KlipperScreen.conf` file and edit it to enable multiple instance by removing the `#` symbols like this:
 
-![Sans titre-1 copie](https://user-images.githubusercontent.com/12702322/197651386-5a33d848-0416-421a-871f-c25288c84d4d.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/197651386-5a33d848-0416-421a-871f-c25288c84d4d.jpg" width="700">
 
 - Go to the Mainsail settings (gear at the top right of the interface) and select `PRINTERS` tab.
 
-- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Pad and the port of each instance (The same IP addresses and ports obtained after installing Moonraker) like this:
+- Add as many printers as you have installed instances of Klipper/Moonraker by adding the IP address of your Speeder Pad and the port of each instance (The same IP addresses and ports obtained after installing Moonraker) like this:
 
-![Sans titre-2 copie](https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/197652480-330ed03f-4820-4507-a0e1-755ce286ea44.jpg" width="700">
 
 - You can now select `Printers` on left tab and switch to others printers.
 
@@ -723,15 +876,15 @@ path: ~/printer_3_data/gcodes
 
 ## Get USB Serial from Motherboard
 
-- Connect your printer to one of the Pad's USB ports.
+- Connect your printer to one of the Speeder Pad's USB ports.
 
 - Connect in SSH then enter the following command to retrieve the motherboard USB serial:
 ```
-ls /dev/serial/by-id/*
+cd ~ && ls /dev/serial/by-id/*
 ```
 - You should see the USB serial appear like this (serial is different depending on the motherboard):
 
-![Capture d’écran 2022-10-22 à 23 08 29](https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/197362963-65c93e37-1cd2-49d3-83d3-45a98450a44f.jpg" width="700">
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -743,41 +896,39 @@ serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
 ```
 - Click on `SAVE & RESTART` at the top right to save the file.
 
-- Your printer should connect to your PAD.
+- Your printer should connect to your Speeder Pad.
 
 <br />
 
-## Update KlipperScreen
+## Fix Shutdown button in Mainsail
 
-- Go to your Mainsail Web interface then select the `Machine` tab.
+Shutdown button in Mainsail only restarts the Speeder Pad because some distros don't support `poweroff` function and this is the case for the Ubuntu Operating System.
+
+To correct this, in the SSH command prompt window, enter the following commands (one at time):
+```
+cd ~/moonraker/scripts
+```
+```
+./set-policykit-rules.sh
+```
+```
+sudo reboot
+```
+- After reboot, go to your Mainsail Web interface then select the `Machine` tab.
 
 - Open the `moonraker.conf` file and add the following lines:
 ```
-[update_manager KlipperScreen]
-type: git_repo
-path: /home/pi/KlipperScreen
-origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-env: /home/pi/.KlipperScreen-env/bin/python
-requirements: scripts/KlipperScreen-requirements.txt
-install_script: scripts/KlipperScreen-install.sh
+[machine]
+shutdown_action: halt
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
 
-- You can now click the refresh button (still in the Machine tab) on the `Update Manager` tile.
+- The Shutdown button now properly shuts off the Pad.
 
-- You will see a new KlipperScreen update appear, if you see a ⚠️DIRTY update, just select `Hard Recovery` to update.
-
-![Update Manager](https://user-images.githubusercontent.com/12702322/183909392-24aab778-c8ed-4f81-be39-ac51612bf12c.jpg)
-
-- Once installed you will have the new version of KlipperScreen and future updates will point directly to my repo like this:
-
-![Update](https://user-images.githubusercontent.com/12702322/183990132-0a7673d1-2e51-484a-8113-e0bd54813995.jpg)
-
-More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)
 
 <br />
 
-## Improve Webcams Support
+## Add Webcams Support
 
 It's possible to improve Webcams support and in particular the framerate by uninstalling mjpg-streamer and installing Crowsnest daemon (see [here](https://github.com/mainsail-crew/crowsnest) for more info).
 
@@ -785,44 +936,41 @@ It's possible to improve Webcams support and in particular the framerate by unin
 
 **Installing Crowsnest:**
 
-- Enter the following commands (one at a time):
+- Launch Kiauh by entering this command:
 ```
-cd ~
-git clone https://github.com/mainsail-crew/crowsnest.git
-cd ~/crowsnest
-make config
+./kiauh/kiauh.sh
 ```
-- When asked to Continue select `Yes` by typing `Y` then `Enter`.
+- Enter in `1) [Install]` menu by typing `1` then `Enter`:
 
-- When asked to specify path for config file (crowsnest.conf):
-  - **For 1 instance:** You can press `Enter` directly
-  - **For 3 instances type:** `/home/pi/printer_1_data/config`
+- Install `11) [Crownest]` by typing `11` then `Enter`.
 
-- When asked to specify path for log file (crowsnest.logs):
-  - **For 1 instance:** You can press `Enter` directly
-  - **For 3 instances type:** `/home/pi/printer_1_data/logs`
+- For 1 instance, nothing is asked and installation is automatic.
 
-- When asked to specify path for environment file (crowsnest.env):
-  - **For 1 instance:** You can press `Enter` directly
-  - **For 3 instances type:** `/home/pi/printer_1_data/systemd`
+    - For more than 1 instance, when asked to continue with configuration select `Yes` by typing `y`.
 
-- When asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
+    - For more than 1 instance when asked to continue to install Crowsnest select `Yes` by typing `Y` then `Enter`.
 
-- When asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
+    - For more than 1 instance  when asked to specify path for config file (crowsnest.conf) type:
+    ```
+    /home/pi/printer_1_data/config
+    ```
+    - For more than 1 instance when asked to specify path for log file (crowsnest.logs) type:
+    ```
+    /home/pi/printer_1_data/logs
+    ```
+    - For more than 1 instance when asked to specify path for environment file (crowsnest.env) type:
+    ```
+    /home/pi/printer_1_data/systemd
+    ```
+    - For more than 1 instance when asked if Raspicam Fix should be applied select `No` by typing `N` then `Enter`.
 
-- Then enter this command to install:
-```
-sudo make install
-```
+    - For more than 1 instance when asked to add Crowsnest Update Manager entry to moonraker.conf select `No` by typing `N` then `Enter`.
+
 - When asked to reboot NOW select `Yes` by typing `y` then `Enter`.
 
-<br />
+- After restart, go to your Mainsail Web interface then click on `Machine` tab.
 
-**Updating Crowsnest:**
-
-- Go to your Mainsail Web interface then click on `Machine` tab.
-
-- Open the `moonraker.conf` file and add the following lines:
+- Open the `moonraker.conf` file and and add the following lines at the end of the file:
 ```
 [update_manager crowsnest]
 type: git_repo
@@ -839,19 +987,7 @@ install_script: tools/install.sh
 
 - You can now configure your webcam (resolution, fps, focus etc...) by clicking on the `EDIT CROWSNEST.CONF` link in the `WEBCAMS` tab of Mainsail settings.
 
-![Capture d’écran 2022-10-29 à 21 46 51](https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg)
-
-<br />
-
-
-**Uninstalling Crowsnest:**
-
-- If needed you can uninstall Crowsnest by entering the following commands (one at a time):
-```
-cd ~/crowsnest
-make uninstall
-sudo rm -rf /home/pi/crowsnest
-```
+  <img src="https://user-images.githubusercontent.com/12702322/198850218-a8e12baf-f057-40c5-8203-9cf5ff7d1efa.jpg" width="700">
 
 <br />
 
@@ -868,6 +1004,36 @@ camera_url: http://127.0.0.1/webcam/?action=stream
 
 - A new `Camera` icon will appear in the `Actions` menu.
 
+<br />
+
+
+**Uninstalling Crowsnest:**
+
+- If needed you can uninstall Crowsnest by entering this command:
+```
+./kiauh/kiauh.sh
+```
+- Enter in `3) [Remove]` menu by typing `3` then `Enter`:
+
+- Remove `9) [Crownest]` by typing `9` then `Enter`.
+
+- When asked if you want to remove Crowsnest select `Yes` by typing `y`.
+
+- When asked if you want to remove crowsnest.conf file select `Yes` by typing `y`.
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open the `moonraker.conf` file and and remove this lines:
+```
+[update_manager crowsnest]
+type: git_repo
+path: ~/crowsnest
+origin: https://github.com/mainsail-crew/crowsnest.git
+managed_services: crowsnest
+install_script: tools/install.sh
+```
+- When it's done, restart the Speeder Pad.
+
 
 <br />
 
@@ -877,29 +1043,47 @@ camera_url: http://127.0.0.1/webcam/?action=stream
 
 **In case you use 1 instance:**
 ```
-cd ~/
-git clone https://github.com/mainsail-crew/moonraker-timelapse.git
+cd ~ && git clone https://github.com/mainsail-crew/moonraker-timelapse.git
+```
+```
 ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker/moonraker/components/timelapse.py"
+```
+```
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_data/config/timelapse.cfg"
+```
+```
 sudo apt install ffmpeg
+```
+```
 sudo reboot
 ```
 
 **In case you use 3 instances:**
 ```
-cd ~/
-git clone https://github.com/mainsail-crew/moonraker-timelapse.git
+cd ~ && git clone https://github.com/mainsail-crew/moonraker-timelapse.git
+```
+```
 ln -sf "/home/pi/moonraker-timelapse/component/timelapse.py" "/home/pi/moonraker/moonraker/components/timelapse.py"
+```
+```
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_1_data/config/timelapse.cfg"
+```
+```
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_2_data/config/timelapse.cfg"
+```
+```
 ln -sf "/home/pi/moonraker-timelapse/klipper_macro/timelapse.cfg" "/home/pi/printer_3_data/config/timelapse.cfg"
+```
+```
 sudo apt install ffmpeg
+```
+```
 sudo reboot
 ```
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Open the `moonraker.conf` file and add the following lines:
+- Open the `moonraker.conf` file and add the following lines at the end of the file:
 ```
 [timelapse]
 
@@ -916,7 +1100,7 @@ managed_services: klipper moonraker
 
 - You will see a new `timelapse` line appear.
 
-![Capture d’écran 2022-09-04 à 18 46 12](https://user-images.githubusercontent.com/12702322/188324381-3ab16337-e7da-4029-a318-ba41a4884ded.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/188324381-3ab16337-e7da-4029-a318-ba41a4884ded.jpg" width="700">
 
 <br />
 
@@ -962,6 +1146,16 @@ managed_services: klipper moonraker
       ```
       END_PRINT
       ```
+      
+   - For **Simplify3D**:
+     - Start Gcode:
+       ```
+       START_PRINT BED_TEMP=[platform0_temperature] EXTRUDER_TEMP=[extruder0_temperature]
+       ```
+     - End Gcode:
+       ```
+       END_PRINT
+       ```
  
  <br />
 
@@ -980,20 +1174,47 @@ managed_services: klipper moonraker
 
 This calibrations can be done by Mainsail Interface with Macros or on Speeder Pad directly.
 
-- Start BED PID and save configuration.
+- Calibrate your extruder by calculing Rotation Distance (see this documentation : <a href="https://www.klipper3d.org/Rotation_Distance.html" target="blank">Rotation Distance | Klipper</a>)
 
-- Start HOTEND PID and save configuration.
+- Calibrate Z-OFFSET with `Z_OFFSET_CALIBRATION` macro.
 
-- Calibrate your extruder by calculing Rotation Distance.
+  - :warning: The leveling sensor must be connected for this operation !
 
-- Start ENDSTOP CALIBRATION and save configuration.
+  - This function performs a palpation on the bed, then raises the hotend and starts the manual adjustment function:
 
-- Start DELTA CALIBRATION and save configuration.
+    <img src="https://user-images.githubusercontent.com/12702322/219629680-28b7180f-5293-4198-9ac6-2da4fea12d1e.png" width="400">
+    
+  - Then remove the leveling sensor and using a piece of "copy machine paper" between the bed and the nozzle, adjust the height of the Z until you feel a little friction when pushing the paper back and forth. This helps determine the actual distance between the nozzle and the bed.
+    
+    Note: Prefer to use the buttons in the `ADVANCED` section, they are more precise and this could prevent the nozzle from forcing on the bed.
+  
+  - Once these steps are completed, you can click on `ACCEPT` to validate the Z-Offset measurement.
+  
+  - It's necessary to save the configuration by clicking on the `SAVE` macro.
 
-- Start BED LEVELING and save configuration.
+- Calibrate ENDSTOPS with `ENDSTOPS_CALIBRATION` macro and save the configuration by clicking on the `SAVE` macro.
 
-- Adjust Z-OFFSET, first you need to move to Z=0 and then adjust nozzle position with a sheet of paper.
-  - Note: The Z-Offset is saved in real time including when adjusting babysteps.
+- Start DELTA CALIBRATION with `DELTA_CALIBRATION` macro and save the configuration by clicking on the `SAVE` macro.
+
+- Start BED LEVELING with `BED_LEVELING` macro and save the configuration by clicking on the `SAVE` macro.
+
+- Start BED PID with `PID_BED_65` macro and save the configuration by clicking on the `SAVE` macro.
+
+- Start HOTEND PID with `PID_HOTEND_220` macro and save the configuration by clicking on the `SAVE` macro.
+
+- After all the calibrations done, I recommend to apply a Safety Offset of 2 mm via the `SECURITY_OFFSET` macro.
+
+  This could prevent the nozzle from scratching or sinking on the bed in the event of an incorrect adjustment of the Z-Offset.
+  
+- After performing all printer calibrations, then start a print and adjust the first layer using babysteps via the `Adjustments` button in KlipperScreen or via the `Headline` section in Mainsail:
+
+  <img src="https://user-images.githubusercontent.com/12702322/219790848-3df39a8d-f5e8-4d1b-97bf-976226c09b20.png" width="400">
+
+- :warning: Don't save the Z-Offset value, a macro save automatically this value in the variables.cfg file and reload it automatically when Klipper starts:
+
+  <img src="https://user-images.githubusercontent.com/12702322/219791279-35edfc40-e84c-4f77-a7e7-993d28d28dec.png" width="400">
+
+- You can find a test STL to print to fit your first layer here: <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/First_Layer_Test.stl">First_Layer_Test.stl</a>
 
 <br />
 
@@ -1008,11 +1229,14 @@ You can use ADXL345 with FLSUN Speeder Pad for measuring Resonances via USB with
 - Cable, tin and soldering iron
 
 **Wiring:**
-![ADXL345 Wiring](https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png)
+
+<img src="https://user-images.githubusercontent.com/12702322/188179060-33c3566d-80c7-4f19-8772-da85fd3704c4.png" width="600">
 
 - Some dependencies are required to use ADXL345, install them with this following commands (one at a time):
 ```
 sudo apt update
+```
+```
 sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 - Followed by this command to install Numpy in Klipper's environment:
@@ -1022,6 +1246,8 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 - It's also necessary to compile firmware for Raspberry Pico, enter the following commands (one at a time):
 ```
 cd ~/klipper/
+```
+```
 make menuconfig
 ```
 - Select these settings:
@@ -1032,24 +1258,28 @@ make menuconfig
 - Enter the following commands to compile firmware (one at a time):
 ```
 make clean
+```
+```
 make
 ```
 - Plug Raspberry Pi Pico into one of the Speeder Pad's USB ports while holding down the `BOOTSEL` button.
 
 - Type this commands to flash firmware (one at a time):
 ```
-cd ~
-sudo mount /dev/sda1 /mnt
+cd ~ && sudo mount /dev/sda1 /mnt
+```
+```
 sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
-sudo umount /mnt
 ```
-- And now, type this command to retrieve the serial:
-```
-ls /dev/serial/by-id/*
-```
-- You should see 2 serials appear, that of the Raspberry Pi Pico is the one with the mention `Klipper_rp2040`:
+- Now disconnect and reconnect the accelerometer, without holding the `BOOTSEL` button this time to restart it in normal mode.
 
-![Capture d’écran 2022-09-03 à 18 48 39](https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg)
+- Then, type this command to retrieve the serial:
+```
+cd ~ && ls /dev/serial/by-id/*
+```
+- You should see 2 serials appear, one is your printer serial an other is the Raspberry Pi Pico, the one with the mention `Klipper Rp2040`:
+
+  <img src="https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg" width="700">
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -1097,11 +1327,13 @@ You can use Fysetc Portable Input Shaper with FLSUN Speeder Pad for measuring Re
 
 **Note:** You can cut the yellow edges to reduce the width
 
-![Capture d’écran 2022-10-27 à 21 40 08](https://user-images.githubusercontent.com/12702322/198383353-5e08d6dc-82d1-4491-b9ff-e9812d2ede15.jpg)
+<img src="https://user-images.githubusercontent.com/12702322/198383353-5e08d6dc-82d1-4491-b9ff-e9812d2ede15.jpg" width="500">
 
 - Some dependencies are required to use this accelerometer, install them with this following commands (one at a time):
 ```
 sudo apt update
+```
+```
 sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 ```
 - Followed by this command to install Numpy in Klipper's environment:
@@ -1111,6 +1343,8 @@ sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
 - It's also necessary to compile firmware for Fysetc Portable Input Shaper, enter the following commands (one at a time):
 ```
 cd ~/klipper/
+```
+```
 make menuconfig
 ```
 - Select these settings:
@@ -1121,24 +1355,28 @@ make menuconfig
 - Enter the following commands to compile firmware (one at a time):
 ```
 make clean
+```
+```
 make
 ```
 - Plug Portable Input Shaper into one of the Speeder Pad's USB ports while holding down the button.
 
 - Type this commands to flash firmware (one at a time):
 ```
-cd ~
-sudo mount /dev/sda1 /mnt
-sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
-sudo umount /mnt
+cd ~ && sudo mount /dev/sda1 /mnt
 ```
-- And now, type this command to retrieve the serial:
+```
+sudo cp /home/pi/klipper/out/klipper.uf2 /mnt/
+```
+- Now disconnect and reconnect the accelerometer, without holding the button this time to restart it in normal mode.
+
+- Then, type this command to retrieve the serial:
 ```
 ls /dev/serial/by-id/*
 ```
-- You should see 2 serials appear, that of the Fysetc Portable Input Shaper is the one with the mention `Klipper_rp2040`:
+- You should see 2 serials appear, one is your printer serial an other is the Fysetc Portable Input Shaper, the one with the mention `Klipper Rp2040`:
 
-![Capture d’écran 2022-09-03 à 18 48 39](https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg)
+  <img src="https://user-images.githubusercontent.com/12702322/188280489-5db90d97-6f15-45a8-9f06-bd9da21b2cac.jpg" width="700">
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
@@ -1213,226 +1451,29 @@ MEASURE_AXES_NOISE
 
 **Wiring for V400 (MKS Robin Nano V2.0):**
 
-![wiring](https://user-images.githubusercontent.com/12702322/189106620-6ebc2983-be6f-4fb2-a36e-89bb4cd7e54b.png)
+<img src="https://user-images.githubusercontent.com/12702322/189106620-6ebc2983-be6f-4fb2-a36e-89bb4cd7e54b.png" width="600">
 
 **Wiring for Super Racer (MKS Robin Nano V3.0/V3.1):**
 
-![wiring](https://user-images.githubusercontent.com/12702322/197017354-f78b9ec9-e959-41ba-b178-14a05bc11da8.png)
+<img src="https://user-images.githubusercontent.com/12702322/197017354-f78b9ec9-e959-41ba-b178-14a05bc11da8.png" width="600">
 
 **Wiring for Super Racer (BigTreeTech SKR 1.3):**
 
-![wiring](https://user-images.githubusercontent.com/12702322/197060341-a616cc7e-d92d-47be-963e-61aeb41b734b.jpg)
+<img src="https://user-images.githubusercontent.com/12702322/197060341-a616cc7e-d92d-47be-963e-61aeb41b734b.jpg" width="600">
 
+**Wiring for Super Racer (BigTreeTech SKR 2.0):**
+
+<img src="https://user-images.githubusercontent.com/12702322/219787859-237c8ffc-0716-4e8f-89ee-6b93883a558f.png" width="600">
 
 **Configuration:**
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
+- Then import the `KlipperScreen.conf` file located in `NeoPixels` folder of the pack (make sure you get the correct version V400 or Super Racer in the respective folders).
+
 - Open the `printer.cfg` file and modify the following line by removing the `#` at the very beginning:
 ```
 [include neopixels.cfg]  #Enable if you want to use Neopixels
-```
-- Now open the `KlipperScreen.conf` file and copy all of this code just before line `#~# --- Do not edit below this line. This section is auto generated --- #~#`:
-```
-[menu __main actions neopixels]
-name: {{ gettext('Neopixels') }}
-icon: neopixels
-
-[menu __main actions neopixels led_off]
-name: {{ gettext('Off') }}
-icon: neopixels-off
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_OFF"}
-
-[menu __main actions neopixels led_on]
-name: {{ gettext('On') }}
-icon: neopixels-on
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ON"}
-
-[menu __main actions neopixels led_blue]
-name: {{ gettext('Blue') }}
-icon: neopixels-blue
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_BLUE"}
-
-[menu __main actions neopixels led_red]
-name: {{ gettext('Red') }}
-icon: neopixels-red
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_RED"}
-
-[menu __main actions neopixels led_green]
-name: {{ gettext('Green') }}
-icon: neopixels-green
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_GREEN"}
-
-[menu __main actions neopixels led_yellow]
-name: {{ gettext('Yellow') }}
-icon: neopixels-yellow
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_YELLOW"}
-
-[menu __main actions neopixels led_orange]
-name: {{ gettext('Orange') }}
-icon: neopixels-orange
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ORANGE"}
-
-[menu __main actions neopixels led_violet]
-name: {{ gettext('Violet') }}
-icon: neopixels-violet
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_VIOLET"}
-
-[menu __main actions neopixels hotend_glow]
-name: {{ gettext('Hotend (All)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_GLOW"}
-
-[menu __main actions neopixels hotend_progress]
-name: {{ gettext('Hotend (One by One)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_PROGRESS"}
-
-[menu __main actions neopixels bed_glow]
-name: {{ gettext('Bed (All)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_GLOW"}
-
-[menu __main actions neopixels bed_progress]
-name: {{ gettext('Bed (One by One)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_PROGRESS"}
-
-[menu __main actions neopixels percent_glow]
-name: {{ gettext('Progress (All)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_GLOW"}
-
-[menu __main actions neopixels percent_progress]
-name: {{ gettext('Progress (One by One)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_PROGRESS"}
-
-[menu __main actions neopixels speed_glow]
-name: {{ gettext('Speed (All)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_GLOW"}
-
-[menu __main actions neopixels speed_progress]
-name: {{ gettext('Speed (One by One)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_PROGRESS"}
-
-[menu __print neopixels]
-name: {{ gettext('Neopixels') }}
-icon: neopixels
-
-[menu __print neopixels led_off]
-name: {{ gettext('Off') }}
-icon: neopixels-off
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_OFF"}
-
-[menu __print neopixels led_on]
-name: {{ gettext('On') }}
-icon: neopixels-on
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ON"}
-
-[menu __print neopixels led_blue]
-name: {{ gettext('Blue') }}
-icon: neopixels-blue
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_BLUE"}
-
-[menu __print neopixels led_red]
-name: {{ gettext('Red') }}
-icon: neopixels-red
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_RED"}
-
-[menu __print neopixels led_green]
-name: {{ gettext('Green') }}
-icon: neopixels-green
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_GREEN"}
-
-[menu __print neopixels led_yellow]
-name: {{ gettext('Yellow') }}
-icon: neopixels-yellow
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_YELLOW"}
-
-[menu __print neopixels led_orange]
-name: {{ gettext('Orange') }}
-icon: neopixels-orange
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_ORANGE"}
-
-[menu __print neopixels led_violet]
-name: {{ gettext('Violet') }}
-icon: neopixels-violet
-method: printer.gcode.script
-params: {"script":"NEOPIXEL_VIOLET"}
-
-[menu __print neopixels hotend_glow]
-name: {{ gettext('Hotend (All)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_GLOW"}
-
-[menu __print neopixels hotend_progress]
-name: {{ gettext('Hotend (One by One)') }}
-icon: extruder
-method: printer.gcode.script
-params: {"script":"HOTEND_PROGRESS"}
-
-[menu __print neopixels bed_glow]
-name: {{ gettext('Bed (All)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_GLOW"}
-
-[menu __print neopixels bed_progress]
-name: {{ gettext('Bed (One by One)') }}
-icon: bed
-method: printer.gcode.script
-params: {"script":"BED_PROGRESS"}
-
-[menu __print neopixels percent_glow]
-name: {{ gettext('Progress (All)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_GLOW"}
-
-[menu __print neopixels percent_progress]
-name: {{ gettext('Progress (One by One)') }}
-icon: clock
-method: printer.gcode.script
-params: {"script":"PERCENT_PROGRESS"}
-
-[menu __print neopixels speed_glow]
-name: {{ gettext('Speed (All)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_GLOW"}
-
-[menu __print neopixels speed_progress]
-name: {{ gettext('Speed (One by One)') }}
-icon: speed+
-method: printer.gcode.script
-params: {"script":"SPEED_PROGRESS"}
 ```
 - Once done, click on `SAVE & RESTART` at the top right to save the file.
 
@@ -1452,6 +1493,28 @@ sensor_type: EPCOS 100K B57560G104F
 min_temp: -5
 max_temp: 70
 ```
+
+## Enable Root Access
+
+Coming Soon...
+
+<br />
+
+## Change SSH Welcome Message and Cleanup Files
+
+Coming Soon...
+
+<br />
+
+## Set a Static IP Address
+
+Coming Soon...
+
+<br />
+
+## Change Boot Logo
+
+Coming Soon...
 
 <br />
 
