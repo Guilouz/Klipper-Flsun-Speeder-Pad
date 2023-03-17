@@ -1531,7 +1531,7 @@ mkdir /root/speeder_pad
 ```
 - Download this files pack and unzip it: <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/speeder_pad_files.7z" target="_blank">Speeder Pad Files</a>
 
-- Drag and drop all files from the files pack to the `/root/speeder_pad` folder.
+- Drag and drop all files from the files pack to the `/root/speeder_pad/` folder.
 
 - Then enter this commands (one at a time):
 ```
