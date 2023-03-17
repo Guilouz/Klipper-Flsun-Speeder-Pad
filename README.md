@@ -1519,7 +1519,58 @@ sudo service ssh restart
 
 ## Change SSH Welcome Message and Cleanup Files
 
-Coming Soon...
+This step allows you to change the SSH welcome message to obtain information about the system and to cleanup some files.
+
+<img width="1302" alt="Capture d’écran 2023-03-17 à 21 54 copie" src="https://user-images.githubusercontent.com/12702322/226061601-92429fc2-8a7a-4e11-81e0-08b8cddcfa1d.png">
+
+- Connect in SSH with root user and your password.
+
+- In `root` folder create a new folder named `speeder_pad` by typing this command:
+```
+mkdir /root/speeder_pad
+```
+- Download this files pack and unzip it: <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/speeder_pad_files.7z" target="_blank">Speeder Pad Files</a>
+
+- Drag and drop all files from the files pack to the `/root/speeder_pad/` folder.
+
+- Then enter this commands (one at a time):
+```
+rm /etc/update-motd.d/00-header
+```
+```
+rm /etc/update-motd.d/10-help-text
+```
+```
+rm /etc/update-motd.d/50-motd-news
+```
+```
+rm /etc/update-motd.d/60-unminimize
+```
+```
+cp /root/speeder_pad/00-banner /etc/update-motd.d/
+```
+```
+cp /root/speeder_pad/10-sysinfo /etc/update-motd.d/
+```
+```
+cp /root/speeder_pad/colors /etc/update-motd.d/
+```
+```
+chmod 755 /etc/update-motd.d/00-banner
+```
+```
+chmod 755 /etc/update-motd.d/10-sysinfo
+```
+```
+cp /root/speeder_pad/sshd_config /etc/ssh/
+```
+```
+cp /root/speeder_pad/cfgguard.sh /usr/sbin/
+```
+```
+service ssh restart
+```
+- You can now disconnect your SSH session and reconnect to see changes.
 
 <br />
 
