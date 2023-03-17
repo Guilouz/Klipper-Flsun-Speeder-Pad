@@ -1576,7 +1576,36 @@ service ssh restart
 
 ## Set a Static IP Address
 
-Coming Soon...
+- Connect in SSH with root user and your password.
+
+- In `root` folder create a new folder named `speeder_pad` by typing this command:
+```
+mkdir /root/speeder_pad
+```
+- Download this files pack and unzip it: <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/speeder_pad_files.7z" target="_blank">Speeder Pad Files</a>
+
+- Open the file `01-network-manager-all.yaml` with a text editor and replace this lines with your information:
+
+  - `addresses: [xxx.xxx.xxx.xxx/24]` -> Replace **xxx.xxx.xxx.xxx** by the IP address you want to assign to your Speeder Pad
+
+  - `gateway4: xxx.xxx.xxx.xxx` -> Replace **xxx.xxx.xxx.xxx** by your gateway
+
+  - `addresses: [xxx.xxx.xxx.xxx, xxx.xxx.xxx.xxx]` -> Replace **xxx.xxx.xxx.xxx, xxx.xxx.xxx.xxx** by your DNS addresses
+
+- **At this step make sure you have entered the correct information otherwise your Speeder Pad will not connect to the WiFi network and the only solution will be to restore the Speeder Pad.**
+
+- Save the file and drag and drop it to the `/root/speeder_pad/` folder.
+
+- Then enter this commands (one at a time):
+```
+cp /root/speeder_pad/01-network-manager-all.yaml /etc/netplan/
+```
+```
+netplan apply
+```
+- It's possible that your SSH session freezes after the last command, this is due to the fact that the Speeder Pad has just taken the new IP address. In this case, you must restart the Speeder Pad.
+
+- After restarting, your Speeder Pad will then have the new IP address.
 
 <br />
 
