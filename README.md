@@ -1531,7 +1531,7 @@ mkdir /root/speeder_pad
 ```
 - Download this files pack and unzip it: <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/speeder_pad_files.7z" target="_blank">Speeder Pad Files</a>
 
-- Drag and drop all files from the files pack to the `/root/speeder_pad/` folder.
+- Drag and drop all files from the pack to the `/root/speeder_pad/` folder.
 
 - Then enter this commands (one at a time):
 ```
@@ -1611,7 +1611,36 @@ netplan apply
 
 ## Change Boot Logo
 
-Coming Soon...
+![Boot Logo](https://user-images.githubusercontent.com/12702322/226067026-688b40c1-d840-4dfc-bec8-bc89478fbcc4.png)
+
+- Connect in SSH with root user and your password.
+
+- Download Boot Logo Pack you want and unzip it:
+
+  - <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/Boot_Logo_EN.7z" target="_blank">English Boot Logo Pack</a>
+
+  - <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/Boot_Logo_FR.7z" target="_blank">French Boot Logo Pack</a>
+
+  - <a href="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/raw/main/Downloads/Boot_Logo_STOCK.7z" target="_blank">Stock Boot Logo Pack</a>
+
+- Drag and drop all files from the pack to the `/root/` folder.
+
+- This will overwrite existing loading boot screen files.
+
+- Then enter this commands to replace the first boot screen (one at a time):
+```
+mount /dev/mmcblk0p1 /mnt
+```
+```
+cp /root/bootlogo.bmp /mnt/
+```
+```
+rm /root/bootlogo.bmp
+```
+```
+sudo reboot
+```
+- After reboot, you will see the new boot logo.
 
 <br />
 
