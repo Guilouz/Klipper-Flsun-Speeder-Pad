@@ -263,7 +263,7 @@ sudo apt update
 ```
 - Then this command to install all of them:
 ```
-sudo apt full-upgrade
+sudo apt full-upgrade -y
 ```
 - Then remove not needed dependencies if present (one command at a time):
 ```
