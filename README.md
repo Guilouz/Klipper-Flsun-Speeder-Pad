@@ -140,7 +140,7 @@ Before using Klipper please read this documentations:
 
 - To mesure Resonances with ADXL, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
-- To use Exclude Objects function, see here: https://docs.mainsail.xyz/features/exclude_objects
+- To use Exclude Objects function, see here: https://docs.mainsail.xyz/overview/features/exclude-objects
 
 - To use Timelapse function, see here: https://github.com/mainsail-crew/moonraker-timelapse/blob/main/docs/configuration.md
   - PDF with settings can be found here: [Instructions for timelapse (corrected).pdf](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/files/9842081/Instructions.for.timelapse.corrected.pdf)
