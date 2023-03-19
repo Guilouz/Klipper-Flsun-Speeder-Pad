@@ -1595,7 +1595,7 @@ mkdir /root/speeder_pad
 cp /root/speeder_pad/01-network-manager-all.yaml /etc/netplan/
 ```
 ```
-netplan apply
+sudo netplan apply
 ```
 - It's possible that your SSH session freezes after the last command, this is due to the fact that the Speeder Pad has just taken the new IP address. In this case, you must restart the Speeder Pad.
 
