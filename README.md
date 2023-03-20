@@ -1195,7 +1195,11 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 - Start DELTA CALIBRATION with `DELTA_CALIBRATION` macro and save the configuration by clicking on the `SAVE` macro.
 
+  - :warning: The leveling sensor must be connected for this operation !
+
 - Start BED LEVELING with `BED_LEVELING` macro and save the configuration by clicking on the `SAVE` macro.
+
+  - :warning: The leveling sensor must be connected for this operation !
 
 - Start BED PID with `PID_BED_65` macro and save the configuration by clicking on the `SAVE` macro.
 
