@@ -7,15 +7,10 @@
 ## Table of Contents
 
 - [About](#about)
-- [Repo Changelog](#repo-changelog)
-- [Useful Links](#useful-links)
-- [STL Files](#stl-files)
 - [Restore OS Image File](#restore-os-image-file)
 - [SSH Connection](#ssh-connection)
 - [Change pi User Password](#change-pi-userpassword)
 - [Update Ubuntu dependencies](#update-ubuntu-dependencies)
-- [Change Timezone](#change-timezone)
-- [Change Wi-Fi Location](#change-wi-fi-location)
 - [Delete Flsun Builds](#delete-flsun-builds)
 - [Install Official Builds (1 instance)](#install-official-builds-1-instance)
 - [Install Official Builds (Multiple instances)](#install-official-builds-multiple-instances)
@@ -27,14 +22,20 @@
   - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 2.0)](#update-super-racer-motherboard-firmware-bigtreetech-skr-20)
 - [Use Configurations](#use-configurations)
 - [Get USB Serial from Motherboard](#get-usb-serial-from-motherboard)
-- [Fix Shutdown button in Mainsail](#fix-shutdown-button-in-mainsail)
-- [Add Webcams Support](#add-webcams-support)
-- [Install and Update Timelapse](#install-and-update-timelapse)
-- [Slicer Side Changes](#slicer-side-changes)
 - [Calibrate your Printer](#calibrate-your-printer)
-- [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
-- [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
-- [Use Neopixels Ring Light](#use-neopixels-ring-light)
+- Additional Settings
+  - [Repo Changelog](#repo-changelog)
+  - [Useful Links](#useful-links)
+  - [STL Files](#stl-files)
+  - [Change Timezone](#change-timezone)
+  - [Change Wi-Fi Location](#change-wi-fi-location)
+  - [Fix Shutdown button in Mainsail](#fix-shutdown-button-in-mainsail)
+  - [Add Webcams Support](#add-webcams-support)
+  - [Install and Update Timelapse](#install-and-update-timelapse)
+  - [Slicer Side Changes](#slicer-side-changes)
+  - [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
+  - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
+  - [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - For Advanced Users Only
   - [Enable Root Access](#enable-root-access)
   - [Change SSH Welcome Message and Cleanup Files](#change-ssh-welcome-message-and-cleanup-files)
@@ -75,92 +76,7 @@ Before using Klipper please read this documentations:
 
 <br />
 
-## Repo Changelog
 
-**15/03/2023:**
-  - Replace FLSUN restoration image file by new V1.2
-
-**12/03/2023:**
-  - Improve Gcode Arc support.
-
-**05/03/2023:**
-  - Updated macros files to load default Bed Mesh at startup.
-
-**19/02/2023:**
-  - Fixed "default" bed mesh in START_PRINT macro.
-
-**18/02/2023:**
-  - Fixed V400 Hotend LED for some configuration files
-  - Fixed Z-Offset in configuration files
-
-**17/02/2023:**
-  - Updated all configuration files so that they are in line with the new version of KlipperScreen. **All your files need to be replaced with the new ones**
-  - New version of KlipperScreen which now allows to calibrate the Z-Offset and apply a safety Gcode Offset of 2mm before starting the first print
-  - Added configuration files for Super Racer with BigTreetech SKR 2.0 Rev A and Rev B
-  - Added new section to fix Shutdown button in Mainsail
-  - Improved 'Calibrate your Printer' section for new changes
-  - Added Start / End Gcode for Simplify3D
-
-**10/02/2023:**
-  - Added new section to fix Shutdown button in Mainsail (need to have latest update of Moonraker)
-
-**30/12/2022:**
-  - Fixed bad character in `printer.cfg` files for Super Racer
-
-**24/12/2022:**
-  - Updated `macros.cfg` file ([gcode_macro START_PRINT])
-
-**16/12/2022:**
-  - Fixed Start Gcode for PrusaSlicer / SuperSlicer (Thanks to Julien Geffray)
-  - Changed Hotend preheat to 150C° instead of 100C° in START_PRINT macro
-
-**13/12/2022:**
-  - Fixed delete `.gitconfig` file before installing Kiauh in [Delete Flsun Builds](#delete-flsun-builds) section
-
-**12/12/2022:**
-  - Updated `macros.cfg` file ([gcode_macro START_PRINT]) for latest Klipper changes with gcode_arcs
-  - Added how to add camera support on Speeder Pad screen in [Improve Webcams Support](#improve-webcams-support) section
-  - Updated `KlipperScreen.conf` file to support camera url
-
-
-**11/12/2022:**
-  - Changes in [Install Official Builds (1 instance)](#install-official-builds-1-instance) & [Install Official Builds (3 instances)](#install-official-builds-3-instances) sections to install Klipper with Python 3.x as recommended
-  - Added new section to [Update V400 Motherboard Firmware (BigTreeTech SKR 3.0)](#update-v400-motherboard-firmware-bigtreetech-skr-30)
-  - Added new BigTreeTech SKR 3.0 config files for V400
-
-<br />
-
-## Useful Links
-
-- To calibrate your extruder, see here: https://www.klipper3d.org/Rotation_Distance.html 
-
-- To adjust Pressure Advance, see here: https://www.klipper3d.org/Pressure_Advance.html
-
-- To adjust manually Resonance Compensation, see here: https://www.klipper3d.org/Resonance_Compensation.html
-
-- To mesure Resonances with ADXL, see here: https://www.klipper3d.org/Measuring_Resonances.html
-
-- To use Exclude Objects function, see here: https://docs.mainsail.xyz/overview/features/exclude-objects
-
-- To use Timelapse function, see here: https://github.com/mainsail-crew/moonraker-timelapse/blob/main/docs/configuration.md
-  - PDF with settings can be found here: [Instructions for timelapse (corrected).pdf](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/files/9842081/Instructions.for.timelapse.corrected.pdf)
-
-- To display thumbnails on screen, see here: https://klipperscreen.readthedocs.io/en/latest/Thumbnails/
-
-- Speeder Pad Mainsail Theme: [Speeder Pad Mainsail Theme.zip](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/files/9944550/Speeder.Pad.Mainsail.Theme.zip)
-
-<br />
-
-## STL Files
-
-Many usefull STL for FLSUN Super Racer and V400 can be found on my profiles:
-
-- Printables: [Here](https://www.printables.com/social/352655-guilouz/models)
-- Thingiverse: [Here](https://www.thingiverse.com/guilouz/designs)
-- ADXL345 Mount for Super Racer : [Here](https://www.printables.com/model/245136-adxl345-mount-for-flsun-super-racer)
-- Fysetc Portable Input Shaper Mount for Super Racer : [Here](https://www.printables.com/model/405796-flsun-super-racer-fysetc-portable-input-shaper-mou/files)
-
-<br />
 
 ## Restore OS Image File
 
@@ -280,96 +196,6 @@ sudo apt clean
 sudo reboot
 ```
 
-<br />
-
-## Change Timezone
-
-To change Timezone, follow these instructions:
-
-- In the SSH command prompt window, enter the following command to check the current time zone:
-```
-timedatectl
-```
-- You can change your timezone by entering this command:
-```
-sudo dpkg-reconfigure tzdata
-```
-- On the page that appears, select your geographic area from the list and press `Enter`.
-
-- Then select your timezone in the new list and press `Enter`.
-
-- You can then verify that the change has been taken into account by retyping this command:
-```
-timedatectl
-```
-
-<br />
-
-## Change Wi-Fi Location
-
-By default, there is no Wi-Fi location defined.
-
-- In the SSH command prompt window, enter the following command to check the current Wi-Fi location:
-```
-iw reg get
-```
-- You obtain this:
-```
-global
-country 00: DFS-UNSET
-        (755 - 928 @ 2), (N/A, 20), (N/A), NO-IR
-        (2402 - 2472 @ 40), (N/A, 20), (N/A)
-        (2457 - 2482 @ 20), (N/A, 20), (N/A), AUTO-BW, NO-IR
-        (2474 - 2494 @ 20), (N/A, 20), (N/A), NO-OFDM, NO-IR
-        (5170 - 5250 @ 80), (N/A, 20), (N/A), AUTO-BW, NO-IR
-        (5250 - 5330 @ 80), (N/A, 20), (0 ms), DFS, AUTO-BW, NO-IR
-        (5490 - 5730 @ 160), (N/A, 20), (0 ms), DFS, NO-IR
-        (5735 - 5835 @ 80), (N/A, 20), (N/A), NO-IR
-        (57240 - 63720 @ 2160), (N/A, 0), (N/A)
-```
-- All available locations can be displayed with this command:
-```
-sudo cat /usr/share/zoneinfo/zone.tab
-```
-- To change the location enter the following command replacing `FR` by your country (you will need to enter your user password):
-```
-sudo iw reg set FR
-```
-You can verify that the change has been made by entering this command again:
-```
-iw reg get
-```
-- You obtain this (related to your country):
-```
-global
-country FR: DFS-ETSI
-        (2400 - 2483 @ 40), (N/A, 20), (N/A)
-        (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
-        (5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
-        (5470 - 5725 @ 160), (N/A, 26), (0 ms), DFS
-        (5725 - 5875 @ 80), (N/A, 13), (N/A)
-        (5945 - 6425 @ 160), (N/A, 23), (N/A), NO-OUTDOOR
-        (57000 - 71000 @ 2160), (N/A, 40), (N/A)
-```
-- To make the location permanent, enter the following command replacing `FR` by your country (you will need to enter your user password):
-```
-sudo sed -i 's/^REG.*=$/&FR/' /etc/default/crda
-```
-- Then, this command:
-```
-sudo sed -i '/^exit 0/ d' /etc/rc.local
-```
-- And this command replacing `FR` by your country:
-```
-echo -e "iw reg set FR\nexit 0" | sudo tee -a /etc/rc.local
-```
-- Then reboot with this command:
-```
-sudo reboot
-```
-
-<br />
-
 ## Delete Flsun Builds
 
 To upgrade to official builds, follow these instructions:
@@ -486,92 +312,6 @@ install_script: scripts/KlipperScreen-install.sh
 
 <br />
 
-## Install Official Builds (Multiple instances)
-
-In this section, we will install 3 instances but you can install 2 if you want (no more than 3 is recommended).
-
-- Relaunch Kiauh by entering this command:
-```
-./kiauh/kiauh.sh
-```
-- Enter in `1) [Install]` menu by typing `1` then `Enter`:
-
-<img width="1303" alt="install1" src="https://user-images.githubusercontent.com/12702322/225440573-aa230cb5-5506-4de5-bbcb-c2b5bf28f701.png">
-
-- Install `1) [Klipper]` by typing `1` then `Enter`.
-
-- Select `1) [Python 3.x]  (recommended)` by typing `1` then `Enter`.
-
-- Then enter the number of Klipper instances by typing `3` and `Enter` to confirm:
-
-![Capture d’écran 2022-12-12 à 02 23 50](https://user-images.githubusercontent.com/12702322/206942150-f6ec553f-e44d-4b95-8cc4-afb715d8c659.jpg)
-
-- When asked to assign custom names, select NO by typing `N` then `Enter`:
-
-![Capture d’écran 2022-12-12 à 02 26 10](https://user-images.githubusercontent.com/12702322/206942312-2992495b-956c-48ec-8a68-68bc5aeb9bd6.jpg)
-
-- When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
-
-- Then enter the number of Moonraker instances by typing `3` then `Enter` and confirm by typing `Y`:
-
-![Capture d’écran 2022-12-12 à 02 34 51](https://user-images.githubusercontent.com/12702322/206942863-61f55f6a-a8c8-4234-b3cc-cfca87e6ccfa.jpg)
-
-- When it's done, you get your 3 instances with their IP addresses and ports, write them down they will be useful later:
-
-![Capture d’écran 2022-12-12 à 02 44 04](https://user-images.githubusercontent.com/12702322/206943753-4f871a6b-0917-4096-9dc9-0801eae58892.jpg)
-
-- Install `3) [Mainsail]` by typing `3` then `Enter` and select no by typing `n` when asked to add the recommended macros.
-
-- When it's done, go back to main menu by typing `B` then `Enter`.
-
-- Exit Kiauh by typing `Q` then `Enter`.
-
-- Enter the following commands (one at a time) to install KlipperScreen:
-```
-cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-```
-```
-sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
-```
-```
-./KlipperScreen/scripts/KlipperScreen-install.sh
-```
-
-Note: Installation may take several minutes.
-
-- When it's done, enter this commands (one at a time):
-```
-cd ~ && ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_1_data/gcodes/USB-Disk
-```
-```
-ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_2_data/gcodes/USB-Disk
-```
-```
-ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_3_data/gcodes/USB-Disk
-```
-```
-sudo reboot
-```
-- After reboot, go to your Mainsail Web interface then select the `Machine` tab.
-
-- Open the `moonraker.conf` file and add the following lines at the end of the file:
-```
-[update_manager KlipperScreen]
-type: git_repo
-path: /home/pi/KlipperScreen
-origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-env: /home/pi/.KlipperScreen-env/bin/python
-requirements: scripts/KlipperScreen-requirements.txt
-install_script: scripts/KlipperScreen-install.sh
-```
-- Once done, click on `SAVE & RESTART` at the top right to save the file.
-
-- You will get the latest versions of KlipperScreen which point to my repo (More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)).
-
-- Your Speeder Pad now running offical builds with 3 instances.
-
-<br />
-
 ## Update V400 Motherboard Firmware (MKS Robin Nano V2.0 / Nano V2.1 Clone)
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
@@ -587,7 +327,7 @@ cd ~/klipper/
 ```
 make menuconfig
 ```
-- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings - there are several settings to change, examine the image carefully:
 
 ![Capture d’écran 2022-12-12 à 02 59 51](https://user-images.githubusercontent.com/12702322/206945000-ec21cbf0-25ea-41dd-a5f1-26ee96732a77.jpg)
 
@@ -814,6 +554,92 @@ make
 
 <br />
 
+## Install Official Builds (Multiple instances)
+
+In this section, we will install 3 instances but you can install 2 if you want (no more than 3 is recommended).
+
+- Relaunch Kiauh by entering this command:
+```
+./kiauh/kiauh.sh
+```
+- Enter in `1) [Install]` menu by typing `1` then `Enter`:
+
+<img width="1303" alt="install1" src="https://user-images.githubusercontent.com/12702322/225440573-aa230cb5-5506-4de5-bbcb-c2b5bf28f701.png">
+
+- Install `1) [Klipper]` by typing `1` then `Enter`.
+
+- Select `1) [Python 3.x]  (recommended)` by typing `1` then `Enter`.
+
+- Then enter the number of Klipper instances by typing `3` and `Enter` to confirm:
+
+![Capture d’écran 2022-12-12 à 02 23 50](https://user-images.githubusercontent.com/12702322/206942150-f6ec553f-e44d-4b95-8cc4-afb715d8c659.jpg)
+
+- When asked to assign custom names, select NO by typing `N` then `Enter`:
+
+![Capture d’écran 2022-12-12 à 02 26 10](https://user-images.githubusercontent.com/12702322/206942312-2992495b-956c-48ec-8a68-68bc5aeb9bd6.jpg)
+
+- When it's done, install `2) [Moonraker]` by typing `2` then `Enter` and confirm by typing `Y`.
+
+- Then enter the number of Moonraker instances by typing `3` then `Enter` and confirm by typing `Y`:
+
+![Capture d’écran 2022-12-12 à 02 34 51](https://user-images.githubusercontent.com/12702322/206942863-61f55f6a-a8c8-4234-b3cc-cfca87e6ccfa.jpg)
+
+- When it's done, you get your 3 instances with their IP addresses and ports, write them down they will be useful later:
+
+![Capture d’écran 2022-12-12 à 02 44 04](https://user-images.githubusercontent.com/12702322/206943753-4f871a6b-0917-4096-9dc9-0801eae58892.jpg)
+
+- Install `3) [Mainsail]` by typing `3` then `Enter` and select no by typing `n` when asked to add the recommended macros.
+
+- When it's done, go back to main menu by typing `B` then `Enter`.
+
+- Exit Kiauh by typing `Q` then `Enter`.
+
+- Enter the following commands (one at a time) to install KlipperScreen:
+```
+cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+```
+```
+sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+```
+```
+./KlipperScreen/scripts/KlipperScreen-install.sh
+```
+
+Note: Installation may take several minutes.
+
+- When it's done, enter this commands (one at a time):
+```
+cd ~ && ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_1_data/gcodes/USB-Disk
+```
+```
+ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_2_data/gcodes/USB-Disk
+```
+```
+ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_3_data/gcodes/USB-Disk
+```
+```
+sudo reboot
+```
+- After reboot, go to your Mainsail Web interface then select the `Machine` tab.
+
+- Open the `moonraker.conf` file and add the following lines at the end of the file:
+```
+[update_manager KlipperScreen]
+type: git_repo
+path: /home/pi/KlipperScreen
+origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
+env: /home/pi/.KlipperScreen-env/bin/python
+requirements: scripts/KlipperScreen-requirements.txt
+install_script: scripts/KlipperScreen-install.sh
+```
+- Once done, click on `SAVE & RESTART` at the top right to save the file.
+
+- You will get the latest versions of KlipperScreen which point to my repo (More info are available here: [KlipperScreen-Flsun-Speeder-Pad](https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad)).
+
+- Your Speeder Pad now running offical builds with 3 instances.
+
+<br />
+
 **In case you use more than 1 instance:**
 
 - Download and unzip my repository zip file here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/archive/refs/heads/main.zip
@@ -902,6 +728,185 @@ serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
 - Click on `SAVE & RESTART` at the top right to save the file.
 
 - Your printer should connect to your Speeder Pad.
+
+<br />
+
+## Additional Settings
+
+## Repo Changelog
+
+**15/03/2023:**
+  - Replace FLSUN restoration image file by new V1.2
+
+**12/03/2023:**
+  - Improve Gcode Arc support.
+
+**05/03/2023:**
+  - Updated macros files to load default Bed Mesh at startup.
+
+**19/02/2023:**
+  - Fixed "default" bed mesh in START_PRINT macro.
+
+**18/02/2023:**
+  - Fixed V400 Hotend LED for some configuration files
+  - Fixed Z-Offset in configuration files
+
+**17/02/2023:**
+  - Updated all configuration files so that they are in line with the new version of KlipperScreen. **All your files need to be replaced with the new ones**
+  - New version of KlipperScreen which now allows to calibrate the Z-Offset and apply a safety Gcode Offset of 2mm before starting the first print
+  - Added configuration files for Super Racer with BigTreetech SKR 2.0 Rev A and Rev B
+  - Added new section to fix Shutdown button in Mainsail
+  - Improved 'Calibrate your Printer' section for new changes
+  - Added Start / End Gcode for Simplify3D
+
+**10/02/2023:**
+  - Added new section to fix Shutdown button in Mainsail (need to have latest update of Moonraker)
+
+**30/12/2022:**
+  - Fixed bad character in `printer.cfg` files for Super Racer
+
+**24/12/2022:**
+  - Updated `macros.cfg` file ([gcode_macro START_PRINT])
+
+**16/12/2022:**
+  - Fixed Start Gcode for PrusaSlicer / SuperSlicer (Thanks to Julien Geffray)
+  - Changed Hotend preheat to 150C° instead of 100C° in START_PRINT macro
+
+**13/12/2022:**
+  - Fixed delete `.gitconfig` file before installing Kiauh in [Delete Flsun Builds](#delete-flsun-builds) section
+
+**12/12/2022:**
+  - Updated `macros.cfg` file ([gcode_macro START_PRINT]) for latest Klipper changes with gcode_arcs
+  - Added how to add camera support on Speeder Pad screen in [Improve Webcams Support](#improve-webcams-support) section
+  - Updated `KlipperScreen.conf` file to support camera url
+
+
+**11/12/2022:**
+  - Changes in [Install Official Builds (1 instance)](#install-official-builds-1-instance) & [Install Official Builds (3 instances)](#install-official-builds-3-instances) sections to install Klipper with Python 3.x as recommended
+  - Added new section to [Update V400 Motherboard Firmware (BigTreeTech SKR 3.0)](#update-v400-motherboard-firmware-bigtreetech-skr-30)
+  - Added new BigTreeTech SKR 3.0 config files for V400
+
+<br />
+
+## Useful Links
+
+- To calibrate your extruder, see here: https://www.klipper3d.org/Rotation_Distance.html 
+
+- To adjust Pressure Advance, see here: https://www.klipper3d.org/Pressure_Advance.html
+
+- To adjust manually Resonance Compensation, see here: https://www.klipper3d.org/Resonance_Compensation.html
+
+- To mesure Resonances with ADXL, see here: https://www.klipper3d.org/Measuring_Resonances.html
+
+- To use Exclude Objects function, see here: https://docs.mainsail.xyz/overview/features/exclude-objects
+
+- To use Timelapse function, see here: https://github.com/mainsail-crew/moonraker-timelapse/blob/main/docs/configuration.md
+  - PDF with settings can be found here: [Instructions for timelapse (corrected).pdf](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/files/9842081/Instructions.for.timelapse.corrected.pdf)
+
+- To display thumbnails on screen, see here: https://klipperscreen.readthedocs.io/en/latest/Thumbnails/
+
+- Speeder Pad Mainsail Theme: [Speeder Pad Mainsail Theme.zip](https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/files/9944550/Speeder.Pad.Mainsail.Theme.zip)
+
+<br />
+
+## STL Files
+
+Many usefull STL for FLSUN Super Racer and V400 can be found on my profiles:
+
+- Printables: [Here](https://www.printables.com/social/352655-guilouz/models)
+- Thingiverse: [Here](https://www.thingiverse.com/guilouz/designs)
+- ADXL345 Mount for Super Racer : [Here](https://www.printables.com/model/245136-adxl345-mount-for-flsun-super-racer)
+- Fysetc Portable Input Shaper Mount for Super Racer : [Here](https://www.printables.com/model/405796-flsun-super-racer-fysetc-portable-input-shaper-mou/files)
+
+<br />
+
+<br />
+
+## Change Timezone
+
+To change Timezone, follow these instructions:
+
+- In the SSH command prompt window, enter the following command to check the current time zone:
+```
+timedatectl
+```
+- You can change your timezone by entering this command:
+```
+sudo dpkg-reconfigure tzdata
+```
+- On the page that appears, select your geographic area from the list and press `Enter`.
+
+- Then select your timezone in the new list and press `Enter`.
+
+- You can then verify that the change has been taken into account by retyping this command:
+```
+timedatectl
+```
+
+<br />
+
+## Change Wi-Fi Location
+
+By default, there is no Wi-Fi location defined.
+
+- In the SSH command prompt window, enter the following command to check the current Wi-Fi location:
+```
+iw reg get
+```
+- You obtain this:
+```
+global
+country 00: DFS-UNSET
+        (755 - 928 @ 2), (N/A, 20), (N/A), NO-IR
+        (2402 - 2472 @ 40), (N/A, 20), (N/A)
+        (2457 - 2482 @ 20), (N/A, 20), (N/A), AUTO-BW, NO-IR
+        (2474 - 2494 @ 20), (N/A, 20), (N/A), NO-OFDM, NO-IR
+        (5170 - 5250 @ 80), (N/A, 20), (N/A), AUTO-BW, NO-IR
+        (5250 - 5330 @ 80), (N/A, 20), (0 ms), DFS, AUTO-BW, NO-IR
+        (5490 - 5730 @ 160), (N/A, 20), (0 ms), DFS, NO-IR
+        (5735 - 5835 @ 80), (N/A, 20), (N/A), NO-IR
+        (57240 - 63720 @ 2160), (N/A, 0), (N/A)
+```
+- All available locations can be displayed with this command:
+```
+sudo cat /usr/share/zoneinfo/zone.tab
+```
+- To change the location enter the following command replacing `FR` by your country (you will need to enter your user password):
+```
+sudo iw reg set FR
+```
+You can verify that the change has been made by entering this command again:
+```
+iw reg get
+```
+- You obtain this (related to your country):
+```
+global
+country FR: DFS-ETSI
+        (2400 - 2483 @ 40), (N/A, 20), (N/A)
+        (5150 - 5250 @ 80), (N/A, 23), (N/A), NO-OUTDOOR, AUTO-BW
+        (5250 - 5350 @ 80), (N/A, 20), (0 ms), NO-OUTDOOR, DFS, AUTO-BW
+        (5470 - 5725 @ 160), (N/A, 26), (0 ms), DFS
+        (5725 - 5875 @ 80), (N/A, 13), (N/A)
+        (5945 - 6425 @ 160), (N/A, 23), (N/A), NO-OUTDOOR
+        (57000 - 71000 @ 2160), (N/A, 40), (N/A)
+```
+- To make the location permanent, enter the following command replacing `FR` by your country (you will need to enter your user password):
+```
+sudo sed -i 's/^REG.*=$/&FR/' /etc/default/crda
+```
+- Then, this command:
+```
+sudo sed -i '/^exit 0/ d' /etc/rc.local
+```
+- And this command replacing `FR` by your country:
+```
+echo -e "iw reg set FR\nexit 0" | sudo tee -a /etc/rc.local
+```
+- Then reboot with this command:
+```
+sudo reboot
+```
 
 <br />
 
