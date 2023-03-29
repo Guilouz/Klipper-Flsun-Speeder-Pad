@@ -415,7 +415,7 @@ sudo rm -rf /home/pi/klipper_config && rm -rf /home/pi/klipper_logs && rm -rf /h
 sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /home/pi/savedVariables3.cfg
 ```
 ```
-sudo rm -rf /home/pi/.cache && rm -rf /home/pi/.gnupg && rm -rf /home/pi/.local && rm -rf /home/pi/.config
+sudo rm -rf /home/pi/.cache && rm -rf /home/pi/.gnupg && rm -rf /home/pi/.local && rm -rf /home/pi/.config && rm -rf /home/pi/.dbus
 ```
 
 <br />
