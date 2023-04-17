@@ -813,7 +813,7 @@ make
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg` and `adxl345_fysetc.cfg` files located in `Configurations` directory according to your printer.
+- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg`, `adxl345_fysetc.cfg` and `adxl345_flsun.cfg` files located in `Configurations` directory according to your printer.
 
 - Restart Speeder Pad and printer to take effect.
 
@@ -825,7 +825,7 @@ make
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg` and `adxl345_fysetc.cfg` files located in `Configurations` directory according to your printer.
+- Then upload `KlipperScreen.conf`, `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg`, `adxl345_fysetc.cfg` and `adxl345_flsun.cfg` files located in `Configurations` directory according to your printer.
 
 - Open the `KlipperScreen.conf` file and edit it to enable multiple instance by removing the `#` symbols like this:
 
