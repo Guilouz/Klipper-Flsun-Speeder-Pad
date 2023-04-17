@@ -32,9 +32,10 @@
 - [Install and Update Timelapse](#install-and-update-timelapse)
 - [Slicer Side Changes](#slicer-side-changes)
 - [Calibrate your Printer](#calibrate-your-printer)
-- Use ADXL345 for Resonance Compensation
-  - [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
-  - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
+- Use ADXL for Resonance Compensation
+  - [Measure resonances with with Raspberry Pi Pico](#measure-resonances-with-raspberry-pi-pico)
+  - [Measure resonances with Fysetc Portable Input Shaper](#measure-resonances-with-fysetc-portable-input-shaper)
+  - [Measure resonances with FLSUN ADXL](#measure-resonances-with-flsun-adxl)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - For Advanced Users Only
   - [Enable Root Access](#enable-root-access)
@@ -1226,7 +1227,7 @@ This calibrations can be done by Mainsail Interface with Macros or on Speeder Pa
 
 <br />
 
-## Use ADXL345 with Raspberry Pi Pico
+## Measure resonances with Raspberry Pi Pico
 
 You can use ADXL345 with FLSUN Speeder Pad for measuring Resonances via USB with a Raspberry Pi Pico.
 
@@ -1325,7 +1326,7 @@ MEASURE_AXES_NOISE
 
 <br />
 
-## Use ADXL345 with Fysetc Portable Input Shaper
+## Measure resonances with Fysetc Portable Input Shaper
 
 You can use Fysetc Portable Input Shaper with FLSUN Speeder Pad for measuring Resonances via USB.
 
@@ -1419,6 +1420,75 @@ MEASURE_AXES_NOISE
 - To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
 
 **Note:** After tests, it's better to disable the ADXL by commenting out the `[include adxl345_fysetc.cfg]` line again.
+
+<br />
+
+## Measure resonances with FLSUN ADXL
+
+You can use FLSUN ADXL with FLSUN Speeder Pad for measuring Resonances via USB.
+
+<img width="576" alt="Capture d’écran 2023-04-17 à 23 10 02" src="https://user-images.githubusercontent.com/12702322/232611521-ffa484d0-0dc7-4572-a691-76636b5cb417.png">
+
+**Needed:**
+- FLSUN ADXL
+- USB cable
+
+<br />
+
+- Some dependencies are required to use this accelerometer, install them with this following commands (one at a time):
+```
+sudo apt update
+```
+```
+sudo apt install python3-numpy python3-matplotlib libatlas-base-dev
+```
+- Followed by this command to install Numpy in Klipper's environment:
+```
+~/klippy-env/bin/pip install -v numpy
+```
+- When it's done, plug FLSUN ADXL into one of the Speeder Pad's USB ports.
+
+- Then, type this command to retrieve the serial:
+```
+ls /dev/serial/by-id/*
+```
+- You should see 2 serials appear, one is your printer serial an other is the FLSUN ADXL, the one with the mention `Klipper_stm32f103xe`:
+
+  <img src="https://user-images.githubusercontent.com/12702322/232610820-5a569221-b447-4069-97d5-50c61fc3f9a9.png" width="700">
+
+- Go to your Mainsail Web interface then click on `Machine` tab.
+
+- Open `adxl345_flsun.cfg` file and edit following line with serial you have just obtained:
+```
+serial: /dev/serial/by-id/usb-Klipper_stm32f103xe_A83331333634120136343231-if00
+```
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- Then uncomment (remove the #) to the following line in the `printer.cfg` file to enable ADXL support:
+```
+[include adxl345_flsun.cfg]
+```
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- You should see the `mcu adxl` connecting to Klipper.
+
+- You can test accelerometer by entering this command:
+```
+ACCELEROMETER_QUERY
+```
+- Something like this must be returned:
+```
+accelerometer values (x, y, z): 5551.544565, 7048.078582, -1924.535449
+```
+- Enter this command to measure the noise of the accelerometer for each axis:
+```
+MEASURE_AXES_NOISE
+```
+- You should get some baseline numbers for the noise of accelerometer on the axes (should be somewhere in the range of ~1-100). Too high axes noise (e.g. 1000 and more) can be indicative of the sensor issues, problems with its power, or too noisy imbalanced fans.
+
+- To measure the resonances, see here: https://www.klipper3d.org/Measuring_Resonances.html
+
+**Note:** After tests, it's better to disable the ADXL by commenting out the `[include adxl345_flsun.cfg]` line again.
 
 <br />
 
