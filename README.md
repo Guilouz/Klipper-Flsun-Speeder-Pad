@@ -1427,11 +1427,11 @@ MEASURE_AXES_NOISE
 
 You can use FLSUN ADXL with FLSUN Speeder Pad for measuring Resonances via USB.
 
-<img width="576" alt="Capture d’écran 2023-04-17 à 23 10 02" src="https://user-images.githubusercontent.com/12702322/232611521-ffa484d0-0dc7-4572-a691-76636b5cb417.png">
-
 **Needed:**
 - FLSUN ADXL
 - USB cable
+
+<img width="576" alt="Capture d’écran 2023-04-17 à 23 10 02" src="https://user-images.githubusercontent.com/12702322/232611521-ffa484d0-0dc7-4572-a691-76636b5cb417.png">
 
 <br />
 
