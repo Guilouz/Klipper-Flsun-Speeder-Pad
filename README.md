@@ -77,8 +77,12 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**17/04/2023:**
+  - Improved all files.
+  - Added support for FLSUN ADXL.
+
 **15/03/2023:**
-  - Replace FLSUN restoration image file by new V1.2
+  - Replace FLSUN restoration image file by new V1.2.
 
 **12/03/2023:**
   - Improve Gcode Arc support.
