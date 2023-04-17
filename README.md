@@ -32,8 +32,9 @@
 - [Install and Update Timelapse](#install-and-update-timelapse)
 - [Slicer Side Changes](#slicer-side-changes)
 - [Calibrate your Printer](#calibrate-your-printer)
-- [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
-- [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
+- Use ADXL345 for Resonance Compensation
+  - [Use ADXL345 with Raspberry Pi Pico](#use-adxl345-with-raspberry-pi-pico)
+  - [Use ADXL345 with Fysetc Portable Input Shaper](#use-adxl345-with-fysetc-portable-input-shaper)
 - [Use Neopixels Ring Light](#use-neopixels-ring-light)
 - For Advanced Users Only
   - [Enable Root Access](#enable-root-access)
