@@ -839,7 +839,7 @@ make
 
 - You can now select `Printers` on left tab and switch to others printers.
 
-- You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg` and `adxl345_fysetc.cfg` files for each printer.
+- You need to upload `printer.cfg`, `macros.cfg`, `neopixels.cfg`, `adxl345_pico.cfg`, `adxl345_fysetc.cfg` and `adxl345_flsun.cfg` files for each printer.
 
 - Open `printer.cfg` file, find `[save_variables]` and `[virtual_sdcard]` sections and edit paths for each configured printer:
 
