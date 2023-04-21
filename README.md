@@ -1183,8 +1183,14 @@ managed_services: klipper moonraker
   ![190531375-dc2def8d-9190-47c8-ae6e-bc7efaf2ce04](https://user-images.githubusercontent.com/12702322/197653257-9a4c29cc-64c0-4aa4-9077-32b30a9634d2.jpg)
 
   - For **PrusaSclicer / SuperSlicer**, you just need to enable `Use firmware retraction` setting like that:
+  
+  ![Capture d’écran 2022-12-12 à 03 21 47](https://user-images.githubusercontent.com/12702322/206947349-f522cf58-ce9f-4bd4-88a6-e73893efeaa3.jpg)
+  
+  - For **OrcaSlicer**, you just need to enable `Use firmware retraction` setting like that:
+  
+  
+    <img width="752" alt="Capture d’écran 2023-04-21 à 12 10 39" src="https://user-images.githubusercontent.com/12702322/233610525-b5a70bd8-3dc6-4da9-968b-5a15b460648c.png">  
 
-![Capture d’écran 2022-12-12 à 03 21 47](https://user-images.githubusercontent.com/12702322/206947349-f522cf58-ce9f-4bd4-88a6-e73893efeaa3.jpg)
 <br />
 
 ## Calibrate your Printer
