@@ -1161,6 +1161,18 @@ managed_services: klipper moonraker
        ```
        END_PRINT
        ```
+      
+   - For **OrcaSlicer**:
+     - Start Gcode:
+       ```
+       START_PRINT BED_TEMP=[bed_temperature_initial_layer_single] EXTRUDER_TEMP=[nozzle_temperature_initial_layer]
+       M104 S[nozzle_temperature_initial_layer]
+       M190 S[bed_temperature_initial_layer_single]
+       ```
+     - End Gcode:
+       ```
+       END_PRINT
+       ```
  
  <br />
 
