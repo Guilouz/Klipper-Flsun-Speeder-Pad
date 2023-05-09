@@ -478,9 +478,9 @@ sudo reboot
 ```
 [update_manager KlipperScreen]
 type: git_repo
-path: /home/pi/KlipperScreen
+path: ~/KlipperScreen
 origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-env: /home/pi/.KlipperScreen-env/bin/python
+env: ~/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
 ```
@@ -564,9 +564,9 @@ sudo reboot
 ```
 [update_manager KlipperScreen]
 type: git_repo
-path: /home/pi/KlipperScreen
+path: ~/KlipperScreen
 origin: https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
-env: /home/pi/.KlipperScreen-env/bin/python
+env: ~/.KlipperScreen-env/bin/python
 requirements: scripts/KlipperScreen-requirements.txt
 install_script: scripts/KlipperScreen-install.sh
 ```
@@ -1088,7 +1088,15 @@ sudo reboot
 
 - Go to your Mainsail Web interface then click on `Machine` tab.
 
-- Open the `moonraker.conf` file and add the following lines at the end of the file:
+- Open `printer.cfg` and uncomment (remove the #) to the following line like that:
+
+```
+[include timelapse.cfg]  #Enable if you want to use Timelapse
+```
+
+- Click on `SAVE & RESTART` at the top right to save the file.
+
+- Then, open the `moonraker.conf` file and add the following lines at the end of the file:
 ```
 [timelapse]
 
