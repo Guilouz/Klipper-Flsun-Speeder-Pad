@@ -412,16 +412,16 @@ cd ~ && git clone https://github.com/th33xitus/kiauh.git
 
 - Enter the following commands (one at a time):
 ```
-sudo rm -rf /home/pi/.moonraker_database_1 && rm -rf /home/pi/.moonraker_database_2 && rm -rf /home/pi/.moonraker_database_3
+sudo rm -rf ~/.moonraker_database_1 && rm -rf ~/.moonraker_database_2 && rm -rf ~/.moonraker_database_3
 ```
 ```
-sudo rm -rf /home/pi/klipper_config && rm -rf /home/pi/klipper_logs && rm -rf /home/pi/moonraker-timelapse
+sudo rm -rf ~/klipper_config && rm -rf ~/klipper_logs && rm -rf ~/moonraker-timelapse
 ```
 ```
-sudo rm /home/pi/savedVariables1.cfg && rm /home/pi/savedVariables2.cfg && rm /home/pi/savedVariables3.cfg
+sudo rm ~/savedVariables1.cfg && rm ~/savedVariables2.cfg && rm ~/savedVariables3.cfg
 ```
 ```
-sudo rm -rf /home/pi/.cache && rm -rf /home/pi/.gnupg && rm -rf /home/pi/.local && rm -rf /home/pi/.config && rm -rf /home/pi/.dbus
+sudo rm -rf ~/.cache && rm -rf ~/.gnupg && rm -rf ~/.local && rm -rf ~/.config && rm -rf ~/.dbus
 ```
 
 <br />
@@ -457,7 +457,7 @@ sudo rm -rf /home/pi/.cache && rm -rf /home/pi/.gnupg && rm -rf /home/pi/.local 
 cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 ```
 ```
-sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+sudo mv ~/KlipperScreen-Flsun-Speeder-Pad ~/KlipperScreen
 ```
 ```
 ./KlipperScreen/scripts/KlipperScreen-install.sh
@@ -467,7 +467,7 @@ Note: Installation may take several minutes.
 
 - When it's done, enter this commands (one at a time):
 ```
-cd ~ && ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_data/gcodes/USB-Disk
+cd ~ && ln -s ~/gcode_files/USB-Disk ~/printer_data/gcodes/USB-Disk
 ```
 ```
 sudo reboot
@@ -537,7 +537,7 @@ In this section, we will install 3 instances but you can install 2 if you want (
 cd ~ && git clone https://github.com/Guilouz/KlipperScreen-Flsun-Speeder-Pad.git
 ```
 ```
-sudo mv /home/pi/KlipperScreen-Flsun-Speeder-Pad /home/pi/KlipperScreen
+sudo mv ~/KlipperScreen-Flsun-Speeder-Pad ~/KlipperScreen
 ```
 ```
 ./KlipperScreen/scripts/KlipperScreen-install.sh
@@ -547,13 +547,13 @@ Note: Installation may take several minutes.
 
 - When it's done, enter this commands (one at a time):
 ```
-cd ~ && ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_1_data/gcodes/USB-Disk
+cd ~ && ln -s ~/gcode_files/USB-Disk ~/printer_1_data/gcodes/USB-Disk
 ```
 ```
-ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_2_data/gcodes/USB-Disk
+ln -s ~/gcode_files/USB-Disk ~/printer_2_data/gcodes/USB-Disk
 ```
 ```
-ln -s /home/pi/gcode_files/USB-Disk /home/pi/printer_3_data/gcodes/USB-Disk
+ln -s ~/gcode_files/USB-Disk ~/printer_3_data/gcodes/USB-Disk
 ```
 ```
 sudo reboot
