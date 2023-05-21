@@ -79,6 +79,9 @@ Before using Klipper please read this documentations:
 
 ## Repo Changelog
 
+**22/05/2023:**
+  - Updated macros.cfg files to support new PID menu on KlipperScreen.
+
 **17/04/2023:**
   - Improved all files.
   - Added support for FLSUN ADXL.
