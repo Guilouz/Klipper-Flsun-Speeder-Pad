@@ -20,7 +20,8 @@
 - [Install Official Builds (1 instance)](#install-official-builds-1-instance)
 - [Install Official Builds (Multiple instances)](#install-official-builds-multiple-instances)
 - Update Motherboard Firmware
-  - [Update V400 Motherboard Firmware (MKS Robin Nano V2.0 / Nano V2.1 Clone)](#update-v400-motherboard-firmware-mks-robin-nano-v20--nano-v21-clone)
+  - [Update V400 Motherboard Firmware (MKS Robin Nano V2.0 - STM32F103)](#update-v400-motherboard-firmware-mks-robin-nano-v20----stm32f103)
+  - [Update V400 Motherboard Firmware (Nano V2.1 Clone - GD32F303)](#update-v400-motherboard-firmware-nano-v21-clone---gd32f303)
   - [Update V400 Motherboard Firmware (BigTreeTech SKR 3.0)](#update-v400-motherboard-firmware-bigtreetech-skr-30)
   - [Update Super Racer Motherboard Firmware (MKS Robin Nano V3.0/V3.1)](#update-super-racer-motherboard-firmware-mks-robin-nano-v30v31)
   - [Update Super Racer Motherboard Firmware (BigTreeTech SKR 1.3)](#update-super-racer-motherboard-firmware-bigtreetech-skr-13)
@@ -581,7 +582,7 @@ install_script: scripts/KlipperScreen-install.sh
 
 <br />
 
-## Update V400 Motherboard Firmware (MKS Robin Nano V2.0 / Nano V2.1 Clone)
+## Update V400 Motherboard Firmware (MKS Robin Nano V2.0  - STM32F103)
 
 It's important that your motherboard firmware version matches with the installed Klipper version.
 
@@ -599,6 +600,50 @@ make menuconfig
 - Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
 
 ![Capture d’écran 2022-12-12 à 02 59 51](https://user-images.githubusercontent.com/12702322/206945000-ec21cbf0-25ea-41dd-a5f1-26ee96732a77.jpg)
+
+- Then on your keyboard press the `Q` key then `Y` to save configuration.
+
+- Enter the following commands to compile firmware (one at a time):
+```
+make clean
+```
+```
+make
+```
+- Then this one to convert firmware:
+```
+./scripts/update_mks_robin.py out/klipper.bin out/Robin_nano35.bin
+```
+- V400 motherboard doesn't support DFU mode, so it's not possible to install the firmware directly. It's therefore necessary to install it manually.
+
+- Get the firmware named `Robin_nano35.bin` in `/home/pi/klipper/out/` directory (on the left part of MobaXterm).
+
+- Copy it to the root of an microSD card formatted in FAT32 and an allocation size of 4096.
+
+- Insert the microSD card into the motherboard then turn on the printer.
+
+- Installation only takes a few seconds, to verify that the firmware has been successfully installed, the file on the microSD card must have been renamed to `ROBIN_NANO35.BIN.CUR`.
+
+<br />
+
+## Update V400 Motherboard Firmware (Nano V2.1 Clone - GD32F303)
+
+It's important that your motherboard firmware version matches with the installed Klipper version.
+
+Version is visible on `System Loads` tile -> `mcu` section (in `Machine` tab).
+
+To update firmware, follow these instructions:
+
+- In the SSH command prompt window, enter the following commands (one at a time):
+```
+cd ~/klipper/
+```
+```
+make menuconfig
+```
+- Move on the menu with the `Up` and `Down` keys of your keyboard and validate the selected item with the `Enter` key and select these settings:
+
+![Capture d’écran 2022-12-12 à 02 59 51](https://github-production-user-asset-6210df.s3.amazonaws.com/12702322/240206302-05c5c992-2c8f-4b98-ac5d-e410f2018485.png)
 
 - Then on your keyboard press the `Q` key then `Y` to save configuration.
 
