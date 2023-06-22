@@ -38,3 +38,5 @@ If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. 
 ## Wiki
 
 Guide is now available here: https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/wiki
+
+<br />
