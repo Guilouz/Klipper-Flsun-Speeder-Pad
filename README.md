@@ -6,16 +6,16 @@
 
 ## About
 
+This guide explains the whole process in order to obtain Root access on the Speeder Pad, to configure it correctly with official Klipper builds and optimized printer settings.
+
 By default, FLSUN does not use builds from official GitHub repositories. Updates point to Gitee repositories which are very slow, sometimes inaccessible and not updated.
 In addition, during Delta Calibration, tower angles and delta radius are never recalculated in their Klipper build, which can cause several issues.
-
-This procedure explains the whole process in order to obtain Root access on the Speeder Pad, to configure it correctly with optimized printer settings.
 
 This settings are compatible with FLSUN Speeder Pad.
 
 - Useful and automated macros with notifications to KlipperScreen
-- Configuration for ADXL345
-- Improved Start/End Gcodes
+- Improved configurations
+- Configurations for many ADXL
 - And more...
 
 <br />
