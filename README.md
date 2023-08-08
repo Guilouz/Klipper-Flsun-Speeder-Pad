@@ -31,7 +31,8 @@ Before using Klipper please read this documentations:
 
 If you like my work, don't hesitate to support me by paying me a 🍺 or a ☕. Thank you 🙂
 
-[ ![Donate](https://user-images.githubusercontent.com/12702322/250208749-5573a4ac-038e-4214-bf98-3c4648032fb5.png) ](https://www.paypal.me/CyrilGuislain)
+<a href="https://ko-fi.com/guilouz"><img width="350" alt="kofi_button_blue" src="https://github.com/Guilouz/Klipper-Flsun-Speeder-Pad/assets/12702322/2cb81d42-3170-4c33-941e-6a619f586467"></a>
+
 
 <br />
 
