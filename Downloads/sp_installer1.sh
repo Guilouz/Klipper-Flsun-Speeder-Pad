@@ -55,12 +55,6 @@ apt install modemmanager -y
 echo
 apt install dnsmasq-base -y
 echo
-mkdir -p /etc/NetworkManager/conf.d
-nano /etc/NetworkManager/conf.d/any-user.conf <<EOF
-[main]
-auth-polkit=false
-EOF
-echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "REBOOT" "${yellow}"
