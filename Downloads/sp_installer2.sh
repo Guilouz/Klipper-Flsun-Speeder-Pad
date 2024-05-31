@@ -65,7 +65,7 @@ git clone https://github.com/th33xitus/kiauh.git
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
-action "REMOVING STOCK CONFIGURATIONS" "${yellow}"
+action "REMOVING STOCK CONFIGURATION FILES" "${yellow}"
 rm -rf /home/pi/.moonraker_database_1
 rm -rf /home/pi/.moonraker_database_2
 rm -rf /home/pi/.moonraker_database_3
