@@ -30,13 +30,13 @@ title "Copyright © Cyril Guislain (Guilouz)" "${white}"
 echo -e " └──────────────────────────────────────────────────────────────┘"
 
 action "INSTALLING UPDATED PYTHON3 VERSION" "${yellow}"
-apt install python3.12 -y
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1
+apt install python3.10 -y
+update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "INSTALLING PYTHON3 VENV" "${yellow}"
-apt install python3.12-venv python3.12-dev -y
+apt install python3.10-venv python3.10-dev -y
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
