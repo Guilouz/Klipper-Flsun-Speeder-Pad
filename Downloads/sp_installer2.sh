@@ -62,6 +62,7 @@ if [ -d /home/pi/kiauh ]; then
     rm -rf /home/pi/kiauh
 fi
 git clone https://github.com/th33xitus/kiauh.git
+git config --global --add safe.directory /home/pi/kiauh
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
