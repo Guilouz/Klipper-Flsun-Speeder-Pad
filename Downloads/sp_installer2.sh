@@ -30,59 +30,59 @@ title "Copyright © Cyril Guislain (Guilouz)" "${white}"
 echo -e " └──────────────────────────────────────────────────────────────┘"
 
 action "INSTALLING UPDATED PYTHON3 VERSION" "${yellow}"
-apt install python3.9 -y
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
+sudo apt install python3.9 -y
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "INSTALLING PYTHON3 VENV" "${yellow}"
-apt install python3.9-venv python3.9-dev -y
+sudo apt install python3.9-venv python3.9-dev -y
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "INSTALLING UPDATED PIP VERSION" "${yellow}"
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 echo
-python3 get-pip.py
+sudo python3 get-pip.py
 echo
-yes | python3 -m pip install testresources
-rm -f get-pip.py
+yes | sudo python3 -m pip install testresources
+sudo rm -f get-pip.py
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "INSTALLING UPDATED VIRTUALENV" "${yellow}"
-yes | pip3 uninstall virtualenv
+yes | sudo pip3 uninstall virtualenv
 echo
-yes | pip3 install virtualenv
+yes | sudo pip3 install virtualenv
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "INSTALLING KIAUH" "${yellow}"
 if [ -d /home/pi/kiauh ]; then
-    rm -rf /home/pi/kiauh
+    sudo rm -rf /home/pi/kiauh
 fi
-git clone https://github.com/th33xitus/kiauh.git
-git config --global --add safe.directory /home/pi/kiauh
+sudo git clone https://github.com/th33xitus/kiauh.git /home/pi/kiauh
+sudo git config --global --add safe.directory /home/pi/kiauh
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "REMOVING STOCK CONFIGURATION FILES" "${yellow}"
-rm -rf /home/pi/.moonraker_database_1
-rm -rf /home/pi/.moonraker_database_2
-rm -rf /home/pi/.moonraker_database_3
-rm -rf /home/pi/klipper_config
-rm -rf /home/pi/klipper_logs
-rm -rf /home/pi/.cache
-rm -rf /home/pi/.gnupg
-rm -rf /home/pi/.local
-rm -rf /home/pi/.config
-rm -rf /home/pi/.dbus
-rm -rf /home/pi/.gitconfig
-rm -rf /home/pi/moonraker-timelapse
-rm -f /home/pi/savedVariables1.cfg
-rm -f /home/pi/savedVariables2.cfg
-rm -f /home/pi/savedVariables3.cfg
-rm -f /home/pi/sp_installer2.sh
+sudo rm -rf /home/pi/.moonraker_database_1
+sudo rm -rf /home/pi/.moonraker_database_2
+sudo rm -rf /home/pi/.moonraker_database_3
+sudo rm -rf /home/pi/klipper_config
+sudo rm -rf /home/pi/klipper_logs
+sudo rm -rf /home/pi/.cache
+sudo rm -rf /home/pi/.gnupg
+sudo rm -rf /home/pi/.local
+sudo rm -rf /home/pi/.config
+sudo rm -rf /home/pi/.dbus
+sudo rm -rf /home/pi/.gitconfig
+sudo rm -rf /home/pi/moonraker-timelapse
+sudo rm -f /home/pi/savedVariables1.cfg
+sudo rm -f /home/pi/savedVariables2.cfg
+sudo rm -f /home/pi/savedVariables3.cfg
+sudo rm -f /home/pi/sp_installer2.sh
 echo -e "${cyan} INFO: Removing done!"
 echo
 

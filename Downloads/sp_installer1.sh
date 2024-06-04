@@ -30,37 +30,35 @@ title "Copyright © Cyril Guislain (Guilouz)" "${white}"
 echo -e " └──────────────────────────────────────────────────────────────┘"
 
 action "UPDATE PACKAGES LIST" "${yellow}"
-apt update
+sudo apt update
 echo
 echo -e "${cyan} INFO: Update done!${white}"
 
 action "INSTALL OUTDATED PACKAGES" "${yellow}"
-apt full-upgrade -y
+sudo apt full-upgrade -y
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "ADDING ALTERNATIVE REPOSITORY" "${yellow}"
 apt install software-properties-common -y
 echo
-yes | add-apt-repository ppa:deadsnakes/ppa
+yes | sudo add-apt-repository ppa:deadsnakes/ppa
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "INSTALLING NEEDED PACKAGES FOR KLIPPERSCREEN" "${yellow}"
-apt install libsystemd-dev -y
+sudo apt install libsystemd-dev -y
 echo
-apt install tmux -y
+sudo apt install modemmanager -y
 echo
-apt install modemmanager -y
-echo
-apt install dnsmasq-base -y
+sudo apt install dnsmasq-base -y
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
 action "REBOOT" "${yellow}"
 echo -e "${cyan} INFO: Your Speeder Pad will reboot. Log in to SSH again to continue.${white}"
 echo
-rm -f /home/pi/sp_installer1.sh
-reboot
+sudo rm -f /home/pi/sp_installer1.sh
+sudo systemctl reboot
 
 exit 0
