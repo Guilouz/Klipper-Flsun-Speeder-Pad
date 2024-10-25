@@ -57,6 +57,12 @@ yes | sudo pip3 install virtualenv
 echo
 echo -e "${cyan} INFO: Install done!${white}"
 
+action "INSTALLING UPDATED SETUPTOOLS" "${yellow}"
+yes | sudo pip3 install --upgrade setuptools
+yes | sudo pip3 install --upgrade setuptools[core]
+echo
+echo -e "${cyan} INFO: Install done!${white}"
+
 action "INSTALLING KIAUH" "${yellow}"
 if [ -d /home/pi/kiauh ]; then
     sudo rm -rf /home/pi/kiauh
